@@ -43,7 +43,7 @@ const loggedInUser = async () => {
 
         loggedUsername1.innerHTML = user.firstName
         loggedInUserballance.innerHTML = `$${user.wallet}`
-        loggedInUserprofit.innerHTML = `$${10*user.totalReferrals}`
+        loggedInUserprofit.innerHTML = `$${user.referralBonus}`
         totalReferralsUser.innerHTML = `${user.totalReferrals}`
         }
     

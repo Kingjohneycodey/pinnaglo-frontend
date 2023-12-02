@@ -6,6 +6,15 @@ const submitPayment = document.getElementById("payment-button")
 
 const urlParams = new URLSearchParams(location.search)
 let plan = urlParams.get("plan") ;
+let percentage;
+
+if(plan === "3-months"){
+    percentage = 0.9
+}else if(urlParams.get("plan") === "6-months"){
+    percentage = 0.18
+}else if(urlParams.get("plan") === "1-year"){
+    percentage = 0.36
+}
 
 let blogImageUrl = ""
 

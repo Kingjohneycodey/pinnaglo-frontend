@@ -318,12 +318,14 @@
     // })
     proccedBtn.addEventListener('click', () => {
 
-        if(urlParams.get("plan") === "3-months"){
-            paymentAmount = 100
+        let percentage;
+
+        if(plan === "3-months"){
+            percentage = 0.09
         }else if(urlParams.get("plan") === "6-months"){
-            paymentAmount = 190
+            percentage = 0.18
         }else if(urlParams.get("plan") === "1-year"){
-            paymentAmount = 370
+            percentage = 0.36
         }
  
     if( amount.value == '' ){
@@ -335,14 +337,21 @@
             // console.log(amount.value, paymentMethod)
         } else{
 
-    
+            // 0.09*8000/0.1
+
+            const firstCalculation = (percentage * amount.value)
+            const secondCalculation = firstCalculation * 0.1
+            const thirdCalculation = firstCalculation + secondCalculation
+            console.log(firstCalculation, secondCalculation, thirdCalculation)
+
+
             paymentMethod = 'USDT'
             payment.innerHTML= paymentMethod
             card.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
             copyText.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
             netWorkType.innerHTML='TRC20'
             coinNetwork = 'TRC20'
-            amountToPay.innerHTML=paymentAmount
+            amountToPay.innerHTML= thirdCalculation
             container1.style.display = 'none'
             container2.style.display = 'block'
         }
