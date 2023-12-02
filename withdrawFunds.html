@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="investmentPlans.css">
     <!-- <link rel="stylesheet" href="./fundAccount.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Nexus Crypto Fx/dashboard/fundaccount</title>
+    <title>PINNALGO CAPITAL/dashboard/fundaccount</title>
 </head>
 <body>
     <header>
@@ -27,7 +27,7 @@
                 <div class="logo-container">
                     <a href="dashboard ">
                         <h2>
-                            Nexus Crypto Fx
+                            PINNALGO CAPITAL
                         </h2>
                     </a>
                 </div>
@@ -73,7 +73,7 @@
                         <a href="./investmentPlans.html ">
                             <li class="sidebar-menu-list-item">
                                 <i class="fas fa-cubes sidebar-icon"></i>
-                                <span>Investment Plans</span>
+                                <span>Subscriptions</span>
                             </li>
                         </a>
                         <a href="./support.html ">
@@ -104,12 +104,12 @@
             <a href="./settings.html " class="account-button">Account settings</a>
             <div id="google_translate_element" class="google-trans"></div>
             <div class="transaction-links">
-                <a href="./fundAccount.html ">Deposit</a>
+                <a href="./investmentPlans.html">Subscribe</a>
                 <a href="./withdrawFunds.html ">Withdraw</a>
                
             </div>
             <div class="logout-button">
-                <button id="logout">Logout</button>
+                <button onclick="logOut()" id="logout">Logout</button>
             </div>
         </div>
     </div>
@@ -176,6 +176,7 @@
                      <div class="input-container">
                         <span>Enter Amount to withdraw</span><br>
                         <input type="number" style="width: 100%;margin-bottom: 10px;" id="withdraw-amount" placeholder="Enter Amount">
+                        <input type="text" style="width: 100%;margin-bottom: 10px;" id="withdraw-wallet" placeholder="Enter Wallet address">
                         <!-- <div class="account-balance">Account balance: $<span id="account-balance">0</span>.00</div> -->
                     </div>
 
@@ -318,6 +319,7 @@
     </div>
 
 </body>
+<script src="scripts/dashboard.js"></script>
 
 <!-- Firebase -->
 <script type="module">
@@ -448,6 +450,8 @@
         userInfoContainer.classList.remove('active')
     })
 
+    const walletAddress = document.getElementById("withdraw-wallet")
+
     bitcoinBtn.addEventListener("click", async ()=>{
 
         // alert("Hello World!")
@@ -457,25 +461,24 @@
           return  alert("Please Enter a Request Amount")
         }
 
-        const url = "https://nexuscrypto.onrender.com"
+        if(walletAddress.value === ""){
 
-
-        const token = localStorage.getItem("token")
-
-        if(!token){
-
-            location.href = "./login page/login.html"
+          return  alert("Please Enter a Wallet Address")
         }
 
+       
 
-        const response = await fetch(url+"/newrequest?user="+token,{
+
+        const response = await fetch(url+"/withdrawals",{
 
             method:"POST",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
-                amount: requestAmount.value
+                amount: requestAmount.value,
+                walletAddress: walletAddress.value
             })
         })
 
@@ -483,12 +486,12 @@
 
         alert(data.message)
 
-        if(data.status){
+        // if(data.status){
 
-            location.href = "./dashboard.html"
-        }
+        //     location.href = "./dashboard.html"
+        // }
 
-        console.log(data)
+        // console.log(data)
 
 
     })

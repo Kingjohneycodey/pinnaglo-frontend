@@ -68,26 +68,32 @@ if (changePasswordButton) {
             return
         }
 
-        const response = await fetch(url+"/users/password?user="+token, {
-            method: "POST",
+        const response = await fetch(url+"/users/update-password", {
+            method: "PATCH",
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
-                oldPassword:oldPasswordInput.value,
-                NewPassword:newPassword.value
+                currentPassword:oldPasswordInput.value,
+                newPassword:newPassword.value,
+                newConfirmPassword:confirmPassword.value
             })
         })
 
 
         const data = await response.json()
 
-        alert(data.message)
-
-        if(data.status){
-
-            location.href = "/dashboard"
+        if(data.status === "error" || data.status === "fail"){
+            alert(data.message)
         }
+
+        if(data.status === "success"){
+            localStorage.setItem("token", data.accessToken)
+            location.href = "/dashboard.html"
+        }
+
+       console.log(data)
 
         
     })
