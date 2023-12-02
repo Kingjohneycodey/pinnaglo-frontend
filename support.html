@@ -1,0 +1,202 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="support.css">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboardMediaQuery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PINNALGO CAPITAL/dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="./dashboard.html">
+                        <h2>
+                            PINNALGO CAPITAL
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                        
+                        <a href="./transactionHistory.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a>
+                        
+                        <a href="./investmentPlans.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Subscriptions</span>
+                            </li>
+                        </a>
+                        <a href="./support.html " class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- account information -->
+        <div class="account-info-container" id="user-info-container">
+            <div class="account-info-wrapper">
+                <div class="user-details">
+                    <h4 id="user-name2"></h4>
+                    <p id="useremail"></p>
+                </div>
+                <a href="./settings.html " class="account-button">Account settings</a>
+                <div class="transaction-links">
+                    <a href="./investmentPlans.html">Subscribe</a>
+                    <a href="./withdrawFunds.html ">Withdraw</a>
+                    
+                    
+                </div>
+                <div class="logout-button">
+                    <button onclick="logOut()" id="logout">Logout</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- MAIN BODY OF SUPPORT PAGE  -->
+    <div class="support-container inner-container" id="inner-container">
+        <div class="support-wrapper inner-wrapper">
+            <div class="support-page-box-container">
+                <div class="support-page-text-container">
+                    <h2>PINNALGO CAPITAL Support</h2>
+                    <p>for Inquiries, suggestions and complains. Mail us</p>
+                    <h2></h2>
+                </div>
+                <div class="input-container">
+                    <span>message</span>
+                    <textarea name="" id="textarea" cols="30" rows="10" placeholder="Write your message"></textarea>
+                    <button id="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="scripts/dashboard.js"></script>
+
+<!-- Firebase -->
+<script type="module">
+   
+        // Logout button 
+        const logoutButton = document.getElementById('logout')
+
+  var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var textarea = document.getElementById('textarea');
+    var button = document.getElementById('button');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var inner = document.getElementById('inner-container') 
+
+   
+
+    menubar.addEventListener('click', () => {
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+    button.addEventListener('click', () => {
+        // console.log(textarea.value)
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+
+  logoutButton.addEventListener('click', () => {
+   
+  })
+
+</script>
+
+<script>
+
+
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Smartsupp Live Chat script -->
+
+</html>

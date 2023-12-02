@@ -1,0 +1,54 @@
+.support-container, .support-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.support-page-box-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px auto;
+    padding: 20px;
+}
+.support-page-text-container{
+    text-align: center;
+}
+.support-page-text-container p{
+    margin: 20px 0;
+}
+.input-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+textarea{
+    width: 500px;
+    background-color:#16181c;
+    border: 1px solid rgb(75, 74, 74);
+    margin-bottom: 10px;
+    color: rgb(212, 209, 209);
+    outline: none;
+    text-indent: 10px;
+}
+.input-container button{
+    height: 35px;
+    background-color: #f9b707;
+    color: #Fff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+@media screen and (max-width:600px) {
+    .support-page-box-container{
+        padding: 0;
+    }
+    .support-page-text-container p{
+        margin: 14px 0;
+    }
+    textarea{
+        width: 100%;
+    }
+}

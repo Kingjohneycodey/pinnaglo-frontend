@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboardMediaQuery.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PINNALGO CAPITAL/dashboard/settings</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard">
+                        <h2>
+                            PINNALGO CAPITAL
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                        <a href="./transactionHistory.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a>
+                       
+                        <a href="./investmentPlans.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Subscriptions</span>
+                            </li>
+                        </a>
+                        <a href="./support.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="##" class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- account information -->
+    <div class="account-info-container" id="user-info-container">
+        <div class="account-info-wrapper">
+            <div class="user-details">
+                <h4 id="user-name2"></h4>
+                <p id="useremail"></p>
+            </div>
+            <a href="./settings.html" class="account-button">Account settings</a>
+            <div id="google_translate_element" class="google-trans"></div>
+            <div class="transaction-links">
+                <a href="./investmentPlans.html">Subscribe</a>
+                <a href="./withdrawFunds.html">Withdraw</a>
+               
+                
+            </div>
+            <div class="logout-button">
+                <button onclick="logOut()" id="logout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN BODY OF SETTINGS PAGE  -->
+    <div class="settings-container inner-container" id="inner-container">
+        <div class="settings-wrapper inner-wrapper">
+            <div class="settings-sub-wrapper">
+                <div class="settings-option-container">
+                    <div class="settings-option" id="option1">
+                        Referral Link
+                    </div>
+                    <div class="settings-option" id="option2">
+                        Withdrawal settings
+                    </div>
+                    <div class="settings-option" id="option3">
+                        Password/security
+                    </div>
+                    <!-- <div class="settings-option">
+                        Other settings
+                    </div> -->
+                </div>
+                
+                <div class="settings-box-container">
+                    <div class="settings-box" id="personal-settings">
+                        <div class="settings-input-container">
+                            <span>Referral Link</span>
+                            <input disabled name="ref" autocomplete="off" type="text" id="ref-link"/>
+                        </div>
+                       
+                        
+                        <div class="settings-button">
+                            <button id="update-profile-button">Copy URL</button>
+                        </div>
+                    </div>
+
+                    <!-- Withdrawl settings -->
+                    <div class="settings-box withdraw-settings" id="withdraw-settings">
+                        <div class="settings-input-container">
+                            <span>Bitcoin</span>
+                            <input type="text" id="bitcoin-address" placeholder="Enter Bitcoin Address">
+                            <p>Please make sure that this Bitcoin wallet address is correct</p>
+                        </div>
+                       
+                        <div class="settings-button">
+                            <button id="withdraw-set-button">Save</button>
+                        </div>
+                    </div>
+
+                    <!-- Password settings -->
+                    <div class="settings-box password-settings" id="password-settings">
+                        <!-- <div class="settings-input-container">
+                            <span>Withdrawal Password</span>
+                            <input id="withdraw-password" type="text" maxlength="5" minlength="4"
+                            placeholder="Enter withdrawal Password"/>
+                            <span class="error" id="withdraw-password-error">input a withdrawal password</span>
+                        </div>
+                        <div class="settings-button withdraw-password-btn">
+                            <button id="withdraw-password-button">set withdrawal Password</button>
+                        </div> -->
+                        <div class="settings-input-container">
+                            <span>Old Password</span>
+                            <input id="old-password" type="password" placeholder="Enter Old Password"/>
+                        </div>
+                        <div class="settings-input-container">
+                            <span>New Password</span>
+                            <input type="password" id="new-password" placeholder="Enter New Password"/>
+                        </div>
+                        <div class="settings-input-container">
+                            <span>Confirm New Password</span>
+                            <input type="password" id="confirm-password" placeholder="Confirm New Password"/>
+                        </div>
+                        <div class="settings-button">
+                            <button id="update-password-button">Update Password</button>
+                        </div>
+
+                        
+                    </div>
+
+               
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="scripts/dashboard.js"></script>
+<script src="scripts/settings.js"></script>
+
+
+<!-- Firebase -->
+<script type="module">
+
+    const logoutButton = document.getElementById('logout')
+
+  var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var option1 = document.getElementById('option1')
+    var option2 = document.getElementById('option2')
+    var option3 = document.getElementById('option3')
+    var personalSettings = document.getElementById('personal-settings')
+    var withdrawalSettings = document.getElementById('withdraw-settings')
+    var passwordSettings = document.getElementById('password-settings')
+    var advanceSettingsButton = document.getElementById('advance-settings-button');
+    var advanceSettings = document.getElementById('advance-settings');
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var setUserName = document.getElementById('set-name')
+    var setPhoneNumber = document.getElementById('set-number')
+    var DOB = document.getElementById('set-DOB')
+    var address = document.getElementById('set-address')
+    var bankName = document.getElementById('bank-name')
+    var accountName = document.getElementById('account-name')
+    var accountNumber = document.getElementById('account-number')
+    var swiftCode = document.getElementById('swift-code')
+    var bitcoinAddress = document.getElementById('bitcoin-address')
+    var etherrumAddress = document.getElementById('ethereum-address')
+    var usdtAddress = document.getElementById('usdt-address')
+    var updateProfileBtn = document.getElementById('update-profile-button')
+    var withdrawSettingsBtn = document.getElementById('withdraw-set-button')
+    var oldPassword = document.getElementById('old-password')
+    var newPassword = document.getElementById('new-password')
+    var confirmPassword = document.getElementById('confirm-password')
+    var updatePasswordBtn = document.getElementById('update-password-button')
+    var withdrawPasswordBtn = document.getElementById('withdraw-password-button')
+    var withdrawPassword = document.getElementById('withdraw-password')
+    var withdrawPasswordError = document.getElementById('withdraw-password-error')
+    var inner = document.getElementById('inner-container') 
+
+      // Check authentication state
+    updatePasswordBtn.addEventListener('click', () => {
+ 
+    
+    })
+
+    menubar.addEventListener('click', () => {
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+    option1.addEventListener('click', () => {
+        option1.style.backgroundColor="#0052FF"
+        option2.style.backgroundColor="#16181c"
+        option3.style.backgroundColor="#16181c"
+        personalSettings.style.display='block'
+        withdrawalSettings.style.display='none'
+        passwordSettings.style.display='none'
+        advanceSettings.style.display='none'
+    })
+    option2.addEventListener('click', () => {
+        option1.style.backgroundColor="#16181c"
+        option2.style.backgroundColor="#0052FF"
+        option3.style.backgroundColor="#16181c"
+        personalSettings.style.display='none'
+        withdrawalSettings.style.display='block'
+        passwordSettings.style.display='none'
+        advanceSettings.style.display='none'
+    })
+    option3.addEventListener('click', () => {
+        option1.style.backgroundColor="#16181c"
+        option2.style.backgroundColor="#16181c"
+        option3.style.backgroundColor="#0052FF"
+        personalSettings.style.display='none'
+        withdrawalSettings.style.display='none'
+        passwordSettings.style.display='block'
+
+    })
+
+     logoutButton.addEventListener('click', () => {
+   
+  })
+
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Smartsupp Live Chat script -->
+
+</html>

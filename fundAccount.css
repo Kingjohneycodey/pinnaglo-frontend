@@ -1,0 +1,100 @@
+.fund-account-wrapper .payment-method-container{
+    margin-top: 0;
+}
+.fund-account-wrapper .payment-method-container2{
+    margin-top: 30px;
+}
+@media screen and (max-width:600px) {
+    .fund-account-wrapper h1{
+        text-align: center;
+    }
+}
+.payment-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-container-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+}
+.payment-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    box-shadow:0 0 5px #373738;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+}
+.card-input{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    background-color: #373738;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    /* height: ; */
+}
+.card-input #card{
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 6px;
+    border: none;
+    height: 35px;
+    outline: none;
+}
+.fa-copy{
+    cursor: pointer;
+}
+.payment-button{
+    width: 100%;
+    margin: 15px 0;
+}
+.payment-button button{
+    width: 100%;
+    background-color: #0052FF;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    height: 36px;
+}
+#container2{
+    display: none;
+}
+.payment-proof{
+    margin-top: 15px;
+    text-align: left;
+}
+.payment-proof span{
+    color:lightgray;
+    font-size: 14px;
+}
+.payment-proof input{
+    margin-top: 6px;
+    background-color: #373738;
+    width: 100%;
+    /* height: 40px; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.network-type{
+    display: flex;
+
+}
+#network-type{
+    margin-left: 5px;
+}

@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./support.css">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./admin.css">
+
+    <link rel="stylesheet" href="/dashboardMediaQuery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nexus Crypto Fx/dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard ">
+                        <h2>
+                            Nexus Crypto Fx
+                        </h2>
+                    </a>
+                </div>
+
+               
+                
+               
+            </div>
+        </nav>
+    </header>
+    
+   <!-- SIDEBAR CONTAINER -->
+    <div class="sidebar-container" id="sidebar-container">
+        
+            <div class="sidebar-list-item-container">
+                <ul class="sidebar-list-items">
+                    <a class="sidebar-list-item" href="/super/admin">
+                        <li>Users</li>
+                    </a>
+              
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+
+    
+            <div style="max-width: 100%;padding: 15px;width: 400px;" class="support-page-box-container">
+               
+                <div class="input-container">
+                    <span>message</span>
+
+                    <textarea id="message-title" placeholder="Email Title"></textarea>
+
+                    <textarea name="" id="message-body" cols="30" rows="10" placeholder="Write your message"></textarea>
+                    <button onclick="sendEmail()" id="send-button">Send</button>
+                </div>
+            </div>
+     
+
+</body>
+
+<script src="scripts/email.js"></script>
+
+<!-- Firebase -->
+<script type="module">
+   
+        // Logout button 
+        const logoutButton = document.getElementById('logout')
+
+  var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var textarea = document.getElementById('textarea');
+    var button = document.getElementById('button');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var inner = document.getElementById('inner-container') 
+
+   
+
+    menubar.addEventListener('click', () => {
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+
+
+
+</script>
+
+<script>
+
+
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Smartsupp Live Chat script -->
+
+</html>

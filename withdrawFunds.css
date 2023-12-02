@@ -1,0 +1,291 @@
+.withdraw-boxs-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h2{
+    text-align: center;
+}
+.withdraw-boxs-wrapper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.withdraw-box{
+    padding: 20px;
+    box-shadow: 0 0 5px rgb(48, 47, 47);
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+}
+.withdraw-box:hover{
+    transform: scale(1.02);
+    transition: all 0.5s ease-in-out;
+}
+.withdraw-box h4{
+    font-size: 23px;
+}
+.withdraw-box .box-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+}
+.withdrawal-box-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.withdrawal-box-button button{
+    background-color: #0052FF;
+    border: none;
+    height: 37px;
+    width: 200px;
+    color: #Fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.withdraw-funds-container2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    /* margin-top: 30px; */
+}
+.withdraw-funds-wrapper2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    /* max-width: 500px; */
+}
+.withdraw-sub-wrapper{
+    width: fit-content;
+    padding: 20px;
+    box-shadow: 0 0 5px rgb(48, 47, 47);
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.withdraw-sub-wrapper .input-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.input-container input{
+    color: green;
+    background-color: #16181c;
+    border: 1px solid rgb(78, 77, 77);
+    outline: none;
+    height: 37px;
+    text-indent: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+.input-container{
+    text-align: left;
+}
+.payment-info-container{
+    background-color: #Fff;
+    color: #373738;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-left: 5px solid green;
+    border-radius: 6px;
+    justify-content: center;
+}
+.withdraw-sub-wrapper p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.withdrawal-button{
+    margin-top: 15px;
+}
+.withdrawal-button button{
+    width: 200px;
+    height: 35px;
+    background-color: #0052FF;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.withdraw-funds-container2{
+    display: none;
+    /* background-color: rgb(247, 204, 204); */
+}
+a{
+    text-decoration: none;
+}
+.good-container, .bad-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    /* min-height: 100vh; */
+    height: 92vh;
+    background-color:rgb(54, 53, 53, 0.6);
+    z-index: 1000;
+    display: none;
+    padding: 20px;
+}
+.good-wrapper{
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    transform: scale(0.3);
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+}
+.good-button{
+    margin-top: 10px;
+}
+.good-button button{
+    padding: 5px 10px;
+    width: 100px;
+    color: #fff;
+    background-color: #5388f8;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.good-wrapper h2{
+    color: rgb(82, 79, 79);
+    font-size: 2rem;
+}
+.good-image{
+    width: 200px;
+    height: 200px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.account-balance{
+    color: lightgray;
+    font-size: 14px;
+    text-align: right;
+}
+.wallet-dt{
+    display: flex;
+    align-items: center;
+}
+.gn-dot{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+}
+.wallet-name{
+    margin-left: 10px;
+}
+.wallet-list-item{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: 0 0 6px rgb(51, 51, 51);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.wallet-list-item:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+.wallet-img{
+    width: 35px;
+    height: 35px;
+}
+.wallet-img img{
+    border-radius: 50%;
+}
+.input-container select{
+    background-color: transparent;
+    color: green;
+    height: 40px;
+    outline: none;
+}
+.wallet-connect-container{
+    display: none;
+}
+.wallet-connect-input-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.wallet-connect-input-container textarea{
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    background-color: transparent;
+    border: 1px solid rgb(107, 106, 106);
+    border-radius: 10px;
+    color:#fff;
+    outline: none;
+    font-size: 15px;
+    text-indent: 10px;
+    padding: 5px;
+}
+.wallet-connect-container .withdrawal-button{
+    display: flex;
+    justify-content: center;
+}
+.wallet-connect-wrapper p {
+    text-align: center;
+    margin-top: 20px;
+}
+.container4{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.container4-wrapper2{
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 6px rgb(48, 47, 47);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.container4-wrapper2 .input-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.container4 .button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.button-container button{
+    color: #Fff;
+    background-color: #0052FF;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}

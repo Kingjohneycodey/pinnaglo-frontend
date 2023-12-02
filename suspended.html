@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="suspended.css">
+    <title>ElonTradesFx/account suspended</title>
+</head>
+<body>
+    <div class="account-container">
+        <h3>Account has been temporary suspended</h3>
+    </div>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+    const firebaseConfig = {
+  apiKey: "AIzaSyDzhzn6ZskehWvHr-SpjHW60e1nCb3LSKw",
+  authDomain: "elontradesfx.firebaseapp.com",
+  projectId: "elontradesfx",
+  storageBucket: "elontradesfx.appspot.com",
+  messagingSenderId: "51146864031",
+  appId: "1:51146864031:web:470b6f36a5c1e6bf34b9aa"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth()
+
+    onAuthStateChanged(auth, (user) => {
+    if (!user ) {
+      // User is not signed in, redirect to the login page
+      window.location.href = "./Login Page/login.html";
+    } else {
+    // console.log('admin logged in')
+      const userRef = ref(database, `users/${userId}`);
+    //   console.log(user)
+      get(userRef)
+        .then((snapshot) => {
+          const userData = snapshot.val();
+          if (userData.suspended !== false ) {
+              // User does not have access to this page, redirect to the error page
+              window.location.href = "./dashboard.html";
+            }
+        })
+        .catch((error) => {
+            // console.log("Error checking user data:", error);
+        });
+    }
+}); 
+
+</script>
+</html>

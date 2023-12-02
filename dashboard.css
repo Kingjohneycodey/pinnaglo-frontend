@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Nunito+Sans:wght@300&family=Roboto&family=Sansita&family=Sansita+Swashed&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Nunito Sans", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #16181c;
+}
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+li{
+    list-style-type: none;
+}
+:root{
+    --primary-background: #16181c;
+    --primary-color:#f9b707;
+}
+.logo-container a{
+    color: #f9b707;
+}
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 60px;
+    box-shadow: 0 0 5px #3f4141;
+    display: flex;
+    justify-content: center;
+    z-index: 900;
+    background-color: var(--primary-background);
+}
+.navbar-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0 25px;
+}
+.navbar-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container{
+    color:var(--primary-color) ;
+}
+.navbar-icon-bars{
+    display:none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.user-acct{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.user-info{
+    color: #fff;
+}
+
+/* SIDEBAR SECTION */
+.sidebar-container{
+    position: fixed;
+    width: 250px;
+    margin-top: 60px;
+    background-color: #16181c;
+    border-right: 1px solid rgb(51, 49, 49);
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+}
+.sidebar-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+}
+.user-name-info-wrapper{
+    text-align: center;
+    padding: 15px 0;
+    border-bottom:1px solid lightgray ;
+    margin-bottom: 10px;
+}
+.line{
+    background-color: lightgray;
+    height: 1px;
+
+}
+.user-acct{
+    margin-left: 10px;
+}
+.sidebar-menu-list{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 230px;
+}
+.sidebar-menu-list-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 45vh;
+    width: 230px;
+    flex-direction: column;
+}
+.sidebar-menu-list-wrapper a{
+    padding: 15px 20px;
+    color: lightgray;
+    text-decoration: none;
+    /* background-color: #838383; */
+    width: 230px;
+    border-radius: 8px 8px 8px 0;
+    /* padding: ; */
+    /* margin: 30px; */
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-menu-list-wrapper a:hover{
+    background-color: #838383;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-menu-list-item span{
+    margin-left: 12px;
+}
+.sidebar-menu-list-wrapper .active{
+    background-color: #fff;
+    color: #16181c;
+    font-weight: 600;
+}
+
+/* ACCOUNT INFORMATION SECTION */
+.account-info-container{
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    z-index: 910;
+    transition: all 0.6s ease-in-out;
+    display: none;
+}
+.account-info-container.active{
+    display: block;
+    transition: all 0.6s ease-in-out;
+}
+.account-info-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.user-details p{
+    color: darkgray;
+    font-size: 14px;
+}
+.transaction-links{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+.account-button{
+    background-color: #f9b707;
+    color: #fff;
+    margin-top: 10px;
+    padding: 5 10px;
+    width: fit-content;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.transaction-links a{
+    text-decoration: none;
+    color: #16181c;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+.transaction-links a:hover{
+    background-color: #e2dddd;
+    transition: all 0.3s ease-in;
+}
+.logout-button{
+    display: flex;
+    justify-content: center;
+}
+.logout-button button{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 30px;
+    background-color: rgb(243, 115, 115);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* INNER SECTION */
+.inner-container{
+    margin-left: 260px;
+    position: relative;
+    top: 62px;
+}
+.inner-wrapper{
+    padding: 20px;
+    color: #fff;
+}
+.inner-wrapper p{
+    color: darkgray;
+}
+.dashboard-welcome-text{
+    margin-top: 20px;
+}
+.dashboard-welcome-text p{
+    margin-top: 5px;
+}
+.dashboard-investments-box-container{
+    margin-top: 20px;
+}
+.dashboard-investments-box-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+.dashboard-investments-box{
+    padding: 15px;
+    /* border: 1px solid lightgray; */
+    box-shadow:0 0 5px #303030;
+    border-radius: 6px;
+    margin: 15px;
+}
+.dashboard-investments-box h3{
+    font-size: 16px;
+}
+.dashboard-investments-box p{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.user-info{
+    display: flex;
+}
+.user-info .google-trans span a{
+    display: none;
+    height: 20px;
+    color: #16181c;
+}
+.dashboard-investment-boxs{
+    margin-top: 10px;
+}
+.dashboard-investment-boxs button{
+    padding: 7px 15px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.dashboard-investment-boxs .Fund-btn{
+    background-color: orange;
+}
+.dashboard-investment-boxs .Withdraw-btn{
+    background-color: rgb(197, 54, 97);
+}
+.investment-box{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.investment-box .fa{
+    padding: 15px;
+    border-radius:5px ;
+}
+.investment-box div{
+    margin-left: 7px;
+}
+.fa-dollar-sign, .fa-gift{
+    background-color: rgb(137, 75, 199);
+}
+.investment-box .fa-coins, .fa-envelope-open{
+    background-color: rgb(15, 189, 15);
+}
+.fa-envelope, .fa-arrow-alt-circle-up{
+    background-color: rgb(221, 41, 41);
+}
+.fa-download{
+    background-color: rgb(223, 161, 48);
+}
+
+@media screen and (max-width:1500px) {
+    .dashboard-investments-box-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    
+    }
+}
+@media screen and (max-width:800px) {
+    .dashboard-investments-box-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+}
+@media screen and (max-width:560px) {
+    .dashboard-investments-box-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    }
+}

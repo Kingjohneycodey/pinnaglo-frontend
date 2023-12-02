@@ -1,0 +1,377 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+    <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="./tradingSignal.css">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardMediaQuery.css">
+    <link rel="stylesheet" href="refers.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ElonTradesFx/dashboard/referals</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard.html" class="active">
+                        <h2>ElonTradesFx</h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html" class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                        <a href="./trades.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-right-left"></i>
+                                <span>Trades</span>
+                            </li>
+                        </a>
+                        <a href="./profit.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                                <span>Profit Record</span>
+                            </li>
+                        </a>
+                        <!-- <a href="./transactionHistory.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a> -->
+                        <!-- <a href="./community.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-people-line"></i>
+                                <span>Communities</span>
+                            </li>
+                        </a> -->
+                        <a href="./myInvestments.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>My Investments</span>
+                            </li>
+                        </a>
+                        <a href="./investmentPlans.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Investment Plans</span>
+                            </li>
+                        </a>
+                        <a href="./support.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- account information -->
+    <div class="account-info-container" id="user-info-container">
+        <div class="account-info-wrapper">
+            <div class="user-details">
+                <h4 id="user-name2"></h4>
+                <p id="useremail"></p>
+            </div>
+            <a href="./settings.html" class="account-button">Account settings</a>
+            <div id="google_translate_element" class="google-trans"></div>
+            <div class="transaction-links">
+                <a href="./fundAccount.html">Deposit</a>
+                <a href="./withdrawFunds.html">Withdraw</a>
+                <a href="./investmentPlans.html">Buy Plan</a>
+                <a href="./refers.html">Referals</a>
+                
+            </div>
+            <div class="logout-button">
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN BODY OF DASHBOARD  -->
+    <div class="dashboard-container inner-container" id="inner-container">
+        <div class="dashboard-wrapper inner-wrapper">
+            
+            <div class="referral_text">
+                <h2>My Referrals</h2>
+            </div>
+
+            <!-- <a href="??FeqjcO1GclShuLHMVyRaKNZ1FI92" onclick="aa()">Link</a> -->
+
+            <div class="good-container" id="good-container">
+                <div class="good-wrapper" id="good-wrapper">
+                    <div class="good-image">
+                        <img src="./assets/check-green.gif" alt="gif">
+                    </div>
+                    <h2 id="main-copy-text">Copied</h2>
+                    <p id="copy-text">Refferal Link Copied</p>
+                    <div class="good-button">
+                        <button id="ok-button">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REFERRAL BOX CONTAINER -->
+            <div class="referral_box_container">
+                <div class="referral_box_wrapper">
+                    <p>Referrals</p>
+                    <h2 class="referral_number" id="referral_number">0</h2>
+                    <hr class="line">
+                    <div class="referal_link_box">
+                        <p id="card">https://elonttradesfx.com/Signup/signup.html?<span id="referral_id"></span></p>
+                        <p class="copy_button" id="copy-btn">Copy <i class="fa-solid fa-copy"></i></p>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<!-- Firebase -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDzhzn6ZskehWvHr-SpjHW60e1nCb3LSKw",
+  authDomain: "elontradesfx.firebaseapp.com",
+  projectId: "elontradesfx",
+  storageBucket: "elontradesfx.appspot.com",
+  messagingSenderId: "51146864031",
+  appId: "1:51146864031:web:470b6f36a5c1e6bf34b9aa"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth()
+    let Data = []
+    let userId
+    
+    // Logout button 
+    const logoutButton = document.getElementById('logout')
+
+
+
+var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var inner = document.getElementById('inner-container') 
+    var tableBtn1 = document.getElementById('table-button1');
+    var tableBtn2 = document.getElementById('table-button2');
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var copyButton = document.getElementById('copy-btn')
+    var goodContainer =document.getElementById('good-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var card = document.getElementById('card')
+    var okButton = document.getElementById('ok-button')
+    // var userName3 = document.getElementById('user-name3')
+    var referralId = document.getElementById('referral_id')
+    var refferalNo = document.getElementById('referral_number')
+    
+    
+
+      // Check authentication state
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      // User is not signed in, redirect to the login page
+      window.location.href = "./Login Page/login.html";
+    } else {
+      // User is signed in, check if they have access to this page
+      userId = user.uid
+        await onValue(ref(database, `users/${userId}`),(snapshot) => {
+              const userData = snapshot.val();
+            //   if(userData.emailVerification !== true){
+            //     window.location.href='./emailverification.html'
+            //   }
+            })
+
+       userId = user.uid;
+       userEmail.innerHTML = user.email
+       userName.innerHTML = user.displayName
+       userName1.innerHTML = user.displayName
+       userName2.innerHTML = user.displayName
+       referralId.innerHTML = userId
+      const userRef = ref(database, `users/${userId}`);
+         await onValue(ref(database, `users/${userId}`),(snapshot) => {
+              const userData = snapshot.val();
+            //   if(userData.role === 'admin'){
+            //     window.location.href='./admin.html'
+            //   }
+            } )
+        await  onValue(ref(database, `referrals/${userId}`), (snapshot) => {
+           let data = []
+        snapshot.forEach(childSnapshot => {
+            data.push(childSnapshot.val())
+        })
+        let total = 0
+        console.log({data})
+        if(Array.isArray(data) && data.length !== 0 && data !== []){
+            // console.log('hello world')
+            // data = data.filter(transaction => transaction.status === 'Approved') 
+            //     total = data.map( el => el.amount)
+            // .reduce((acct, amount) => (+acct + +amount))
+            // totalDeposite.innerHTML='$'+total+'.00'
+            // deposites = total
+             refferalNo.innerHTML = data.length
+            }    
+        })
+        console.log(window.location.href.split('?')[2])
+    }
+});
+
+
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+ copyButton.addEventListener('click', () => {
+
+    goodContainer.style.display='block'
+    goodWrapper.style.transform='scale(1)'
+
+    // Get the text you want to copy
+    let Card = card.innerHTML;
+
+    // Copy the text to the clipboard
+    navigator.clipboard.writeText(`https://elontradesfx.com/Signup/signup.html?${userId}`)
+    // navigator.clipboard.writeText(`https://Mfstrades.com/Signup/signup.html?${userId}`)
+    .then(() => {
+    //   console.log('Text copied to clipboard');
+    })
+    .catch((error) => {
+    //   console.error('Error copying text: ', error);
+    });
+});
+
+    okButton.addEventListener('click', () => {
+        goodContainer.style.display='none'
+        goodWrapper.style.transform='scale(0.3)'
+        goodWrapper.style.transition= 'all 0.5s ease-in-out';
+    })
+    
+
+  logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+      console.log('user logged out')
+    }).catch((error) => {
+      // An error happened.
+      console.log(error.message)
+    });
+  })  
+
+
+</script>
+
+
+<script>
+
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'd4b231cab0933638430640cae792f9b19b879e97';
+        window.smartsupp||(function(d) {
+          var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+          s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+          c.type='text/javascript';c.charset='utf-8';c.async=true;
+          c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+        </script>
+        <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+</html>

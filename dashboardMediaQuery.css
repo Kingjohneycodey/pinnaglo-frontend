@@ -1,0 +1,57 @@
+@media screen and (max-width:1000px) {
+    .sidebar-mobile-container{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.14);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);background-color: rgb(194, 192, 192,0.5);
+        display: none;
+}
+    .sidebar-mobile-container.active{
+        display: block;
+    }
+    .sidebar-container{
+        position: fixed;
+        margin-top: 0px;
+        z-index: 10001; 
+        left: -10000px;
+        transition: all 1s ease-in-out;
+    }
+    .sidebar-container.active{
+        left: 0;
+        transition: all 1s ease-in-out;
+        transition-delay: 1s;
+    }
+    .inner-container{
+        margin-left: 0;
+    }
+    .navbar-icon-bars{
+        display: block;
+        cursor: pointer;
+    }
+    .user-info{
+        display: none;
+    }
+}
+@media screen and (max-width:600px) {
+    .inner-wrapper{
+        padding: 10px;
+    }
+}
+@media screen and (max-width:600px) {
+    /* .dashboard-investments-box-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    } */
+    .dashboard-investments-box{
+        margin: 10px;
+    }
+}

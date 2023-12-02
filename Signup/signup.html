@@ -1,0 +1,319 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="/Signup/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PINNALGO CAPITAL /signup</title>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-wrapper">
+            <div class="logo">
+                <a href="../index ">
+                 <h2>PINNALGO CAPITAL</h2>
+                </a> 
+            </div>
+            <div class="signup-form-container">
+                <div class="error" id="error">Could not complete signup</div>
+                <div class="signup-form-text">
+                    <h2>Create an Account</h2>
+                </div>
+                <form class="auth-form" id="form">
+                    <div class="input-container">
+                        <span>First Name</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <input type="text" 
+                             placeholder="First Name"
+                             id="firstName"
+                            />
+                        </div>
+                        <div class="username-error error" id="firstname-error">Input your first name</div>
+                    </div>
+                    <div class="input-container">
+                        <span>Last Name</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <input type="text" 
+                             placeholder="Last Name"
+                             id="lastName"
+                            />
+                        </div>
+                        <div class="username-error error" id="lastname-error">Input your last name</div>
+                    </div>
+                    <div class="input-container">
+                        <span>Email</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <input type="email" 
+                             id="email"
+                             placeholder="exmaple@gmail.com"
+                            />
+                        </div>
+                        <div class="email-error error" id="email-error">Input your Email</div>
+                    </div>
+                   
+                    <div class="input-container">
+                        <span>Password</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-key-skeleton"></i>
+                            </div>
+                            <input type="password" 
+                             id="password"
+                             placeholder="*******"
+                            />
+                        </div>
+                        <div class="password-error error" id="password-error">Input your Password</div>
+                    </div>
+                    <div class="input-container">
+                        <span>ConfirmPassword</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-key-skeleton"></i>
+                            </div>
+                            <input type="password" 
+                             placeholder="*******"
+                             id="confirm-password"
+                            />
+                        </div>
+                        <div class="confirm-error error" id="confirm-error">Input your Password</div>
+                    </div>
+                    <div class="input-container">
+                        <span>Referral (optional)</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-key-skeleton"></i>
+                            </div>
+                            <input type="text" 
+                             placeholder="Referal ID"
+                             id="referral"
+                             disabled
+                             value="None Detected"
+                            />
+                        </div>
+                    </div>
+                    <!-- <div class="input-container">
+                        <span>Password</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-key-skeleton"></i>
+                            </div>
+                            <input type="password" 
+                             placeholder="*******"
+                            />
+                        </div>
+                    </div> -->
+                    <div class="form-button">
+                        <button id="SignUpbutton">SignUp</button>
+                    </div>
+                    <div class="form-alt-text">
+                        Already have an account? <span><a href="/login page/login.html">Login</a></span>
+                    </div>
+                    <div class="form-alt-text">
+                        © Copyright 2023  PINNALGO CAPITAL   All Rights Reserved.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Firebase -->
+<script type="module">
+
+        const url = "https://pinn-algo-capitals.vercel.app/api/v1"
+
+    
+
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const confirmPassword = document.getElementById('confirm-password')
+    const firstName = document.getElementById('firstName')
+    const lastName = document.getElementById('lastName')
+    const emailError = document.getElementById('email-error')
+    const firstNameError = document.getElementById('firstname-error')
+    const lastNameError = document.getElementById('lastname-error')
+    const passwordError = document.getElementById('password-error')
+    const confirmError = document.getElementById('confirm-error')
+    var refferal = document.getElementById('referral')
+    var country = ''
+    const button = document.getElementById('SignUpbutton')
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    const error = document.getElementById('error')
+   let sub;
+   
+
+   const urlParams = new URLSearchParams(location.search)
+   if(urlParams.get("ref")){
+    refferal.value = urlParams.get("ref")
+   }
+
+   if(urlParams.get("sub")){
+    sub = urlParams.get("sub")
+   }
+    
+console.log(sub)
+console.log(urlParams.get("ref"))
+
+
+
+    button.addEventListener('click', async (e) => {
+        e.preventDefault()
+        button.innerHTML='Loading...'
+        // button.disabled = true
+        button.style.cursor = 'nodrop'
+        // console.log('you clicked me')
+        firstNameError.style.display='none'
+        lastNameError.style.display='none'
+        emailError.style.display='none'
+        passwordError.style.display='none'
+        passwordError.style.display='none'
+        confirmError.style.display='none'
+        if(firstName.value == ''){
+            firstNameError.style.display='block'
+        }
+        if(lastName.value == ''){
+            lastNameError.style.display='block'
+        }
+        if(email.value == ''){
+            emailError.style.display='block'
+        }
+        if(password.value == ''){
+            passwordError.style.display='block'
+        }
+        if(confirmPassword.value == ''){
+            confirmError.style.display='block'
+        } else if(confirmPassword.value !== password.value){
+        //   return
+            confirmError.style.display='block'
+            confirmError.innerHTML='Passwords are incorrect'
+            // console.log(password.value, confirmPassword.value)
+        }
+
+        if(firstName.value == null || email.value == null || lastName.value == null || password.value == null || confirmPassword.value == null){
+            // return
+                error.style.display='block';
+                error.innerHTML='Please complete credentials';
+                
+            }else{
+                button.innerHTML='Loading...'
+                button.ariaDisabled=true
+                if(email.value && password.value && confirmPassword.value){
+                    button.innerHTML='Loading...'
+                    
+
+                    const response = await fetch(url+"/users/signup",{
+                    method:"POST",
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    body:JSON.stringify({
+                        email:email.value,
+                        password:password.value,
+                        firstName:firstName.value,
+                        lastName:lastName.value,
+                        passwordConfirm: confirmPassword.value,
+                        referralLink: refferal.value !== "None Detected" ? refferal.value : ""
+                    })
+                })
+
+                const data = await response.json()
+                console.log(data)
+                  if(data.status === "error" || data.status === "fail"){
+
+                    error.innerHTML = data.message
+                    error.style.display='block'
+                    button.innerHTML='Login'
+                    return false
+                }
+
+            
+            button.innerHTML='Login'
+
+
+        localStorage.setItem("token",data.accessToken)
+
+                    error.innerHTML = "Sign Up Sucessful"
+                    error.style.display='block'
+                    error.style.color = "green"
+
+
+                    setTimeout(() => {
+                        location.href = "../dashboard.html"
+                    }, 1000);
+
+              
+
+           
+
+                
+
+                 
+                }
+                // })
+                button.ariaDisabled=false
+                button.innerHTML='SignUp'
+            }
+            button.innerHTML='SignUp'
+            // console.log(userName.value, email.value, phone.value, password.value)
+        })
+
+    //    console.log({email:email.value, password:password.value})
+
+
+
+//     auth.currentUser.sendEmailVerification()
+//   .then(() => {
+//     // Email verification sent
+//     console.log('Email verification sent to ' + email.value);
+//   })
+//   .catch((error) => {
+//     // An error occurred while sending email verification
+//     console.error(error);
+//   });
+    // setTimeout(() => {
+    //     onAuthStateChanged(auth, (user) => {
+    //         if(user){
+    //             window.location.href='/dashboard '
+    //             // setTimeout(() => {
+    //             // }, 2000)
+    //             console.log('Hello There')
+    //         }
+    //     })
+    // }, 3000)
+
+    // console.log(email.value, password.value)
+</script>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'd4b231cab0933638430640cae792f9b19b879e97';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+</html>

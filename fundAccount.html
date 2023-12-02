@@ -1,0 +1,399 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboardMediaQuery.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="./fundAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PINNALGO CAPITAL/dashboard/fundaccount</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard ">
+                        <h2>
+                            PINNALGO CAPITAL
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list" class="active">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                       
+                        <a href="./transactionHistory.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a>
+                        
+                        <a href="./investmentPlans.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Subscriptions</span>
+                            </li>
+                        </a>
+                        <a href="./support.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- account information -->
+    <div class="account-info-container" id="user-info-container">
+        <div class="account-info-wrapper">
+            <div class="user-details">
+                <h4 id="user-name2"></h4>
+                <p id="useremail"></p>
+            </div>
+            <a href="./settings.html " class="account-button">Account settings</a>
+            <div id="google_translate_element" class="google-trans"></div>
+            <div class="transaction-links">
+                <a href="./investmentPlans.html">Subscribe</a>
+                <a href="./withdrawFunds.html">Withdraw</a>
+               
+            </div>
+            <div class="logout-button">
+                <button onclick="logOut()" id="logout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN BODY OF DASHBOARD  -->
+    <div class="fund-account-container inner-container" id="inner-container">
+        <div class="fund-account-wrapper inner-wrapper">
+
+
+        <div class="notification-container not-selected" id="not-selected">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Payment method</h4>
+                <p id="notify-text">Please choose a payment method</p>
+            </div>
+        </div>
+        <div class="notification-container" id="notify">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Payment method selected</h4>
+                <p id="notify-text1"></p>
+                <!-- <p id="notify-text">you have choosen bank transfer</p> -->
+            </div>
+        </div>
+
+        <!-- CONTAINER ONE -->
+        <div class="payment-method-container" id="container1">
+            <!-- <h1>Fund Account</h1> -->
+            <div class="payment-method-wrapper">
+                <!-- <h2>Fund Your Account</h2> -->
+                <div class="amount-container">
+                    <div class="amount-text">
+                        <h3>Enter Account Size</h3>
+                    </div>
+                    <div style="width: 100%;" class="amount-input">
+                        <input style="width: 100%;" type="number" id="amount" placeholder="Input account size">
+                    </div>
+                </div>
+                <div class="payment-method-container payment-method-container2">
+                  
+                    
+                    <div class="payment-procced-button">
+                        <button id="procced-btn">Procced to payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="assets/check-green.gif" alt="gif">
+                </div>
+                <!-- <h2 id="main-copy-text">Copied</h2> -->
+                <p id="copy-text"></p>
+                <p id="network-text">Network:<span id="coin-network"></span></p>
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER TWO -->
+        <div class="payment-method-container container2 payment-container2" id="container2">
+            <div class="payment-container-two">
+                <h2>Make Payment</h2>
+               <div class="payment-box">
+                <p>you are to make payment of <b>$<span class="amount-to-pay" id="amount-to-pay">0.00</span></b> using your selected payment method. Screenshot and upload the proof of payment</p>
+                <div>Payment method:
+                <h4 id="payment-method"></h4>
+            </div>
+                <div class="network-type">Network type:
+                <h4 id="network-type"></h4>
+            </div>
+
+            <div style="width: 100%;" class="qr-code">
+
+                <img style="max-width: 200px;" src="images/qrcode.jpg" alt="">
+
+            </div>
+                <div class="card-input">
+                    <div type="text" id="card">TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx</div>
+                    <i class="fa-solid fa-copy" id="copy-button"></i>
+                </div>
+                <div class="payment-proof">
+                    <span>Upload payment proof after payment.</span>
+                    <input type="file" id="payment-proof-image" name="image" accept="image/*" required>
+                </div>
+                <div class="payment-button">
+                    <button id="payment-button">Submit payment</button>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+</body>
+<script src="scripts/dashboard.js"></script>
+<script src="scripts/deposit.js"></script>
+
+<!-- Firebase -->
+<script type="module">
+  
+  
+    const logoutButton = document.getElementById('logout')       
+
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var card = document.getElementById('card')
+    var amount = document.getElementById('amount')
+    // var bankTransfer = document.getElementById('bank-transfer')
+    // var paypal = document.getElementById('paypal')
+    // var stripe = document.getElementById('stripe')
+    var bitcoin = document.getElementById('bitcoin')
+    var etherum = document.getElementById('etherum')
+    // var BNB = document.getElementById('BNB')
+    var proccedBtn = document.getElementById('procced-btn')
+    var notify = document.getElementById('notify')
+    var notifyText = document.getElementById('notify-text')
+    var notSelected = document.getElementById('not-selected')
+    var notifyText1 = document.getElementById('notify-text1')
+    var container1 = document.getElementById('container1')
+    var container2 = document.getElementById('container2')
+    var amountToPay = document.getElementById('amount-to-pay')
+    var copyButton = document.getElementById('copy-button')
+    var paymentProofImage = document.getElementById('payment-proof-image')
+    var paymentButton = document.getElementById('payment-button')
+    var payment = document.getElementById('payment-method')
+    var goodContainer =document.getElementById('good-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var copyText = document.getElementById('copy-text')
+    var okButton = document.getElementById('ok-button')
+    var coinNetwork = document.getElementById('coin-network')
+    var mainCopyText = document.getElementById('main-copy-text')
+    var networkText = document.getElementById('network-text')
+    var coinNetworkText = document.getElementById('coin-network')
+    var coinNetwork = ''
+    var netWorkType = document.getElementById('network-type')
+    var inner = document.getElementById('inner-container') 
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    // time:`${day}-${month}-${year}`
+    let paymentMethod = 'USDT'
+    const urlParams = new URLSearchParams(location.search)
+    let plan = urlParams.get("plan") ;
+    let paymentAmount;
+
+          // Check authentication state
+ 
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+    
+    // bitcoin.addEventListener('click', () => {
+    //     notifyText1.innerHTML='You have choosen Bitcoin'
+    //     notify.style.top=0
+    //     setTimeout(() => {
+    //         notify.style.top='-1000px'
+    //     }, 3000)
+    //     paymentMethod = 'Bitcoin'
+    //     payment.innerHTML= paymentMethod
+    //     card.innerHTML='17jBXLYSnAgjgq86HhVXtymSiGa3oHKkBm'
+    //     copyText.innerHTML='17jBXLYSnAgjgq86HhVXtymSiGa3oHKkBm'
+    //     netWorkType.innerHTML='btc'
+    //     coinNetwork = 'btc'
+    // })
+    proccedBtn.addEventListener('click', () => {
+
+        if(urlParams.get("plan") === "3-months"){
+            paymentAmount = 100
+        }else if(urlParams.get("plan") === "6-months"){
+            paymentAmount = 190
+        }else if(urlParams.get("plan") === "1-year"){
+            paymentAmount = 370
+        }
+ 
+    if( amount.value == '' ){
+            notSelected.style.top=0
+            notifyText.innerHTML="Please Input an account Size"
+        setTimeout(() => {
+            notSelected.style.top='-1000px'
+        }, 3000)
+            // console.log(amount.value, paymentMethod)
+        } else{
+
+    
+            paymentMethod = 'USDT'
+            payment.innerHTML= paymentMethod
+            card.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
+            copyText.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
+            netWorkType.innerHTML='TRC20'
+            coinNetwork = 'TRC20'
+            amountToPay.innerHTML=paymentAmount
+            container1.style.display = 'none'
+            container2.style.display = 'block'
+        }
+    })
+
+    copyButton.addEventListener('click', () => {
+
+        goodContainer.style.display='block'
+        goodWrapper.style.transform='scale(1)'
+        coinNetworkText.innerHTML=coinNetwork
+        
+
+  // Get the text you want to copy
+   let Card = card.textContent;
+
+  // Copy the text to the clipboard
+  navigator.clipboard.writeText(Card)
+    .then(() => {
+    //   console.log('Text copied to clipboard');
+    })
+    .catch((error) => {
+    //   console.error('Error copying text: ', error);
+    });
+  });
+
+   
+   
+    paymentButton.addEventListener('click', async () => {
+        
+    
+          
+    }) 
+    okButton.addEventListener('click', () => {
+        goodContainer.style.display='none'
+        goodWrapper.style.transform='scale(0.3)'
+        goodWrapper.style.transition= 'all 0.5s ease-in-out';
+    })
+
+  logoutButton.addEventListener('click', () => {
+   
+  })
+
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Smartsupp Live Chat script -->
+
+</html>

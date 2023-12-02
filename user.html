@@ -1,0 +1,205 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- SIDEBAR CONTAINER -->
+    <div class="sidebar-container" id="sidebar-container">
+        <div class="sidebar-wrapper">
+            <div class="logo-container">
+                <h2>Nexus Crypto Fx</h2>
+            </div>
+            <div class="sidebar-list-item-container">
+                <ul class="sidebar-list-items">
+                    <a class="sidebar-list-item" href="/super/admin">
+                        <li>Users</li>
+                    </a>
+                  
+                    <a class="sidebar-list-item" href="/super/admin/withdrawals">
+                        <li>Transaction Proofs</li>
+                    </a>
+                    
+                    <a class="sidebar-list-item" href="/super/admin/email">
+                        <li>Email</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <div class="good-container" id="good-container">
+        <div class="good-wrapper" id="good-wrapper">
+            <div class="good-image">
+                <img src="./assets/check-green.gif" alt="gif">
+            </div>
+            <h2 id="main-copy-text">Copied</h2>
+            <p id="copy-text"></p>
+            <p id="network-text">Network:<span id="coin-network"></span></p>
+            <div class="good-button">
+                <button id="ok-button">OK</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- MAIN BODY CONTAINER -->
+    <section class="main-body-container" id="main-container">
+        <div class="main-header">
+            <div class="main-header-wrapper">
+               
+                <div class="log-out-icon-container main-header-icon" id="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN SECTION BODY -->
+        <div class="main-section-body-container">
+         
+
+            <!-- USER ACTIVITIES SECTION -->
+            <div class="user-activities-container" id="user-activity-container">
+                <h3><span id="username"></span>'s activities</h3>
+                <div id="block-button-container"></div>
+                <div class="deposite-transactions-table">
+                    <div class="h3">Deposit Transactions</div>
+                    <div class="user-transaction-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Payment mode</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Aprove</th>
+                            </tr>
+                            <!-- <hr> -->
+                            <tbody id="deposite-table-body">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="deposite-transactions-table">
+                    <div class="h3">Withdrawal Requests</div>
+                    <div class="user-transaction-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Payment mode</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Aprove</th>
+                            </tr>
+                            <!-- <hr> -->
+                            <tbody id="withdrawal-table-body">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+
+                <!-- ADD BONUS CONTAINER -->
+                <div class="add-bonus-container">
+                    <h3>Add Deposite</h3>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>Deposite Amount</span>
+                            <input type="number" class="bonus-input" placeholder="Enter Deposite Amount" id="add-deposite-amount">
+                        </div>
+                        <!-- <div class="bonus-box-input-container">
+                            <span>Payment method</span>
+                            <input id="add-deposite-narration" type="text" class="bonus-input" placeholder="Enter Payment Method">
+                        </div> -->
+                        <div class="bonus-button">
+                            <button onclick="addDeposit()" id="add-deposite-btn">Add Deposit</button>
+                            <button onclick="removeDeposit()" id="add-deposite-btn">Remove Deposite</button>
+                        </div>
+                    </div>
+                </div>
+
+               
+                 <!-- ADD PROFIT CONTAINER -->
+                 <div class="add-bonus-container profit-container" id="profit-container">
+                    <h4>Add Profit</h4>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>Profit Amount</span>
+                            <input type="number" class="bonus-input" placeholder="Enter Profit Amount" id="add-profit-amount">
+                        </div>
+                        <!-- <div class="bonus-box-input-container">
+                            <span>Profit Narration/Plan</span>
+                            <input id="add-profit-naration" type="text" class="bonus-input" placeholder="Enter Profit Narration">
+                        </div> -->
+                        <div class="bonus-button">
+                            <button onclick="addProfit()" id="add-profit-btn">Add Profit</button>
+                            <button onclick="removeProfit()" id="add-profit-btn">Remove Profit</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="add-bonus-container profit-container" id="password-container">
+                    <h4>Reset Password</h4>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>New Password</span>
+                            <input type="text" class="bonus-input" placeholder="Enter New Password" id="change-password-input">
+                        </div>
+                        <!-- <div class="bonus-box-input-container">
+                            <span>Profit Narration/Plan</span>
+                            <input id="add-profit-naration" type="text" class="bonus-input" placeholder="Enter Profit Narration">
+                        </div> -->
+                        <div class="bonus-button">
+                            <button onclick="resetPassword()" id="add-profit-btn">Reset Password</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="add-bonus-container profit-container" id="login-btn">
+                    <h4>Login as User</h4>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                           
+                        </div>
+                        <!-- <div class="bonus-box-input-container">
+                            <span>Profit Narration/Plan</span>
+                            <input id="add-profit-naration" type="text" class="bonus-input" placeholder="Enter Profit Narration">
+                        </div> -->
+                        <div class="bonus-button">
+                            <button onclick="loginAsUser()" id="add-profit-btn">Login as User</button>
+                            <button onclick="sendUserEmail()" id="add-profit-btn">Send User Email</button>
+                            <button style="background-color: red;" onclick="" id="add-profit-btn">Delete User</button>
+                        </div>
+                    </div>
+                </div>
+
+              
+
+
+               
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+
+<script src="scripts/user.js"></script>
+
+</html>

@@ -1,0 +1,332 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboardMediaQuery.css">
+    <link rel="stylesheet" href="./profit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ElonTradesFx/dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard.html">
+                        <h2>
+                            ElonTradesFx
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                        <a href="./profit.html" class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                                <span>Profit Record</span>
+                            </li>
+                        </a>
+                        <!-- <a href="./transactionHistory.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a> -->
+                        <a href="./myInvestments.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>My Investments</span>
+                            </li>
+                        </a>
+                        <a href="./investmentPlans.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Investment Plans</span>
+                            </li>
+                        </a>
+                        <a href="./support.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- account information -->
+        <div class="account-info-container" id="user-info-container">
+            <div class="account-info-wrapper">
+                <div class="user-details">
+                    <h4 id="user-name2">Wisdom woke</h4>
+                    <p id="useremail"></p>
+                </div>
+                <a href="./settings.html" class="account-button">Account settings</a>
+                <div class="transaction-links">
+                    <a href="./fundAccount.html">Deposit</a>
+                    <a href="./withdrawFunds.html">Withdraw</a>
+                    <a href="./investmentPlans.html">Buy Plan</a>
+                </div>
+                <div class="logout-button">
+                    <button id="logout">Logout</button>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- MAIN BODY OF DASHBOARD  -->
+    <div class="profit-page-container inner-container" id="inner-container">
+        <div class="profit-page-wrapper inner-wrapper">
+            <h3>My Profits</h3>
+
+            <div class="profit-transactions-table">
+                <!-- <div class="h3">Deposite Transactions</div> -->
+                <div class="user-transaction-table">
+                    <table class="table">
+                        <tr class="table-head">
+                            <th>Plan</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <!-- <th>Aprove</th> -->
+                        </tr>
+                        <!-- <hr> -->
+                        <tbody id="profit-table-body">
+                            <tr class="table-data" id="table-date"></tr>
+                        </tbody>
+                    </table>
+                    <h3 class="no-profit" id="no-profit">You do not have any Profit</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<!-- Firebase -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDzhzn6ZskehWvHr-SpjHW60e1nCb3LSKw",
+  authDomain: "elontradesfx.firebaseapp.com",
+  projectId: "elontradesfx",
+  storageBucket: "elontradesfx.appspot.com",
+  messagingSenderId: "51146864031",
+  appId: "1:51146864031:web:470b6f36a5c1e6bf34b9aa"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth()
+    let Data = []
+    let userId
+  
+        // Logout button 
+        const logoutButton = document.getElementById('logout')
+
+  var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var noProfit = document.getElementById('no-profit')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var profit = document.getElementById('profit-table-body')
+    var inner = document.getElementById('inner-container') 
+
+      // Check authentication state
+      onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      // User is not signed in, redirect to the login page
+      window.location.href = "./Login Page/login.html";
+    } else {
+      // User is signed in, check if they have access to this page
+       userId = user.uid;
+       userEmail.innerHTML = user.email
+       userName.innerHTML = user.displayName
+       userName1.innerHTML = user.displayName
+       userName2.innerHTML = user.displayName
+      const userRef = ref(database, `users/${userId}`);
+    //   console.log(user)
+      get(userRef)
+        .then((snapshot) => {
+          const userData = snapshot.val();
+          if (!userData || !userData.access || !userData.access.pageName) {
+              // User does not have access to this page, redirect to the error page
+              window.location.href = "error.html";
+            }
+        })
+        .catch((error) => {
+            // console.log("Error checking user data:", error);
+        });
+    }
+});
+    
+
+    menubar.addEventListener('click', () => {
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+    const addProfitTable = ( amount, date, narration, plan, type  ) => {
+
+        let trow = document.createElement('tr')
+        let amountRow = document.createElement('td')
+        // let typeRow = document.createElement('td')
+        let narrationRow = document.createElement('td')
+        let planRow = document.createElement('td')
+        let dateRow = document.createElement('td')
+
+        amountRow.innerHTML = '$' + amount
+        // typeRow.innerHTML = type
+        narrationRow.innerHTML = narration
+        dateRow.innerHTML = date
+        planRow.innerHTML = plan
+
+        trow.classList.add('table-data')
+        trow.appendChild(planRow)
+        trow.appendChild(amountRow)
+        trow.appendChild(narrationRow)
+        // trow.appendChild(typeRow)
+        trow.appendChild(dateRow)
+
+        profit.appendChild(trow)
+    }
+
+    const getDataOnce = (profit) => {
+        profit.forEach(profit => {
+            addProfitTable(profit.amount, profit.date, profit.narration, profit.plan, profit.type)
+        })
+   }
+
+    setTimeout(() => {
+       onValue(ref(database, `MainProfit/${userId}`), (snapshot) => {
+        let profit = []
+        snapshot.forEach(childSnapshot => {
+            profit.push(childSnapshot.val())
+        })
+        if(profit.length === 0){
+            noProfit.style.display='block'
+        }
+
+        
+        getDataOnce(profit)
+       })
+
+    }, 3000)
+
+  
+  logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+      ('user logged out')
+    }).catch((error) => {
+      // An error happened.
+      alert(error.message)
+    });
+  })
+
+</script>
+
+<script>
+   
+
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'd4b231cab0933638430640cae792f9b19b879e97';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+</html>

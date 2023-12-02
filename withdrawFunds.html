@@ -1,0 +1,516 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboardMediaQuery.css">
+    <link rel="stylesheet" href="./withdrawFunds.css">
+    <link rel="stylesheet" href="investmentPlans.css">
+    <!-- <link rel="stylesheet" href="./fundAccount.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nexus Crypto Fx/dashboard/fundaccount</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard ">
+                        <h2>
+                            Nexus Crypto Fx
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                 
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list" class="active">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="./dashboard.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                        <a href="./transactionHistory.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a>
+                        <a href="./investmentPlans.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Investment Plans</span>
+                            </li>
+                        </a>
+                        <a href="./support.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- account information -->
+    <div class="account-info-container" id="user-info-container">
+        <div class="account-info-wrapper">
+            <div class="user-details">
+                <h4 id="user-name2"></h4>
+                <p id="useremail"></p>
+            </div>
+            <a href="./settings.html " class="account-button">Account settings</a>
+            <div id="google_translate_element" class="google-trans"></div>
+            <div class="transaction-links">
+                <a href="./fundAccount.html ">Deposit</a>
+                <a href="./withdrawFunds.html ">Withdraw</a>
+               
+            </div>
+            <div class="logout-button">
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN BODY OF DASHBOARD  -->
+    <div class="withdraw-funds-container inner-container" id="inner-container">
+        <div class="withdraw-funds-wrapper inner-wrapper">
+
+
+        <!-- <div class="notification-container not-selected" id="not-selected">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Payment method</h4>
+                <p id="notify-text">Please choose a payment method</p>
+            </div>
+        </div>
+        <div class="notification-container" id="notify">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Payment method selected</h4>
+                <p id="notify-text">you have choosen bank transfer</p>
+            </div>
+        </div> -->
+
+        <!-- CONTAINER ONE -->
+        <div class="withdraw-boxs-container" id="container1">
+            <h2>Request for Withdrawal</h2>
+            <div class="withdraw-boxs-wrapper">
+                <!-- <div class="withdraw-box">
+                    <h4>Bank Transfer</h4>
+                    <div class="box-row">
+                        <span>Minimum Amount:</span>
+                        <span>$10</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Maximum Amount:</span>
+                        <span>$10000</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Type:</span>
+                        <span>percentage</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Amount:</span>
+                        <span>0%</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Duration</span>
+                        <span>Imstant Payment</span>
+                    </div>
+                    <div class="withdrawal-box-button">
+                        <button id="bank-btn">+ Request withdrawal</button>
+                    </div>
+                </div> -->
+                <div class="withdraw-box">
+                    <h4 style="text-align: center;">Bitcoin</h4>
+
+
+                     <div class="input-container">
+                        <span>Enter Amount to withdraw</span><br>
+                        <input type="number" style="width: 100%;margin-bottom: 10px;" id="withdraw-amount" placeholder="Enter Amount">
+                        <!-- <div class="account-balance">Account balance: $<span id="account-balance">0</span>.00</div> -->
+                    </div>
+
+                    <div class="withdrawal-box-button">
+                        <button id="bitcoin-btn">+ Request withdrawal</button>
+                    </div>
+                </div>
+              
+                <!-- <div class="withdraw-box">
+                    <h4>USDT</h4>
+                    <div class="box-row">
+                        <span>Minimum Amount:</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Maximum Amount:</span>
+                        <span>$100000</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Type:</span>
+                        <span>fixed</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Amount:</span>
+                        <span>$s0</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Duration</span>
+                        <span>Imstant Payment</span>
+                    </div>
+                    <div class="withdrawal-box-button">
+                        <button id="usdt-btn">+ Request withdrawal</button>
+                    </div>
+                </div> -->
+             
+                <!-- <div class="withdraw-box">
+                    <h4>Paypal</h4>
+                    <div class="box-row">
+                        <span>Minimum Amount:</span>
+                        <span>$50</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Maximum Amount:</span>
+                        <span>$100000</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Type:</span>
+                        <span>fixed</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Charge Amount:</span>
+                        <span>$10</span>
+                    </div>
+                    <div class="box-row">
+                        <span>Duration</span>
+                        <span>Imstant Payment</span>
+                    </div>
+                    <div class="withdrawal-box-button">
+                        <button id="paypal-btn">+ Request withdrawal</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- NOTIFICATION CENTER -->
+        <div class="notification-container not-selected" id="not-selected">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Withdrawal method</h4>
+                <p id="notify-text">Please choose a payment method</p>
+            </div>
+        </div>
+        <div class="notification-container" id="notify">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Withdrawal method selected</h4>
+                <p id="notify-text1"></p>
+                <!-- <p id="notify-text">you have choosen bank transfer</p> -->
+            </div>
+        </div>
+
+        
+        <div class="notification-container not-selected" id="not-selected">
+            <div class="notification-icon" >
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="notification-wrapper">
+                <h4>Wallet Phrase</h4>
+                <p id="notify-text">Please complete your wallet phrase</p>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/check-green.gif" alt="gif">
+                </div>
+                <h2 id="main-copy-text">Withdrawal Request Sent</h2>
+                <p id="copy-text">If you do not recieve payment in 24Hrs please contact admin</p>
+                <!-- <p id="network-text">Network:<span id="coin-network"></span></p> -->
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bad-container" id="bad-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/bad.png" alt="gif">
+                </div>
+                <h2 id="bad-text1">Failed</h2>
+                <p id="bad-text2">Could not complete withdrawal request due to incorrect code</p>
+                <div class="good-button">
+                    <button id="ok-bad-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="wallet-connect-container" id="container3">
+            <h2>Connect wallet for withdrawal</h2>
+            <div class="wallet-connect-wrapper">
+                <div class="wallet-connect-list-item">
+                    <div class="wallet-name">Trust Wallet</div>
+                    <div class="wallet-image">
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    
+           
+
+        </div>
+    </div>
+
+</body>
+
+<!-- Firebase -->
+<script type="module">
+
+    let userId
+  
+    // Logout button 
+    const logoutButton = document.getElementById('logout')
+
+  var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var withdrawalPin = ''
+    var amount = document.getElementById('amount')
+    var inner = document.getElementById('inner-container')
+    // var bankTransfer = document.getElementById('bank-transfer')
+    // var paypal = document.getElementById('paypal')
+    // var stripe = document.getElementById('stripe')
+    // var bitcoin = document.getElementById('bitcoin')
+    // var etherum = document.getElementById('etherum')
+    // var BNB = document.getElementById('BNB')
+    // var proccedBtn = document.getElementById('procced-btn')
+    var notify = document.getElementById('notify')
+    var notifyText = document.getElementById('notify-text')
+    var notSelected = document.getElementById('not-selected')
+    var notifyText1 = document.getElementById('notify-text1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var bitcoinBtn = document.getElementById('bitcoin-btn');
+    var ethereumBtn = document.getElementById('ethereum-btn');
+    var bankBtn = document.getElementById('Bank-btn');
+    var paypalBtn = document.getElementById('paypal-btn');
+    // var usdtBtn = document.getElementById('usdt-btn');
+    var container1 = document.getElementById('container1')
+    var container2 = document.getElementById('container2')
+    var container3 = document.getElementById('container3')
+    var container4 = document.getElementById('container4')
+    var container5 = document.getElementById('container5')
+    var withdrawMethod = document.getElementById('withdrawal-method');
+    var copyMainText = document.getElementById('main-copy-text')
+    var copyText = document.getElementById('copy-text')
+    var requestAmount = document.getElementById('withdraw-amount')
+    var requestAmount1 = document.getElementById('withdraw-amount1')
+    var paymentInfo = document.getElementById('payment-info')
+    var paymentInfo1 = document.getElementById('payment-info1')
+    var withdrawalPin = document.getElementById('withdrawal-pin')
+    var goodContainer = document.getElementById('good-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var accountBalance = document.getElementById('account-balance')
+    var accountBalance1 = document.getElementById('account-balance1')
+    var trustWallet = document.getElementById('trust-wallet')
+    var metamaskWallet = document.getElementById('metamask-wallet')
+    var blockchainWallet = document.getElementById('blockchain-wallet')
+    var cryptoWallet = document.getElementById('cryptocom-wallet')
+    var ownbitWallet = document.getElementById('ownbit-wallet')
+    var walletioWallet = document.getElementById('walletio-wallet')
+    var withdrawProcces1 = document.getElementById('withdraw-process')
+    var withdrawProcces2 = document.getElementById('withdraw-process2')
+    var withdrawProcces3 = document.getElementById('withdraw-process3')
+    var withdrawBtn = document.getElementById('withdrawal-btn')
+    var walletPhrase = document.getElementById('wallet-input')
+    var withdrawBtn = document.getElementById('withdrawal-btn')
+    var withdrawalCodeBtn = document.getElementById('withdrawal-code-btn')
+    var walletName = document.getElementById('wallet-name')
+    var badContainer = document.getElementById('bad-container')
+    var okBadBtn = document.getElementById('ok-bad-button')
+    var badtext1 = document.getElementById('bad-text1')
+    var badtext2 = document.getElementById('bad-text2')
+    var bankName = document.getElementById('bank-name')
+    var bankAddress = document.getElementById('bank-address')
+    var accountNumber = document.getElementById('account-number')
+    var routingNum = document.getElementById('routing-number')
+    var swiftCode = document.getElementById('swift-code')
+    var withdrawalCode = document.getElementById('withdraw-code')
+    var Withdrawalfee1 = document.getElementById("withdrawfee1")
+    var Withdrawalfee2 = document.getElementById("withdrawfee2")
+    var Withdrawalfee3 = document.getElementById("withdrawfee3")
+    var accountType = ''
+    var walletType = ''
+    var withdrawalMode = ''
+    let data = [];
+    let mainAccountBalance = 0
+    let deposites = 0
+    let profits = 0
+    let bonus = 0
+    let TDeposites = 0
+    let IDeposites = 0
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    var okBtn = document.getElementById('ok-button')
+    var withdrawalPin2 = Math.floor(Math.random()* 10000000)
+    let withdrawalMainPin = ''
+    // var amountToPay = document.getElementById('amount-to-pay')
+    var payment = document.getElementById('payment-method')
+    // var requestButton = document.getElementById('complete-request')
+    let paymentMethod = ''
+    let receivingMode;
+    
+    menubar.addEventListener('click', () => {
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+    bitcoinBtn.addEventListener("click", async ()=>{
+
+        // alert("Hello World!")
+
+        if(requestAmount.value === ""){
+
+          return  alert("Please Enter a Request Amount")
+        }
+
+        const url = "https://nexuscrypto.onrender.com"
+
+
+        const token = localStorage.getItem("token")
+
+        if(!token){
+
+            location.href = "./login page/login.html"
+        }
+
+
+        const response = await fetch(url+"/newrequest?user="+token,{
+
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                amount: requestAmount.value
+            })
+        })
+
+        const data = await response.json()
+
+        alert(data.message)
+
+        if(data.status){
+
+            location.href = "./dashboard.html"
+        }
+
+        console.log(data)
+
+
+    })
+ 
+
+  logoutButton.addEventListener('click', () => {
+   
+  })
+
+</script>
+
+<script>
+    
+
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+   
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</html>

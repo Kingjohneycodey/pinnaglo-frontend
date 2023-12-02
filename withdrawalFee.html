@@ -1,0 +1,305 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link rel="stylesheet" href="./withdrawalFee.css">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- SIDEBAR CONTAINER -->
+    <div class="sidebar-container" id="sidebar-container">
+        <div class="sidebar-wrapper">
+            <div class="logo-container">
+                <h2>ElonTradesFx</h2>
+            </div>
+            <div class="sidebar-list-item-container">
+                <ul class="sidebar-list-items">
+                    <a class="sidebar-list-item" href="./admin.html">
+                        <li>Users</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./paymentProof.html">
+                        <li>Payment Proofs</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./withdrawAdmin.html">
+                        <li>Withdrawals</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./withdrawalFee.html">
+                        <li>Withdrawal Fees</li>
+                    </a>
+                    <!-- <a class="sidebar-list-item" href="./adminTradingSignal.html">
+                        <li>Signals</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./emailCompose.html">
+                        <li>Email</li>
+                    </a> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTAINER -->
+    <section class="main-body-container" id="main-container">
+        <div class="main-header">
+            <div class="main-header-wrapper">
+                <div class="navbar-logo-icon" id="menubar">
+                    <i class="fa-solid fa-bars main-header-icon"></i>
+                </div>
+                <div class="log-out-icon-container main-header-icon" id="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/check-green.gif" alt="gif">
+                </div>
+                <h2>Success</h2>
+                <p>Withdrawal Fee Updated</p>
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN SECTION BODY -->
+        <div class="main-section-body-container">
+            <div class="main-section-body-container1" id="user-table-container">
+                <h3>You have <span id="number-of-users">0</span> Users</h3>
+                <div class="users-list-container">
+                    <table class="table">
+                                <tr class="table-head">
+                                    <th>User</th>
+                                    <th>Country</th>
+                                    <th>phoneNumber</th>
+                                    <th>Date Joined </th>
+                                </tr>
+                                <!-- <hr> -->
+                                <tbody id="users-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- USER ACTIVITIES SECTION -->
+            <div class="user-activities-container" id="user-activity-container">
+                <h3><span id="username"></span>'s withdraws Fee</h3>
+                <div class="deposite-transactions-table">
+                    <div class="h3">Update withdrawal Fee</div>
+                    <form class="withdrawfree-container" id="form">
+                        <label>
+                            <span>Withdrawal Fee</span>
+                            <input type="number" id="withdrawal-fee" placeholder="Enter Withdrawal Fee" required>
+                        </label>
+                        <div class="fee-btn">
+                            <button id="button">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+<!-- Firebase -->
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDzhzn6ZskehWvHr-SpjHW60e1nCb3LSKw",
+  authDomain: "elontradesfx.firebaseapp.com",
+  projectId: "elontradesfx",
+  storageBucket: "elontradesfx.appspot.com",
+  messagingSenderId: "51146864031",
+  appId: "1:51146864031:web:470b6f36a5c1e6bf34b9aa"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth()
+    let Data = []
+    let userId
+
+          // Check authentication state
+  onAuthStateChanged(auth,async (user) => {
+    if (!user ) {
+      // User is not signed in, redirect to the login page
+      window.location.href = "./Login Page/login.html";
+    } else {
+    // console.log('admin logged in')
+      const userRef = ref(database, `users/${userId}`);
+    //   console.log(user)
+    userId = user.uid
+        await onValue(ref(database, `users/${userId}`),(snapshot) => {
+              const userData = snapshot.val();
+              if(userData.role !== 'admin'){
+                window.location.href="./Login Page/login.html"
+              }
+            })
+    }
+});
+
+
+    var userTable = document.getElementById('users-table-body')
+    var numberOfUsers = document.getElementById('number-of-users')
+    var deposite = document.getElementById('deposite-table-body')
+    var userName = document.getElementById('username')
+    var Plan = document.getElementById('pln-table-body')
+    var profitContainer = document.getElementById('profit-container')
+    var userTableContainer = document.getElementById('user-table-container')
+    var userActivityContainer = document.getElementById('user-activity-container')
+    var logoutButton = document.getElementById('logout-btn')
+    var bonus = document.getElementById('bonus-table-body')
+    var profit = document.getElementById('profit-table-body')
+    var menubar = document.getElementById('menubar')
+    var sidebar = document.getElementById('sidebar-container')
+    var mainContainer = document.getElementById('main-container')
+    var depositeBtn = document.getElementById('add-deposite-btn')
+    var good = document.getElementById('good-container')
+    var bad = document.getElementById('bad-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var okBtn = document.getElementById('ok-button')
+    var withdrawalFee = document.getElementById('withdrawal-fee') 
+    var withdrawalFeeBtn = document.getElementById('button') 
+    var form = document.getElementById('form')
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    // time:`${day}-${month}-${year}`
+    // var User = document.querySelectorAll('.table-data') 
+    // let UserInfo 
+    let users = []
+
+    const AddToUsersTable = ( username, email, phoneNumber, Date, userId, country, withdrawalPin ) => {
+
+        var UserInfo = {
+            username,
+            email,
+            phoneNumber,
+            Date,
+            userId,
+            country
+        }
+
+        let trow = document.createElement('tr')
+        let nameRow = document.createElement('td')
+        // let emailRow = document.createElement('td')
+        let phoneNumberRow = document.createElement('td')
+        let dateRow = document.createElement('td')
+        let countryRow = document.createElement('td')
+
+        nameRow.innerHTML = username
+        // emailRow.innerHTML = email
+        countryRow.innerHTML = country
+        phoneNumberRow.innerHTML = phoneNumber
+        dateRow.innerHTML = Date
+
+        trow.classList.add('table-data')
+        trow.appendChild(nameRow)
+        // trow.appendChild(emailRow)
+        trow.appendChild(countryRow)
+        trow.appendChild(phoneNumberRow)
+        trow.appendChild(dateRow)
+        userTable.appendChild(trow)
+        
+        trow.addEventListener('click',() => {
+            // console.log(UserInfo.userId)
+            userTableContainer.style.display='none'
+            userActivityContainer.style.display='block'
+            userName.innerHTML=UserInfo.username
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                console.log(withdrawalFee.value)
+                set(ref(database, `users/${userId}/withdrawalFee`), withdrawalFee.value)
+                .then(() => {
+                    good.style.display='block'
+                    goodWrapper.style.transform='scale(1)'
+                })
+            })
+
+        })
+
+    }
+
+    const getDataOnce = (users) => {
+        users.forEach(user => {
+            AddToUsersTable(user.username, user.email, user.phoneNumber, user.date, user.userId, user.country, user.withdrawalPin)
+        })
+   }
+
+    setTimeout(() => {
+    //    console.log(database)
+       onValue(ref(database, `users/`), (snapshot) => {
+           const data = snapshot.val();
+        snapshot.forEach(childSnapshot => {
+            users.push(childSnapshot.val())
+        })
+        
+        getDataOnce(users)
+        // console.log(users)
+        numberOfUsers.innerHTML=users.length
+       })
+
+    }, 3000)
+    // User.addEventListener('click', () => {
+    //     console.log(UserInfo)
+    // })
+
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.remove('active')
+    })
+    // mainContainer.addEventListener('click', () => {
+    //     sidebar.classList.remove('active')
+    // })
+
+    okBtn.addEventListener('click', () => {
+        good.style.display='none'
+        goodWrapper.style.transform='scale(0.3)'
+        window.location.reload()
+    })
+
+
+
+    logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+    //   console.log('user logged out')
+    window.location.href = './Login Page/login.html'
+    }).catch((error) => {
+      // An error happened.
+    //   console.log(error.message)
+    });
+  })  
+
+</script>
+
+</html>

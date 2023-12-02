@@ -1,0 +1,250 @@
+@media screen and (max-width:700px) {
+    .header-container{
+        padding: 10px;
+    }
+}
+@media screen and (max-width:900px) {
+    .nav-menu-list-container{
+        display: none;
+    }
+    .nav-menu-auth{
+        display: none;
+    }
+    .menu-bar{
+        display: block;
+    }
+    .menu-bar .fa-bars{
+        font-size:1.6rem ;
+        cursor: pointer;
+        display: block;
+    }
+    .mobile-menu-list{
+        display:flex ;
+        position: absolute;
+        top: -1000px;
+        left: 0;
+        right: 0;
+        padding: 10px 10px 30px 10px;
+        background-color: #16181c;
+        /* height: 100px; */
+        border-bottom: 1px solid rgb(63, 63, 63);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.6s ease-in-out;
+        z-index: 10;
+    }
+    .mobile-menu-list.active{
+        transition: all 0.6s ease-in-out;
+        top: 60px;
+    }
+    .mobile-menu-list li{
+        margin: 10px 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    .mobile-menu-list li:hover{
+        color: #Fff;
+        transition: all 0.3s ease-in-out;
+    }
+    .mobile-menu-list button{
+        width: 80%;
+        margin: 10px 0;
+        height: 40px;
+        background-color: #f9b707;
+        color: #Fff;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .mobile-menu-list button:hover{
+        color: #f9b707;
+        background-color: #Fff;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* INTRO SECTION */
+@media screen and (max-width:1200px) {
+    .intro-wrapper{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-text-container{
+        margin-bottom: 30px;
+    }
+    .intro-image-container{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .intro-text-container h2{
+        /* font-size: 3rem; */
+    }
+}
+@media screen and (max-width:500px){
+    .intro-container{
+        padding:10px ;
+        margin-top: 50px;
+        /* font-size: 2rem; */
+    }
+    .intro-text-container h2{
+        font-size: 2.1rem;
+        margin-bottom: 40px;
+    }
+    .partners-container{
+        padding:20px 10px ;
+    }
+}
+
+/* How  */
+@media screen and (max-width:860px) {
+    .start-box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 700px;
+        padding: 30px;
+        max-height: 350px;
+    }
+    .start-box{
+        width: 100%;
+        max-width: 700px;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px;
+    }
+}
+
+/* INVESTMENT PACKAGES */
+@media screen and (max-width:500px) {
+    .investment-package-container{
+        padding: 10px;
+    }
+}
+
+/* GET STARTED */
+@media screen and (max-width:1000px) {
+    .get-started-container{
+        padding: 80px 10px;
+    }
+    .get-started-wrapper{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .get-started-button{
+        margin-top: 20px ;
+        width:100%;
+    }
+    .get-started-button button{
+        width: 250px;
+        height: 50px;
+        font-size: 17px;
+    }
+}
+
+/* ONLINE TRADE SECTION */
+@media screen and (max-width: 1260px) {
+    .online-trade-wrapper{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .online-trade-text-container{
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
+
+
+/* SECURITY SECTION */
+@media screen and (max-width:1000px) {
+    .security-box-main-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .security-box-container{
+        padding: 20px 20px 40px 20px;
+        margin-top: 20px;
+        background-color: #16181c;
+    }
+}
+@media screen and (max-width:620px) {
+    .security-container{
+        padding: 10px;
+    }
+    .online-trade-image-container{
+        max-width: 380px;
+        height: 450px;
+    }
+}
+
+/* TESTIMONIES SECTION */
+.testimonies-container{
+    padding: 20px;
+    color: #Fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.swiper{
+    width: 100%;
+    height: 500px;
+}
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testimonies-image-container{
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+}
+.testimonies-box{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #Fff;
+}
+
+/* INVESTORS GUIDE SECTION */
+@media screen and (max-width:800px) {
+    .investors-guide-container{
+        padding: 10px;
+    }
+    .investors-guide-box{
+        margin: 10px 0;
+    }
+}
+@media screen and (max-width:600px) {
+    .main-footer-container{
+        padding: 10px;
+    }
+}
+@media screen and (max-width:12800px) {
+    .footer-box-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-box{
+        margin-top: 20px;
+        width: 100%;
+        max-width: 350px;
+    }
+}

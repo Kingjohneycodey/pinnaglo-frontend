@@ -1,0 +1,71 @@
+.transaction-history-table{
+    margin-top:20px ;
+    padding: 20px 30px;
+}
+.transaction-buttons{
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 1px solid lightgray; */
+    border-bottom: 1px solid rgb(126, 125, 125);
+}
+.transaction-buttons .button{
+    padding: 10px;
+    width: 100%;
+    /* justify-content: center; */
+    text-align: center;
+    color: #fff;
+    /* background-color: #fff; */
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 7px 7px 0 0;
+    font-weight: 600;
+}
+.transaction-buttons .button:hover{
+    border: 1px solid lightgray;
+}
+.transaction-buttons .button.active{
+    background-color: #fff;
+    color: #16181c;
+}
+table{
+    color: #fff;
+    width: 100%;
+    padding: 20px 5px;
+    /* box-shadow: 0 0 5px rgb(77, 76, 76); */
+    border-radius:10px ;
+    /* margin-top: 20px; */
+}
+tr td{
+    text-align: center;
+}
+.table .table-head{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+tr{
+    border-bottom:  1px solid lightgray;
+}
+.table-data td{
+    padding: 10px;
+}
+.withdraw-table, .others-table{
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+    .transaction-history-table{
+        padding: 20px 0;
+    }
+    .deposite-table{
+        overflow: scroll;
+    }
+}
+a{
+    text-decoration: none;
+}
+/* deposite-table */
+@media screen and (max-width:460px) {
+    .deposite-table, .withdraw-table, .other-table{
+        overflow-x: scroll;
+    }
+}

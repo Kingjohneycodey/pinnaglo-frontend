@@ -1,0 +1,359 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+    <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardMediaQuery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PINNALGO CAPITAL/dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="navbar-wrapper">
+                <div class="navbar-icon-bars" id="menubar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo-container">
+                    <a href="dashboard">
+                        <h2>
+                            PINNALGO CAPITAL
+                        </h2>
+                    </a>
+                </div>
+
+                <div class="navbar-icon-bars" id="user-info-container-button">
+                    <i class="fa-solid fa-user-circle"></i>
+                </div>
+                
+                <div class="user-info">
+                    <div id="google_translate_element" class="google-trans"></div>
+                    <span>Hello <span id="user-name"></span></span>
+                    <div class="user-acct" id="user-info-container-button1">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- SIDEBAR SECTION -->
+    <div class="sidebar-mobile-container" id="sidebar-container">
+
+        <div class="sidebar-container" id="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="user-name-info-wrapper">
+                    <h3 id="user-name1"></h3>
+                </div>
+                <!-- <hr class="line"> -->
+                <div class="sidebar-menu-list">
+                    <ul class="sidebar-menu-list-wrapper">
+                        <a href="##" class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <span>Dashboard</span>
+                            </li>
+                        </a>
+                      
+                        <a href="./transactionHistory.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa fa-briefcase sidebar-icon"></i>
+                                <span>Transaction history</span>
+                            </li>
+                        </a>
+                       
+                        <a href="./investmentPlans.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fas fa-cubes sidebar-icon"></i>
+                                <span>Subscriptions</span>
+                            </li>
+                        </a>
+                        <a href="./support.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Help/Support</span>
+                            </li>
+                        </a>
+                        <a href="./settings.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- account information -->
+    <div class="account-info-container" id="user-info-container">
+        <div class="account-info-wrapper">
+            <div class="user-details">
+                <h4 id="user-name2"></h4>
+                <p id="useremail"></p>
+            </div>
+            <a href="./settings.html" class="account-button">Account settings</a>
+            <div id="google_translate_element" class="google-trans"></div>
+            <div class="transaction-links">
+                <a href="./investmentPlans.html">Subscribe</a>
+                <a href="./withdrawFunds.html">Withdraw</a>
+                
+            </div>
+            <div class="logout-button">
+                <button id="logout" onclick="logOut()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN BODY OF DASHBOARD  -->
+    <div class="dashboard-container inner-container" id="inner-container">
+        <div class="dashboard-wrapper inner-wrapper">
+            <div class="dashboard-welcome-text">
+                <h2>Welcome, <span id="user-name3"></span></h2>
+                <p>Welcome to Pinnalgo Your Gateway to Successful Trading</p>
+                <div class="dashboard-investment-boxs">
+                    <a href="./investmentPlans.html">
+                        <button class="Fund-btn">Subscribe Now</button>
+                    </a>
+                    <a href="./withdrawFunds.html">
+                        <button class="Withdraw-btn" >Withdraw Funds</button>
+                    </a>
+                </div>
+            </div>
+            <div class="dashboard-investments-box-container">
+                <div class="dashboard-investments-box-wrapper">
+                    <div class="dashboard-investments-box">
+                        <div class="investment-box">
+                            <span><i class="fa fa-dollar-sign"></i></span>
+                            <div>
+                                <h3 id="account-balance">$0.00</h3>
+                                <p>Account Balance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-investments-box">
+                        <div class="investment-box">
+                            <span>
+                                <i class="fa fa-coins"></i>
+                            </span>
+                            <div>
+                                <h3 id="total-profit">$0.00</h3>
+                                <p>Referral Bonus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-investments-box">
+                        <div class="investment-box">
+                            <span><i class="fa fa-gift"></i></span>
+                            <div>
+                                <h3 id="total-bonus">0</h3>
+                                <p>Total Referrals</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- <div class="dashboard-investments-box">
+                        <div class="investment-box">
+                            <span><i class="fa fa-arrow-alt-circle-up"></i></span>
+                            <div>
+                                <h3 id="Withdrawals-total">$0.00</h3>
+                                <p>Total Withdrawals</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- USER CHART -->
+            <div class="pt-1 col-12">
+                <h3>Personal Trading Chart</h3>
+                <div class="tradingview-widget-container" style="margin:30px 0px 10px 0px;">
+<div id="tradingview_f933e"><div id="tradingview_aea8d-wrapper" style="position: relative;box-sizing: content-box;width: 100%;height: calc(550px - 32px);margin: 0 auto !important;padding: 0 !important;font-family: -apple-system, BlinkMacSystemFont,Roboto, Ubuntu, sans-serif"><div style="width: 100%;height: calc(550px - 32px);background: transparent;padding: 0 !important;"><iframe id="tradingview_aea8d" src="##" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe></div></div></div>
+<div class="tradingview-widget-copyright" style="width: 100%;"><span class="blue-text"></span> <span class="blue-text">Personal trading chart</span></div>
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget(
+{
+"width": "100%",
+"height": "550",
+"symbol": "COINBASE:BTCUSD",
+"interval": "1",
+"timezone": "Etc/UTC",
+"theme": 'dark',
+"style": "9",
+"locale": "en",
+"toolbar_bg": "#f1f3f6",
+"enable_publishing": false,
+"hide_side_toolbar": false,
+"allow_symbol_change": true,
+"calendar": false,
+"studies": [
+"BB@tv-basicstudies"
+],
+"container_id": "tradingview_f933e"
+}
+);
+</script>
+</div>
+                
+</div>
+
+    <!-- USER CHART 2 -->
+    <!-- TradingView Widget BEGIN -->
+<!-- <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="##" rel="noopener" target="_blank"><span class="blue-text">Forex market</span></a> byPINNALGO CAPITAL</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+    {
+    "width": "100%",
+    "height": "100%",
+    "currencies": [
+      "EUR",
+      "USD",
+      "JPY",
+      "GBP",
+      "CHF",
+      "AUD",
+      "CAD",
+      "NZD",
+      "CNY",
+      "NOK",
+      "ZAR",
+      "HKD",
+      "SGD",
+      "PHP"
+    ],
+    "isTransparent": false,
+    "colorTheme": "dark",
+    "locale": "en"
+  }
+    </script>
+  </div> -->
+  <!-- TradingView Widget END -->
+
+
+        </div>
+    </div>
+
+</body>
+
+<script src="scripts/dashboard.js"></script>
+
+
+<!-- Firebase -->
+<script type="module">
+
+    const logoutButton = document.getElementById('logout')
+
+
+
+var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var userName3 = document.getElementById('user-name3')
+    var accountBalance = document.getElementById('account-balance')
+    var totalDeposite = document.getElementById('total-deposite')
+    var totalInvestments = document.getElementById('total-investments')
+    var totalActiveInvestments = document.getElementById('total-active-investments')
+    var totalBonus = document.getElementById('total-bonus')
+    var totalProfit = document.getElementById('total-profit')
+    var inner = document.getElementById('inner-container') 
+    let mainBalance = 0
+    let deposites = 0
+    let profits = 0
+    let bonuss = 0
+    let depositeTransactions 
+
+      // Check authentication state
+
+
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+   
+
+     
+
+
+
+ 
+  
+
+  logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+      console.log('user logged out')
+    }).catch((error) => {
+      // An error happened.
+      console.log(error.message)
+    });
+  })  
+
+
+</script>
+
+
+<script>
+
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '7049bd469612b6787fb5e4f81b302b16f64396f3';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+</html>

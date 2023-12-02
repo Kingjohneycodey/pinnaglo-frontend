@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="../Signup/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nexus Crypto Fx</title>
+</head>
+<body>
+    
+    <div class="signup-container">
+        <div class="signup-wrapper">
+            <div class="logo">
+                <a href="../index ">
+                 <h2>Nexus Crypto Fx</h2>
+                </a> 
+            </div>
+            <div class="signup-form-container">
+                <div class="signup-form-text">
+                    <h2>Login to your Account</h2>
+                </div>
+                <div class="error" id="error">Could not login user</div>
+                <form class="auth-form" id="form">
+                    <div class="input-container">
+                        <span>Email</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <input type="email" 
+                             placeholder="exmaple@gmail.com"
+                             id="email"
+                            />
+                        </div>
+                        <div class="error" id="email-error">Input an email</div>
+                    </div>
+                    <div class="input-container">
+                        <span>Password</span>
+                        <div class="input-field">
+                            <div class="icon-container">
+                                <i class="fa-solid fa-key-skeleton"></i>
+                            </div>
+                            <input type="password" 
+                             placeholder="*******"
+                             id="password"
+                            />
+                        </div>
+                        <div class="error" id="password-error">Input a password</div>
+                    </div>
+                    <div class="form-button">
+                        <button id="button">Login</button>
+                    </div>
+                    <div class="form-alt-text">
+                        Forgot Your Password <span><a href="../passwordReset ">Reset</a></span>
+                    </div>
+                    <div class="form-alt-text">
+                        Don't have an account? <span><a href="/signup/signup ">SignUp</a></span>
+                    </div>
+                    <div class="form-alt-text">
+                        © Copyright 2023  Nexus Crypto Fx   All Rights Reserved.
+                    </div>
+                </form>
+            </div>  
+        </div>
+    </div>
+
+    <script type="module">
+
+                // const url = "https://nexuscrypto.onrender.com"
+                const url = "https://nexuscrypto.onrender.com"
+
+
+         const startServer = async ()=>{
+
+                    const response = await fetch(url, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type":"application/json"
+                        }
+                  })
+                }
+
+                startServer()
+  
+
+        const email = document.getElementById('email')
+        const password = document.getElementById('password')
+        const form = document.getElementById('form')
+        const button = document.getElementById('button')
+        const error = document.getElementById('error')
+        const passwordError = document.getElementById('password-error')
+        const emailError = document.getElementById('email-error')
+        let User = []
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            emailError.style.display='none'
+            passwordError.style.display='none'
+            if(email.value == ''){
+                emailError.style.display='block'
+            } if( password.value == ''){
+                passwordError.style.display='block'
+            } else{
+                button.innerHTML='Loading...'
+                button.ariaDisabled=true
+
+
+
+
+                const response = await fetch(url+"/admin/login",{
+                    method:"POST",
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    body:JSON.stringify({
+                        email:email.value,
+                        password:password.value
+                    })
+                })
+
+
+                const data = await response.json()
+
+                if(!data.status){
+
+                    error.style.display = "block"
+                    error.innerHTML = "Invalid Credentials"
+
+                }
+
+                if(data.status){
+                    button.innerHTML='Login'
+
+
+            const expirationDate = new Date();
+
+        expirationDate.setDate(expirationDate.getDate() + 60);
+
+        const expires = `expires=${expirationDate.toUTCString()}`
+
+        document.cookie=`admin="Nexuscryptoadmin422";${expires}; path=/`
+
+                    localStorage.setItem("himbeadmin","true")
+
+                    error.innerHTML = "Login Sucessful"
+                    error.style.display='block'
+                    error.style.color = "green"
+
+
+                    setTimeout(() => {
+                        location.href = "../admin.html"
+                    }, 1000);
+
+                }
+
+                console.log(data)
+          
+//         .catch((error) => {
+//     button.innerHTML='Login'
+//     button.ariaDisabled=true
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     Error.innerHTML = error.message
+//     Error.style.display='block'
+//     console.log(error)
+//     // alert(error.message)
+//   });
+    }
+    // button.innerHTML='Login'
+            // try{
+    // } catch{
+
+    // }
+    
+  })
+  
+            // console.log({email:email.value, password:password.value})
+      </script>
+      <script>
+
+      </script>
+</body>
+<!-- <script src="/scripts/login.js"></script> -->
+
+<!-- Smartsupp Live Chat script -->
+
+</html>

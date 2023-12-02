@@ -1,0 +1,129 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 27/07/2017 09:35
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticond41dd41dd41d.eot#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../Flaticon.html#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+font-style: normal;
+}
+
+.flaticon-001-wallet-1:before { content: "\f100"; }
+.flaticon-002-piggy-bank-3:before { content: "\f101"; }
+.flaticon-003-piggy-bank-2:before { content: "\f102"; }
+.flaticon-004-piggy-bank-1:before { content: "\f103"; }
+.flaticon-005-piggy-bank:before { content: "\f104"; }
+.flaticon-006-calendar:before { content: "\f105"; }
+.flaticon-007-user-1:before { content: "\f106"; }
+.flaticon-008-user:before { content: "\f107"; }
+.flaticon-009-price:before { content: "\f108"; }
+.flaticon-010-pie-chart:before { content: "\f109"; }
+.flaticon-011-bitcoin-1:before { content: "\f10a"; }
+.flaticon-012-gold-ingots:before { content: "\f10b"; }
+.flaticon-013-placeholder:before { content: "\f10c"; }
+.flaticon-014-smartphone-3:before { content: "\f10d"; }
+.flaticon-015-smartphone-2:before { content: "\f10e"; }
+.flaticon-016-smartphone-1:before { content: "\f10f"; }
+.flaticon-017-laptop-1:before { content: "\f110"; }
+.flaticon-018-laptop:before { content: "\f111"; }
+.flaticon-019-credit-card-1:before { content: "\f112"; }
+.flaticon-020-smartphone:before { content: "\f113"; }
+.flaticon-021-safebox-1:before { content: "\f114"; }
+.flaticon-022-pound-sterling-1:before { content: "\f115"; }
+.flaticon-023-safebox:before { content: "\f116"; }
+.flaticon-024-savings:before { content: "\f117"; }
+.flaticon-025-money-bag-3:before { content: "\f118"; }
+.flaticon-026-briefcase-1:before { content: "\f119"; }
+.flaticon-027-briefcase:before { content: "\f11a"; }
+.flaticon-028-dollar-4:before { content: "\f11b"; }
+.flaticon-029-binder:before { content: "\f11c"; }
+.flaticon-030-bookshelf:before { content: "\f11d"; }
+.flaticon-031-desk-1:before { content: "\f11e"; }
+.flaticon-032-desk:before { content: "\f11f"; }
+.flaticon-033-euro-2:before { content: "\f120"; }
+.flaticon-034-computer:before { content: "\f121"; }
+.flaticon-035-dollar-3:before { content: "\f122"; }
+.flaticon-036-dollar-2:before { content: "\f123"; }
+.flaticon-037-euro-1:before { content: "\f124"; }
+.flaticon-038-money-3:before { content: "\f125"; }
+.flaticon-039-exchange-10:before { content: "\f126"; }
+.flaticon-040-exchange-9:before { content: "\f127"; }
+.flaticon-041-file-5:before { content: "\f128"; }
+.flaticon-042-file-4:before { content: "\f129"; }
+.flaticon-043-file-3:before { content: "\f12a"; }
+.flaticon-044-dollar-1:before { content: "\f12b"; }
+.flaticon-045-contract:before { content: "\f12c"; }
+.flaticon-046-file-2:before { content: "\f12d"; }
+.flaticon-047-file-1:before { content: "\f12e"; }
+.flaticon-048-file:before { content: "\f12f"; }
+.flaticon-049-telephone-1:before { content: "\f130"; }
+.flaticon-050-telephone:before { content: "\f131"; }
+.flaticon-051-house:before { content: "\f132"; }
+.flaticon-052-coin:before { content: "\f133"; }
+.flaticon-053-clock:before { content: "\f134"; }
+.flaticon-054-analytics-4:before { content: "\f135"; }
+.flaticon-055-yen-1:before { content: "\f136"; }
+.flaticon-056-analytics-3:before { content: "\f137"; }
+.flaticon-057-analytics-2:before { content: "\f138"; }
+.flaticon-058-analytics-1:before { content: "\f139"; }
+.flaticon-059-currency:before { content: "\f13a"; }
+.flaticon-060-analytics:before { content: "\f13b"; }
+.flaticon-061-exchange-8:before { content: "\f13c"; }
+.flaticon-062-exchange-7:before { content: "\f13d"; }
+.flaticon-063-exchange-6:before { content: "\f13e"; }
+.flaticon-064-exchange-5:before { content: "\f13f"; }
+.flaticon-065-exchange-4:before { content: "\f140"; }
+.flaticon-066-bitcoin:before { content: "\f141"; }
+.flaticon-067-exchange-3:before { content: "\f142"; }
+.flaticon-068-exchange-2:before { content: "\f143"; }
+.flaticon-069-exchange-1:before { content: "\f144"; }
+.flaticon-070-exchange:before { content: "\f145"; }
+.flaticon-071-bank-2:before { content: "\f146"; }
+.flaticon-072-bank-1:before { content: "\f147"; }
+.flaticon-073-bank:before { content: "\f148"; }
+.flaticon-074-cargo-truck:before { content: "\f149"; }
+.flaticon-075-balance:before { content: "\f14a"; }
+.flaticon-076-scale:before { content: "\f14b"; }
+.flaticon-077-pound-sterling:before { content: "\f14c"; }
+.flaticon-078-shopping-cart-7:before { content: "\f14d"; }
+.flaticon-079-shopping-cart-6:before { content: "\f14e"; }
+.flaticon-080-shopping-cart-5:before { content: "\f14f"; }
+.flaticon-081-shopping-cart-4:before { content: "\f150"; }
+.flaticon-082-shopping-cart-3:before { content: "\f151"; }
+.flaticon-083-shopping-cart-2:before { content: "\f152"; }
+.flaticon-084-shopping-cart-1:before { content: "\f153"; }
+.flaticon-085-shopping-cart:before { content: "\f154"; }
+.flaticon-086-point-of-service:before { content: "\f155"; }
+.flaticon-087-dollar:before { content: "\f156"; }
+.flaticon-088-euro:before { content: "\f157"; }
+.flaticon-089-money-2:before { content: "\f158"; }
+.flaticon-090-credit-card:before { content: "\f159"; }
+.flaticon-091-atm-1:before { content: "\f15a"; }
+.flaticon-092-atm:before { content: "\f15b"; }
+.flaticon-093-money-1:before { content: "\f15c"; }
+.flaticon-094-money-bag-2:before { content: "\f15d"; }
+.flaticon-095-money-bag-1:before { content: "\f15e"; }
+.flaticon-096-money-bag:before { content: "\f15f"; }
+.flaticon-097-coins:before { content: "\f160"; }
+.flaticon-098-wallet:before { content: "\f161"; }
+.flaticon-099-yen:before { content: "\f162"; }
+.flaticon-100-money:before { content: "\f163"; }

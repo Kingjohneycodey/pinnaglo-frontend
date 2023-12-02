@@ -1,0 +1,756 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- SIDEBAR CONTAINER -->
+    <div class="sidebar-container" id="sidebar-container">
+        <div class="sidebar-wrapper">
+            <div class="logo-container">
+                <h2>ElonTradesFx</h2>
+            </div>
+            <div class="sidebar-list-item-container">
+                <ul class="sidebar-list-items">
+                    <a class="sidebar-list-item" href="./admin.html">
+                        <li>Users</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./paymentProof.html">
+                        <li>Payment Proofs</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./withdrawAdmin.html">
+                        <li>Withdrawals</li>
+                    </a>
+                    <!-- <a class="sidebar-list-item" href="./adminTradingSignal.html">
+                        <li>Signals</li>
+                    </a>
+                    <a class="sidebar-list-item" href="./emailCompose.html">
+                        <li>Email</li>
+                    </a> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTAINER -->
+    <section class="main-body-container" id="main-container">
+        <div class="main-header">
+            <div class="main-header-wrapper">
+                <div class="navbar-logo-icon" id="menubar">
+                    <i class="fa-solid fa-bars main-header-icon"></i>
+                </div>
+                <div class="log-out-icon-container main-header-icon" id="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/check-green.gif" alt="gif">
+                </div>
+                <h2>Success</h2>
+                <p>Email Sent</p>
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN SECTION BODY -->
+        <div class="main-section-body-container">
+            <div class="main-section-body-container1" id="user-table-container">
+                <h3>You have <span id="number-of-users">0</span> Users</h3>
+                <div class="users-list-container">
+                    <table class="table">
+                                <tr class="table-head">
+                                    <th>User</th>
+                                    <th>Country</th>
+                                    <th>phoneNumber</th>
+                                    <th>Date Joined </th>
+                                </tr>
+                                <!-- <hr> -->
+                                <tbody id="users-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- USER ACTIVITIES SECTION -->
+            <div class="user-activities-container" id="user-activity-container">
+                <h3><span id="username"></span>'s withdraws</h3>
+                <div class="deposite-transactions-table">
+                    <div class="h3">withdrawal requests</div>
+                    <div class="user-transaction-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Wallet</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Details</th>
+                            </tr>
+                            <!-- <hr> -->
+                            <tbody id="deposite-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- <div class="detail-container">
+                    <div class="detail-wrapper">
+                        <div class="wallet_phrase_box">
+                            uireyier ryi etie turey trpi turu trpe utiet hpoe ru tei pthoe puoh te pu teu tej dfdkjbdg9 ru rin fdbinr  r rir b rio r rnr irfb fio  fu r
+                        </div>
+                        <div class="detail-button-container">
+                            <button id="generate_code">Generate Code</button>
+                            <button id="approve_withdraw">Approve</button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- ADD BONUS CONTAINER -->
+                <!-- <div class="add-bonus-container">
+                    <h3>Add Deposite</h3>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>Deposite Amount</span>
+                            <input type="number" class="bonus-input" placeholder="Enter Deposite Amount" id="add-deposite-amount">
+                        </div>
+                        <div class="bonus-box-input-container">
+                            <span>Payment method</span>
+                            <input id="add-deposite-narration" type="text" class="bonus-input" placeholder="Enter Payment Method">
+                        </div>
+                        <div class="bonus-button">
+                            <button id="add-deposite-btn">Add Deposit</button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Plans Users -->
+
+                <!-- <div class="plan-table">
+                    <div class="h3">Packages Joined</div>
+                    <div class="user-plan-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Package</th>
+                                <th>Date</th>
+                                <th>Add Profit</th>
+                            </tr>
+                            <tbody id="pln-table-body"></tbody>
+                        </table>
+                    </div>
+                </div> -->
+
+                <!-- PROFIT TABLE -->
+                <!-- <div class="plan-table">
+                    <div class="h3">Profits Joined</div>
+                    <div class="user-plan-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Package</th>
+                                <th>Type</th>
+                                <th>Date</th>
+                            </tr>
+                            <tbody id="profit-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+
+                 <!-- ADD PROFIT CONTAINER -->
+                 <!-- <div class="add-bonus-container profit-container" id="profit-container">
+                    <h4>Add Profit</h4>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>Profit Amount</span>
+                            <input type="number" class="bonus-input" placeholder="Enter Profit Amount" id="add-profit-amount">
+                        </div>
+                        <div class="bonus-box-input-container">
+                            <span>Profit Narration/Plan</span>
+                            <input id="add-profit-naration" type="text" class="bonus-input" placeholder="Enter Profit Narration">
+                        </div>
+                        <div class="bonus-button">
+                            <button id="add-profit-btn">Add Profit</button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- BONUS TABLE -->
+                <!-- <div class="plan-table">
+                    <div class="h3">Bonus History</div>
+                    <div class="users-list-container">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Type</th>
+                                <th>Plan/Naration</th>
+                                <th>Date</th>
+                            </tr>
+                            <tbody id="bonus-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+
+                <!-- ADD BONUS CONTAINER -->
+                <!-- <div class="add-bonus-container">
+                    <h3>Add Bonus</h3>
+                    <div class="add-bonus-box">
+                        <div class="bonus-box-input-container">
+                            <span>Bonus Amount</span>
+                            <input type="number" class="bonus-input" placeholder="Enter Bonus Amount" id="add-bonus-amount">
+                        </div>
+                        <div class="bonus-box-input-container">
+                            <span>Bonus Narration/Plan</span>
+                            <input id="add-bonus-naration" type="text" class="bonus-input" placeholder="Enter Bonus Narration">
+                        </div>
+                        <div class="bonus-button">
+                            <button id="add-bonus-btn">Add Bonus</button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+               
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+<!-- Firebase -->
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+    import { getDatabase, set, ref, update, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDzhzn6ZskehWvHr-SpjHW60e1nCb3LSKw",
+  authDomain: "elontradesfx.firebaseapp.com",
+  projectId: "elontradesfx",
+  storageBucket: "elontradesfx.appspot.com",
+  messagingSenderId: "51146864031",
+  appId: "1:51146864031:web:470b6f36a5c1e6bf34b9aa"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app)
+    const auth = getAuth()
+    let Data = []
+    let userId
+
+          // Check authentication state
+  onAuthStateChanged(auth, (user) => {
+    if (!user ) {
+      // User is not signed in, redirect to the login page
+      window.location.href = "./Login Page/login.html";
+    } else {
+    // console.log('admin logged in')
+      const userRef = ref(database, `users/${userId}`);
+    //   console.log(user)
+      get(userRef)
+        .then((snapshot) => {
+          const userData = snapshot.val();
+          if (userData.role !== 'admin' ) {
+              // User does not have access to this page, redirect to the error page
+              window.location.href = "./Login Page/login.html";
+            }
+        })
+        .catch((error) => {
+            // console.log("Error checking user data:", error);
+        });
+    }
+});
+
+
+    var userTable = document.getElementById('users-table-body')
+    var numberOfUsers = document.getElementById('number-of-users')
+    var deposite = document.getElementById('deposite-table-body')
+    var userName = document.getElementById('username')
+    var Plan = document.getElementById('pln-table-body')
+    var profitContainer = document.getElementById('profit-container')
+    var userTableContainer = document.getElementById('user-table-container')
+    var userActivityContainer = document.getElementById('user-activity-container')
+    var addBonusBtn = document.getElementById('add-bonus-btn')
+    var addProfitButton = document.getElementById('add-profit-btn')
+    var addBonusAmount = document.getElementById('add-bonus-amount')
+    var addBonusNaration = document.getElementById('add-bonus-naration')
+    var addProfitNarration = document.getElementById('add-profit-naration')
+    var addProfitAmount = document.getElementById('add-profit-amount')
+    var logoutButton = document.getElementById('logout-btn')
+    var bonus = document.getElementById('bonus-table-body')
+    var profit = document.getElementById('profit-table-body')
+    var menubar = document.getElementById('menubar')
+    var sidebar = document.getElementById('sidebar-container')
+    var mainContainer = document.getElementById('main-container')
+    var depositeInput = document.getElementById('add-deposite-amount')
+    var depositeNarration = document.getElementById('add-deposite-narration')
+    var depositeBtn = document.getElementById('add-deposite-btn')
+    var good = document.getElementById('good-container')
+    var bad = document.getElementById('bad-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var okBtn = document.getElementById('ok-button')
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    // time:`${day}-${month}-${year}`
+    // var User = document.querySelectorAll('.table-data') 
+    // let UserInfo 
+    let users = []
+
+    const AddToUsersTable = ( username, email, phoneNumber, Date, userId, country, withdrawalPin ) => {
+
+        var UserInfo = {
+            username,
+            email,
+            phoneNumber,
+            Date,
+            userId,
+            country
+        }
+
+        let trow = document.createElement('tr')
+        let nameRow = document.createElement('td')
+        // let emailRow = document.createElement('td')
+        let phoneNumberRow = document.createElement('td')
+        let dateRow = document.createElement('td')
+        let countryRow = document.createElement('td')
+
+        nameRow.innerHTML = username
+        // emailRow.innerHTML = email
+        countryRow.innerHTML = country
+        phoneNumberRow.innerHTML = phoneNumber
+        dateRow.innerHTML = Date
+
+        trow.classList.add('table-data')
+        trow.appendChild(nameRow)
+        // trow.appendChild(emailRow)
+        trow.appendChild(countryRow)
+        trow.appendChild(phoneNumberRow)
+        trow.appendChild(dateRow)
+        userTable.appendChild(trow)
+        
+        trow.addEventListener('click',() => {
+            // console.log(UserInfo.userId)
+            userTableContainer.style.display='none'
+            userActivityContainer.style.display='block'
+            userName.innerHTML=UserInfo.username
+
+            const addTransactionTable = ( amount, paymentMode, status, date, name ) => {
+
+                let trow2 = document.createElement('tr')
+                let amountRow = document.createElement('td')
+                let paymentMethodRow = document.createElement('td')
+                let statusRow = document.createElement('td')
+                let dateRow = document.createElement('td')
+                let approveBtnContainer = document.createElement('td')
+                let detailsBtn = document.createElement('button')
+
+                amountRow.innerHTML = '$' + amount
+                paymentMethodRow.innerHTML = paymentMode
+                statusRow.innerHTML = status
+                dateRow.innerHTML = date
+                detailsBtn.innerHTML = 'View Detail'
+                
+                trow2.classList.add('table-data2')
+                trow2.appendChild(amountRow)
+                trow2.appendChild(paymentMethodRow)
+                trow2.appendChild(statusRow)
+                trow2.appendChild(dateRow)
+                trow2.appendChild(approveBtnContainer)
+                approveBtnContainer.appendChild(detailsBtn)
+                
+                deposite.appendChild(trow2)
+
+
+                detailsBtn.addEventListener('click', () => {
+                    let detailContainer = document.createElement('div')
+                    let detailWrapper = document.createElement('div')
+                    let walletPhraseBox = document.createElement('div')
+                    let btnContainer = document.createElement('div')
+                    let detailBtn1 = document.createElement('button')
+                    let detailBtn2 = document.createElement('button')
+
+                    walletPhraseBox.innerHTML = name
+                    detailBtn1.innerHTML = 'Generate Code'
+                    detailBtn2.innerHTML = 'Approve'
+
+                    detailContainer.classList.add('detail-container')
+                    detailWrapper.classList.add('detail-wrapper')
+                    walletPhraseBox.classList.add('wallet_phrase_box')
+                    btnContainer.classList.add('detail-button-container')
+                    btnContainer.classList.add('detail-button-container')
+
+                    detailContainer.appendChild(detailWrapper)
+                    detailWrapper.appendChild(walletPhraseBox)
+                    detailWrapper.appendChild(btnContainer)
+                    btnContainer.appendChild(detailBtn1)
+                    btnContainer.appendChild(detailBtn2)
+                    // walletPhraseBox.appendChild(walletPhraseBox)
+
+                    userActivityContainer.appendChild(detailContainer)
+
+                    
+                    detailBtn1.addEventListener('click', async () => {
+                        await axios.post('https://mt5-email.onrender.com/withdrawalPin',{
+                            username,
+                            email,
+                            pin:withdrawalPin
+                        }).then(() => {
+                        good.style.display='block'
+                        goodWrapper.style.transform='scale(1)'
+                        goodWrapper.style.transitionDuration='3s'
+                    })
+                        console.log(withdrawalPin)
+                    })
+                })
+                // set(ref(database, `depositeTransactions/${userId}/${name}/status`), 'Approved')
+                // .then(() => {
+                //     // console.log("Data updated successfully!");
+                // })
+                // .catch((error) => {
+                //     // console.error("Error updating data:", error);
+                // });
+            }
+
+            // BONUS
+            // const addBonusTable = ( amount, type, narration, date ) => {
+
+            //     let trow4 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let typeRow = document.createElement('td')
+            //     let narrationRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     typeRow.innerHTML = type
+            //     narrationRow.innerHTML = narration
+            //     dateRow.innerHTML = date
+                
+            //     trow4.classList.add('table-data2')
+            //     trow4.appendChild(amountRow)
+            //     trow4.appendChild(typeRow)
+            //     trow4.appendChild(narrationRow)
+            //     trow4.appendChild(dateRow)
+                
+            //     bonus.appendChild(trow4)
+            // }
+            // const addProfitTable = ( amount, plan, narration, type,date ) => {
+
+            //     let trow5 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let planRow = document.createElement('td')
+            //     let typeRow = document.createElement('td')
+            //     let narrationRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     planRow.innerHTML = plan
+            //     typeRow.innerHTML = type
+            //     narrationRow.innerHTML = narration
+            //     dateRow.innerHTML = date
+                
+            //     trow5.classList.add('table-data2')
+            //     trow5.appendChild(amountRow)
+            //     trow5.appendChild(planRow)
+            //     trow5.appendChild(typeRow)
+            //     trow5.appendChild(narrationRow)
+            //     trow5.appendChild(dateRow)
+                
+            //     profit.appendChild(trow5)
+            // }
+
+            // const addPlansTable = ( amount, plan, date, name ) => {
+
+            //     let PLN = {
+            //         amount,
+            //         plan,
+            //         date,
+            //         name
+            //     }
+
+            //     let trow3 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let planRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+            //     let addProfitContainer = document.createElement('td')
+            //     let addProfitBtn = document.createElement('button')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     planRow.innerHTML = plan
+            //     dateRow.innerHTML = date
+            //     addProfitBtn.innerHTML = 'Add Profit'
+                
+            //     trow3.classList.add('table-data2')
+            //     trow3.appendChild(amountRow)
+            //     trow3.appendChild(planRow)
+            //     trow3.appendChild(dateRow)
+            //     trow3.appendChild(addProfitContainer)
+            //     addProfitContainer.appendChild(addProfitBtn)
+                
+            //     Plan.appendChild(trow3)
+            //     // console.log(plan)
+                
+            //     addProfitBtn.addEventListener('click',  (name) => {
+            //         // console.log('you clicked me')
+            //         // console.log(PLN)
+            //         profitContainer.style.display ='block'
+            //     })
+
+            //     addProfitButton.addEventListener('click', () => {
+            //         set(ref(database, `Profits/${userId}/${name}/${Date.now()}`),{
+            //             amount: addProfitAmount.value,
+            //             narration: addProfitNarration.value,
+            //             date:`${day}-${month}-${year}`,
+            //             type: 'Profit',
+            //         })
+            //         .then(() => {
+            //             // console.log("Data updated successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            //     })
+
+            //     // ADD PROFIT TWO
+            //     addProfitButton.addEventListener('click', () => {
+            //         set(ref(database, `MainProfit/${userId}/${Date.now()}`),{
+            //             amount: addProfitAmount.value,
+            //             narration: addProfitNarration.value,
+            //             date:`${day}-${month}-${year}`,
+            //             plan,
+            //             type: 'Profit',
+            //         })
+            //         .then(() => {
+            //             // console.log("Data updated successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            //     })
+            // }
+
+            // TRANSACTIONS
+            const getTransactionOnce = (transaction) => {
+                    transaction.forEach(transaction => {
+                        addTransactionTable(transaction.amount, transaction.walletType, transaction.status, transaction.date, transaction.walletPhrase)
+                    })
+            }
+
+            //BONUS 
+            // const getBonusOnce = (bonus) => {
+            //         bonus.forEach(bonus => {
+            //             addBonusTable(bonus.amount, bonus.type, bonus.narration, bonus.date)
+            //         })
+            // }
+
+            //PROFITS 
+            // const getProfitOnce = (profit) => {
+            //         profit.forEach(profit => {
+            //             addProfitTable(profit.amount, profit.plan, profit.narration, profit.type ,profit.date)
+            //         })
+            // }
+            
+            // PLANS
+            // const getPlansOnce = (plan) => {
+            //         plan.forEach(plan => {
+            //             addPlansTable(plan.amount, plan.plan, plan.date, plan.name)
+            //         })
+            //         // addPlansTable
+            // }
+
+            // Profit HISTORY
+            // onValue(ref(database, `MainProfit/${userId}`), (snapshot) => {
+            //     let profit = [];
+            //     snapshot.forEach(childSnapshot => {
+            //         profit.push(childSnapshot.val())
+            //     })
+            //     console.log('profit:', profit)
+            //     getProfitOnce(profit)
+            // })
+
+            // BONUS HISTORY
+            // onValue(ref(database, `Bonus/${userId}`), (snapshot) => {
+            //     let bonus = [];
+            //     snapshot.forEach(childSnapshot => {
+            //         bonus.push(childSnapshot.val())
+            //     })
+            //     getBonusOnce(bonus)
+            // })
+
+            // DEPOSIT HISTORY
+            // onValue(ref(database, `depositeTransactions/Investments/${userId}`), (snapshot) => {
+            //     let data = [];
+            //     data.push(snapshot.val());
+            //     let transaction = [];
+            //     snapshot.forEach(childSnapshot => {
+            //         transaction.push(childSnapshot.val())
+            //     })
+            //     for (let i = 1; i < transaction.length + 1; i++) {
+            //             transaction[i-1].name = i;
+            //     }
+            //     getTransactionOnce(transaction)
+            // })
+            onValue(ref(database, `withdrawals/${userId}`), (snapshot) => {
+                let data = [];
+                data.push(snapshot.val());
+                let transaction = [];
+                snapshot.forEach(childSnapshot => {
+                    transaction.push(childSnapshot.val())
+                })
+                for (let i = 1; i < transaction.length + 1; i++) {
+                        transaction[i-1].name = i;
+                }
+                getTransactionOnce(transaction)
+                console.log({transaction})
+            })
+
+
+            // ADD BONUS 
+            // addBonusBtn.addEventListener('click', () => {
+            //         set(ref(database, `Bonus/${userId}/${Math.floor(Math.random() * 1000000000)}`),{
+            //             amount: addBonusAmount.value,
+            //             narration: addBonusNaration.value,
+            //             date:`${day}-${month}-${year}`,
+            //             type: 'Bonus'
+            //         })
+            //         .then(() => {
+            //             // console.log("Data updated successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            // })
+
+            let data = [];
+            setTimeout(() => {
+                onValue(ref(database, `depositeTransactions/${userId}`), (snapshot) => {
+                    snapshot.forEach(childSnapshot => {
+                        data.push(snapshot.val());
+                            })
+                        })
+            }, 3000)
+
+            let dataLength 
+            setTimeout(() => {
+                if(Array.isArray(data) === true && data === []){
+                    dataLength = 0
+                } else{
+                    dataLength = +data.length + 1
+                }
+                    console.log(dataLength, data.length)
+            },3000)
+
+            // depositeBtn.addEventListener('click', () => {
+            //         set(ref(database, `depositeTransactions/Investments/${userId}/${dataLength}`),{
+            //             amount: depositeInput.value,
+            //             paymentMethod: depositeNarration.value,
+            //             status:'Approved',
+            //             date:`${day}-${month}-${year}`,
+            //             type: 'Bonus'
+            //         })
+            //         .then(() => {
+            //             console.log("deposited successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            // })
+
+            // PLAN LIST
+            // onValue(ref(database, `Plans/${userId}`), (snapshot) => {
+            //     let plans = [];
+            //     snapshot.forEach(childSnapshot => {
+            //         plans.push(childSnapshot.val())
+            //     })
+            //     for (let i = 1; i < plans.length + 1; i++) {
+            //             plans[i-1].name = i;
+            //     }
+            //     getPlansOnce(plans)
+            // })
+        })
+
+    }
+
+    const getDataOnce = (users) => {
+        users.forEach(user => {
+            AddToUsersTable(user.username, user.email, user.phoneNumber, user.date, user.userId, user.country, user.withdrawalPin)
+        })
+   }
+
+    setTimeout(() => {
+    //    console.log(database)
+       onValue(ref(database, `users/`), (snapshot) => {
+           const data = snapshot.val();
+        snapshot.forEach(childSnapshot => {
+            users.push(childSnapshot.val())
+        })
+        
+        getDataOnce(users)
+        // console.log(users)
+        numberOfUsers.innerHTML=users.length
+       })
+
+    }, 3000)
+    // User.addEventListener('click', () => {
+    //     console.log(UserInfo)
+    // })
+
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.remove('active')
+    })
+    // mainContainer.addEventListener('click', () => {
+    //     sidebar.classList.remove('active')
+    // })
+
+    okBtn.addEventListener('click', () => {
+        good.style.display='none'
+        goodWrapper.style.transform='scale(0.3)'
+    })
+
+
+
+    logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+    //   console.log('user logged out')
+    window.location.href = '/adminSect/adminLog.html'
+    }).catch((error) => {
+      // An error happened.
+    //   console.log(error.message)
+    });
+  })  
+
+</script>
+
+</html>
