@@ -8,12 +8,14 @@ const url = "https://pinn-algo-capitals.vercel.app/api/v1"
 
 const checkAdmin = localStorage.getItem("admin")
 
-// if (!checkAdmin) {
+if (!checkAdmin) {
     
-//     location.href = "./index.html"
-// }
+    location.href = "./index.html"
+}
 
-const token = localStorage.getItem("token")
+
+let subs = []
+
 
 
 const allWIthdrawals = async () => {
@@ -23,7 +25,7 @@ const allWIthdrawals = async () => {
         method: "GET",
         headers: {
             "Content-Type":"application/json",
-            "authorization": `Bearer ${token}`
+            "authorization": `Bearer ${checkAdmin}`
         }
     })
 
@@ -32,29 +34,29 @@ const allWIthdrawals = async () => {
 
     usersNumber.innerHTML = data.doc.length
 
+    subs = data.doc
+
     usersTable.innerHTML = data.doc.map((x,i)=>{
 
-        // return `
+        return `
         
-        // <tr data-id=${x._id} data-index=${i} class="table-data">
+        <tr data-id=${x._id} data-index=${i} class="table-data">
 
-        // <td>${x.firstName}</td>
-        // <td> ${x.lastName}</td>
-        // <td>${x.email}</td>
-        // <td>${x.wallet}</td>
-        // <td>${x.status}</td>
+        <td>${x.user.firstName} ${x.user.lastName}</td>
+        <td> $${x.amount}</td>
+        <td>${x.status}</td>
+        <td>${new Date(x.createdAt).toLocaleDateString()}</td>
+        <td><button onclick="showModal(${i})">Manage</button></td>
 
-        // </tr>
+        </tr>
         
         
         
         
         
-        // `
+        `
 
     }).join("")
-
-    console.log(data)
 
 }
 
@@ -70,6 +72,43 @@ const manage = (button) => {
     location.href=`./user.html?id=${id}`
 
 }
+
+
+// Add this JavaScript code
+const showModal = (index) => {
+    const currentSub = subs[index];
+    const image = currentSub.attachments[0];
+    const hash = currentSub.transaction_hash;
+    const amount = currentSub.amount;
+    const status = currentSub.status;
+
+    // Update modal content
+    document.getElementById("modalHash").textContent = hash;
+    document.getElementById("modalAmount").textContent = amount;
+    document.getElementById("modalStatus").textContent = status;
+    document.getElementById("modalImage").src = image;
+
+    // Display modal
+    document.getElementById("myModal").style.display = "block";
+}
+
+const closeModal = () => {
+    // Hide modal
+    document.getElementById("myModal").style.display = "none";
+}
+
+const approveTransaction = () => {
+    // Add logic for approving the transaction
+    console.log("Transaction approved");
+    closeModal();
+}
+
+const declineTransaction = () => {
+    // Add logic for declining the transaction
+    console.log("Transaction declined");
+    closeModal();
+}
+
 
 
 // allRows.forEach(row => {

@@ -88,30 +88,30 @@ const getUserWithdrawal = async () => {
     console.log(data)
     if (withdrawalTable) {
         
-        // withdrawalTable.innerHTML = data.requests.map(x => {
+        withdrawalTable.innerHTML = data.doc.map(x => {
             
-        //      const date = new Date(x.createdAt).toLocaleDateString("en-GB", {
-        //     year: "2-digit",
-        //     month: "2-digit",
-        //     day:"2-digit"
-        //      }).split("/").join("-")
+             const date = new Date(x.createdAt).toLocaleDateString("en-GB", {
+            year: "2-digit",
+            month: "2-digit",
+            day:"2-digit"
+             }).split("/").join("-")
             
 
-        //     return `
+            return `
             
-        //     <tr>
+            <tr>
 
-        //     <td>$${x.amount}</td>
-        //                             <td>Bitcoin</td>
-        //                             <td>${x.status}</td>
-        //                             <td>${date}</td>
+            <td>$${x.amount}</td>
+                                   
+                                    <td>${x.status}</td>
+                                    <td>${date}</td>
 
-        //     </tr>
+            </tr>
             
-        //     `
+            `
 
 
-        // }).join("")
+        }).join("")
     }
 
     

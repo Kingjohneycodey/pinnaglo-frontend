@@ -34,23 +34,22 @@ const allWIthdrawals = async () => {
 
     usersTable.innerHTML = data.doc.map((x,i)=>{
 
-        // return `
+        return `
         
-        // <tr data-id=${x._id} data-index=${i} class="table-data">
+        <tr data-id=${x._id} data-index=${i} class="table-data">
 
-        // <td>${x.firstName}</td>
-        // <td> ${x.lastName}</td>
-        // <td>${x.email}</td>
-        // <td>${x.wallet}</td>
-        // <td>${x.status}</td>
+        <td>${x.user.firstName} ${x.user.lastName}</td>
+        <td> $${x.amount}</td>
+        <td>${x.walletAddress}</td>
+        <td>${x.status === "pending" ? "<button>Manage</button>" : "Approved"}</td>
 
-        // </tr>
+        </tr>
         
         
         
         
         
-        // `
+        `
 
     }).join("")
 

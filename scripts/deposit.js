@@ -7,6 +7,7 @@ const submitPayment = document.getElementById("payment-button")
 const urlParams = new URLSearchParams(location.search)
 let plan = urlParams.get("plan") ;
 let percentage;
+const transactionHash = document.getElementById("hash")
 
 if(plan === "3-months"){
     percentage = 0.9
@@ -60,7 +61,8 @@ submitPayment.addEventListener("click", async () => {
         body: JSON.stringify({
             accountSize: amount.value,
             duration:plan,
-            attachments:[blogImageUrl]
+            attachments:[blogImageUrl],
+            transaction_hash:transactionHash.value
         })
     })
 
