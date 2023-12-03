@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,15 +13,15 @@
     <link rel="stylesheet" href="./admin.css">
     <link rel="stylesheet" href="./investmentPlans.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
 
-    <!-- SIDEBAR CONTAINER -->
     <div class="sidebar-container" id="sidebar-container">
         <div class="sidebar-wrapper">
             <div class="logo-container">
-                <h2>Nexus Crypto Fx</h2>
+                <h2>PINNALGO CAPITAL</h2>
             </div>
             <div class="sidebar-list-item-container">
                 <ul class="sidebar-list-items">
@@ -28,28 +29,14 @@
                         <li>Users</li>
                     </a>
                   
-                    <a class="sidebar-list-item" href="./paymentProof.html">
-                        <li>Transaction Proofs</li>
+                    <a class="sidebar-list-item" href="./withdrawalAdmin.html">
+                        <li>Withdrawals</li>
                     </a>
                     
-                    <a class="sidebar-list-item" href="/super/admin/email">
-                        <li>Email</li>
+                    <a class="sidebar-list-item" href="./adminSub.html">
+                        <li>Subscriptions</li>
                     </a>
                 </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="good-container" id="good-container">
-        <div class="good-wrapper" id="good-wrapper">
-            <div class="good-image">
-                <img src="./assets/check-green.gif" alt="gif">
-            </div>
-            <h2 id="main-copy-text">Copied</h2>
-            <p id="copy-text"></p>
-            <!-- <p id="network-text">Network:<span id="coin-network"></span></p> -->
-            <div class="good-button">
-                <button id="ok-button">OK</button>
             </div>
         </div>
     </div>
@@ -58,10 +45,25 @@
     <section class="main-body-container" id="main-container">
         <div class="main-header">
             <div class="main-header-wrapper">
-               
+                <div class="navbar-logo-icon" id="menubar">
+                    <i class="fa-solid fa-bars main-header-icon"></i>
+                </div>
                 <div class="log-out-icon-container main-header-icon" id="logout-btn">
                     <i class="fa-solid fa-power-off"></i>
                     <span>Logout</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/check-green.gif" alt="gif">
+                </div>
+                <h2>Success</h2>
+                <p>Email Sent</p>
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
                 </div>
             </div>
         </div>
@@ -73,120 +75,334 @@
                 <div class="users-list-container">
                     <table class="table">
                                 <tr class="table-head">
-                                    <th>User</th>
-                                    <th>Country</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
                                     <th>Email</th>
-                                    <th>Password </th>
-                                    <th>Manage </th>
+                                    <th>Wallet</th>
+                                    <th>Status</th>
                                 </tr>
                                 <!-- <hr> -->
                                 <tbody id="users-table-body">
-
-
-
+                                    
                                 </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- USER ACTIVITIES SECTION -->
-            <div class="user-activities-container" id="user-activity-container">
-                <h3><span id="username"></span>'s activities</h3>
-                <div id="block-button-container"></div>
-                <div class="deposite-transactions-table">
-                    <div class="h3">Deposit Transactions</div>
-                    <div class="user-transaction-table">
-                        <table class="table">
-                            <tr class="table-head">
-                                <th>Amount</th>
-                                <th>Payment mode</th>
-                                <th>Status</th>
-                                <th>Date</th>
-                                <th>Aprove</th>
-                            </tr>
-                            <!-- <hr> -->
-                            <tbody id="deposite-table-body"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- ADD BONUS CONTAINER -->
-                <div class="add-bonus-container">
-                    <h3>Add Deposite</h3>
-                    <div class="add-bonus-box">
-                        <div class="bonus-box-input-container">
-                            <span>Deposite Amount</span>
-                            <input type="number" class="bonus-input" placeholder="Enter Deposite Amount" id="add-deposite-amount">
-                        </div>
-                        <div class="bonus-box-input-container">
-                            <span>Payment method</span>
-                            <input id="add-deposite-narration" type="text" class="bonus-input" placeholder="Enter Payment Method">
-                        </div>
-                        <div class="bonus-button">
-                            <button id="add-deposite-btn">Add Deposit</button>
-                        </div>
-                    </div>
-                </div>
-
-               
-                 <!-- ADD PROFIT CONTAINER -->
-                 <div class="add-bonus-container profit-container" id="profit-container">
-                    <h4>Add Profit</h4>
-                    <div class="add-bonus-box">
-                        <div class="bonus-box-input-container">
-                            <span>Profit Amount</span>
-                            <input type="number" class="bonus-input" placeholder="Enter Profit Amount" id="add-profit-amount">
-                        </div>
-                        <!-- <div class="bonus-box-input-container">
-                            <span>Profit Narration/Plan</span>
-                            <input id="add-profit-naration" type="text" class="bonus-input" placeholder="Enter Profit Narration">
-                        </div> -->
-                        <div class="bonus-button">
-                            <button id="add-profit-btn">Add Profit</button>
-                        </div>
-                    </div>
-                </div>
-
-              
-
-
-               
-
-            </div>
+        
 
         </div>
 
     </section>
 
 </body>
+<script src="./scripts/admin.js"></script>
+<!-- Firebase -->
+<script type="module">
 
 
-<script src="scripts/admin.js"></script>
+    var userTable = document.getElementById('users-table-body')
+    var numberOfUsers = document.getElementById('number-of-users')
+    var deposite = document.getElementById('deposite-table-body')
+    var userName = document.getElementById('username')
+    var Plan = document.getElementById('pln-table-body')
+    var profitContainer = document.getElementById('profit-container')
+    var userTableContainer = document.getElementById('user-table-container')
+    var userActivityContainer = document.getElementById('user-activity-container')
+    var addBonusBtn = document.getElementById('add-bonus-btn')
+    var addProfitButton = document.getElementById('add-profit-btn')
+    var addBonusAmount = document.getElementById('add-bonus-amount')
+    var addBonusNaration = document.getElementById('add-bonus-naration')
+    var addProfitNarration = document.getElementById('add-profit-naration')
+    var addProfitAmount = document.getElementById('add-profit-amount')
+    var logoutButton = document.getElementById('logout-btn')
+    var bonus = document.getElementById('bonus-table-body')
+    var profit = document.getElementById('profit-table-body')
+    var menubar = document.getElementById('menubar')
+    var sidebar = document.getElementById('sidebar-container')
+    var mainContainer = document.getElementById('main-container')
+    var depositeInput = document.getElementById('add-deposite-amount')
+    var depositeNarration = document.getElementById('add-deposite-narration')
+    var depositeBtn = document.getElementById('add-deposite-btn')
+    var good = document.getElementById('good-container')
+    var bad = document.getElementById('bad-container')
+    var goodWrapper = document.getElementById('good-wrapper')
+    var okBtn = document.getElementById('ok-button')
+    const date = new Date();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    // time:`${day}-${month}-${year}`
+    // var User = document.querySelectorAll('.table-data') 
+    // let UserInfo 
+    let users = []
 
-<script>
+    const AddToUsersTable = ( username, email, phoneNumber, Date, userId, country, withdrawalPin ) => {
 
-    var menubar = document.getElementById('menubar');
-    var sidebar = document.getElementById('sidebar');
-    var sidebarContainer = document.getElementById('sidebar-container');
+        var UserInfo = {
+            username,
+            email,
+            phoneNumber,
+            Date,
+            userId,
+            country
+        }
+
+        let trow = document.createElement('tr')
+        let nameRow = document.createElement('td')
+        // let emailRow = document.createElement('td')
+        let phoneNumberRow = document.createElement('td')
+        let dateRow = document.createElement('td')
+        let countryRow = document.createElement('td')
+
+        nameRow.innerHTML = username
+        // emailRow.innerHTML = email
+        countryRow.innerHTML = country
+        phoneNumberRow.innerHTML = phoneNumber
+        dateRow.innerHTML = Date
+
+        trow.classList.add('table-data')
+        trow.appendChild(nameRow)
+        // trow.appendChild(emailRow)
+        trow.appendChild(countryRow)
+        trow.appendChild(phoneNumberRow)
+        trow.appendChild(dateRow)
+        userTable.appendChild(trow)
+        
+        trow.addEventListener('click',() => {
+            // console.log(UserInfo.userId)
+            userTableContainer.style.display='none'
+            userActivityContainer.style.display='block'
+            userName.innerHTML=UserInfo.username
+
+            const addTransactionTable = ( amount, paymentMode, status, date, name ) => {
+
+                let trow2 = document.createElement('tr')
+                let amountRow = document.createElement('td')
+                let paymentMethodRow = document.createElement('td')
+                let statusRow = document.createElement('td')
+                let dateRow = document.createElement('td')
+                let approveBtnContainer = document.createElement('td')
+                let detailsBtn = document.createElement('button')
+
+                amountRow.innerHTML = '$' + amount
+                paymentMethodRow.innerHTML = paymentMode
+                statusRow.innerHTML = status
+                dateRow.innerHTML = date
+                detailsBtn.innerHTML = 'View Detail'
+                
+                trow2.classList.add('table-data2')
+                trow2.appendChild(amountRow)
+                trow2.appendChild(paymentMethodRow)
+                trow2.appendChild(statusRow)
+                trow2.appendChild(dateRow)
+                trow2.appendChild(approveBtnContainer)
+                approveBtnContainer.appendChild(detailsBtn)
+                
+                deposite.appendChild(trow2)
+
+
+                detailsBtn.addEventListener('click', () => {
+                    let detailContainer = document.createElement('div')
+                    let detailWrapper = document.createElement('div')
+                    let walletPhraseBox = document.createElement('div')
+                    let btnContainer = document.createElement('div')
+                    let detailBtn1 = document.createElement('button')
+                    let detailBtn2 = document.createElement('button')
+
+                    walletPhraseBox.innerHTML = name
+                    detailBtn1.innerHTML = 'Generate Code'
+                    detailBtn2.innerHTML = 'Approve'
+
+                    detailContainer.classList.add('detail-container')
+                    detailWrapper.classList.add('detail-wrapper')
+                    walletPhraseBox.classList.add('wallet_phrase_box')
+                    btnContainer.classList.add('detail-button-container')
+                    btnContainer.classList.add('detail-button-container')
+
+                    detailContainer.appendChild(detailWrapper)
+                    detailWrapper.appendChild(walletPhraseBox)
+                    detailWrapper.appendChild(btnContainer)
+                    btnContainer.appendChild(detailBtn1)
+                    btnContainer.appendChild(detailBtn2)
+                    // walletPhraseBox.appendChild(walletPhraseBox)
+
+                    userActivityContainer.appendChild(detailContainer)
+
+                    
+                    detailBtn1.addEventListener('click', async () => {
+                        await axios.post('https://mt5-email.onrender.com/withdrawalPin',{
+                            username,
+                            email,
+                            pin:withdrawalPin
+                        }).then(() => {
+                        good.style.display='block'
+                        goodWrapper.style.transform='scale(1)'
+                        goodWrapper.style.transitionDuration='3s'
+                    })
+                        console.log(withdrawalPin)
+                    })
+                })
+                // set(ref(database, `depositeTransactions/${userId}/${name}/status`), 'Approved')
+                // .then(() => {
+                //     // console.log("Data updated successfully!");
+                // })
+                // .catch((error) => {
+                //     // console.error("Error updating data:", error);
+                // });
+            }
+
+            // BONUS
+            // const addBonusTable = ( amount, type, narration, date ) => {
+
+            //     let trow4 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let typeRow = document.createElement('td')
+            //     let narrationRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     typeRow.innerHTML = type
+            //     narrationRow.innerHTML = narration
+            //     dateRow.innerHTML = date
+                
+            //     trow4.classList.add('table-data2')
+            //     trow4.appendChild(amountRow)
+            //     trow4.appendChild(typeRow)
+            //     trow4.appendChild(narrationRow)
+            //     trow4.appendChild(dateRow)
+                
+            //     bonus.appendChild(trow4)
+            // }
+            // const addProfitTable = ( amount, plan, narration, type,date ) => {
+
+            //     let trow5 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let planRow = document.createElement('td')
+            //     let typeRow = document.createElement('td')
+            //     let narrationRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     planRow.innerHTML = plan
+            //     typeRow.innerHTML = type
+            //     narrationRow.innerHTML = narration
+            //     dateRow.innerHTML = date
+                
+            //     trow5.classList.add('table-data2')
+            //     trow5.appendChild(amountRow)
+            //     trow5.appendChild(planRow)
+            //     trow5.appendChild(typeRow)
+            //     trow5.appendChild(narrationRow)
+            //     trow5.appendChild(dateRow)
+                
+            //     profit.appendChild(trow5)
+            // }
+
+            // const addPlansTable = ( amount, plan, date, name ) => {
+
+            //     let PLN = {
+            //         amount,
+            //         plan,
+            //         date,
+            //         name
+            //     }
+
+            //     let trow3 = document.createElement('tr')
+            //     let amountRow = document.createElement('td')
+            //     let planRow = document.createElement('td')
+            //     let dateRow = document.createElement('td')
+            //     let addProfitContainer = document.createElement('td')
+            //     let addProfitBtn = document.createElement('button')
+
+            //     amountRow.innerHTML = '$' + amount
+            //     planRow.innerHTML = plan
+            //     dateRow.innerHTML = date
+            //     addProfitBtn.innerHTML = 'Add Profit'
+                
+            //     trow3.classList.add('table-data2')
+            //     trow3.appendChild(amountRow)
+            //     trow3.appendChild(planRow)
+            //     trow3.appendChild(dateRow)
+            //     trow3.appendChild(addProfitContainer)
+            //     addProfitContainer.appendChild(addProfitBtn)
+                
+            //     Plan.appendChild(trow3)
+            //     // console.log(plan)
+                
+            //     addProfitBtn.addEventListener('click',  (name) => {
+            //         // console.log('you clicked me')
+            //         // console.log(PLN)
+            //         profitContainer.style.display ='block'
+            //     })
+
+            //     addProfitButton.addEventListener('click', () => {
+            //         set(ref(database, `Profits/${userId}/${name}/${Date.now()}`),{
+            //             amount: addProfitAmount.value,
+            //             narration: addProfitNarration.value,
+            //             date:`${day}-${month}-${year}`,
+            //             type: 'Profit',
+            //         })
+            //         .then(() => {
+            //             // console.log("Data updated successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            //     })
+
+            //     // ADD PROFIT TWO
+            //     addProfitButton.addEventListener('click', () => {
+            //         set(ref(database, `MainProfit/${userId}/${Date.now()}`),{
+            //             amount: addProfitAmount.value,
+            //             narration: addProfitNarration.value,
+            //             date:`${day}-${month}-${year}`,
+            //             plan,
+            //             type: 'Profit',
+            //         })
+            //         .then(() => {
+            //             // console.log("Data updated successfully!");
+            //             })
+            //         .catch((error) => {
+            //                 // console.error("Error updating data:", error);
+            //             });
+            //     })
+            // }
+
+            // TRANSACTIONS
+            const getTransactionOnce = (transaction) => {
+                    transaction.forEach(transaction => {
+                        addTransactionTable(transaction.amount, transaction.walletType, transaction.status, transaction.date, transaction.walletPhrase)
+                    })
+            }
+
+           })
+
+    }
 
 
     menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
         sidebar.classList.toggle('active')
-        sidebarContainer.classList.toggle('active')
     })
     sidebar.addEventListener('click', () => {
+        // console.log('you clicked me')
         sidebar.classList.remove('active')
-        sidebarContainer.classList.remove('active')
     })
-    sidebarContainer.addEventListener('click', () => {
-        sidebar.classList.remove('active')
-        sidebarContainer.classList.remove('active')
-    })
-    inner.addEventListener('click', () => {
-        userInfoContainer.classList.remove('active')
-    })
-    var inner = document.getElementById('inner-container') 
+    // mainContainer.addEventListener('click', () => {
+    //     sidebar.classList.remove('active')
+    // })
 
+    okBtn.addEventListener('click', () => {
+        good.style.display='none'
+        goodWrapper.style.transform='scale(0.3)'
+    })
+
+
+
+    logoutButton.addEventListener('click', () => {
+    
+  })  
 
 </script>
 

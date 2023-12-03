@@ -11,7 +11,7 @@
         <link href="images/favicon.png" rel="shortcut icon">
     <link rel="stylesheet" href="../Signup/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Nexus Crypto Fx</title>
+    <title>PINNALGO CAPITAL</title>
 </head>
 <body>
     
@@ -19,7 +19,7 @@
         <div class="signup-wrapper">
             <div class="logo">
                 <a href="../index ">
-                 <h2>Nexus Crypto Fx</h2>
+                 <h2>PINNALGO CAPITAL</h2>
                 </a> 
             </div>
             <div class="signup-form-container">
@@ -57,14 +57,14 @@
                     <div class="form-button">
                         <button id="button">Login</button>
                     </div>
-                    <div class="form-alt-text">
+                    <!-- <div class="form-alt-text">
                         Forgot Your Password <span><a href="../passwordReset ">Reset</a></span>
-                    </div>
+                    </div> -->
                     <div class="form-alt-text">
                         Don't have an account? <span><a href="/signup/signup ">SignUp</a></span>
                     </div>
                     <div class="form-alt-text">
-                        © Copyright 2023  Nexus Crypto Fx   All Rights Reserved.
+                        © Copyright 2023  PINNALGO CAPITAL   All Rights Reserved.
                     </div>
                 </form>
             </div>  
@@ -73,22 +73,7 @@
 
     <script type="module">
 
-                // const url = "https://nexuscrypto.onrender.com"
-                const url = "https://nexuscrypto.onrender.com"
-
-
-         const startServer = async ()=>{
-
-                    const response = await fetch(url, {
-                        method: "GET",
-                        headers: {
-                            "Content-Type":"application/json"
-                        }
-                  })
-                }
-
-                startServer()
-  
+                const url = "https://pinn-algo-capitals.vercel.app/api/v1"
 
         const email = document.getElementById('email')
         const password = document.getElementById('password')
@@ -127,27 +112,13 @@
 
 
                 const data = await response.json()
+                console.log(data)
 
-                if(!data.status){
 
-                    error.style.display = "block"
-                    error.innerHTML = "Invalid Credentials"
-
-                }
-
-                if(data.status){
+                if(data.status === "success"){
                     button.innerHTML='Login'
 
-
-            const expirationDate = new Date();
-
-        expirationDate.setDate(expirationDate.getDate() + 60);
-
-        const expires = `expires=${expirationDate.toUTCString()}`
-
-        document.cookie=`admin="Nexuscryptoadmin422";${expires}; path=/`
-
-                    localStorage.setItem("himbeadmin","true")
+                    localStorage.setItem("admin",data.accessToken)
 
                     error.innerHTML = "Login Sucessful"
                     error.style.display='block'
@@ -158,37 +129,23 @@
                         location.href = "../admin.html"
                     }, 1000);
 
+                }else{
+                    error.style.display = "block"
+                    error.innerHTML = "Invalid Credentials"
+
                 }
 
-                console.log(data)
-          
-//         .catch((error) => {
-//     button.innerHTML='Login'
-//     button.ariaDisabled=true
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     Error.innerHTML = error.message
-//     Error.style.display='block'
-//     console.log(error)
-//     // alert(error.message)
-//   });
     }
-    // button.innerHTML='Login'
-            // try{
-    // } catch{
 
-    // }
+ 
     
   })
   
-            // console.log({email:email.value, password:password.value})
+           
       </script>
       <script>
 
       </script>
 </body>
-<!-- <script src="/scripts/login.js"></script> -->
-
-<!-- Smartsupp Live Chat script -->
 
 </html>

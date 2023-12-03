@@ -13,14 +13,17 @@ const checkAdmin = localStorage.getItem("admin")
 //     location.href = "./index.html"
 // }
 
+const token = localStorage.getItem("token")
 
 
-const allUsers = async () => {
+const allWIthdrawals = async () => {
     
-    const response = await fetch(url+"/users", {
+    const response = await fetch(url+"/subscriptions"
+    , {
         method: "GET",
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
+            "authorization": `Bearer ${token}`
         }
     })
 
@@ -31,23 +34,23 @@ const allUsers = async () => {
 
     usersTable.innerHTML = data.doc.map((x,i)=>{
 
-        return `
+        // return `
         
-        <tr data-id=${x._id} data-index=${i} class="table-data">
+        // <tr data-id=${x._id} data-index=${i} class="table-data">
 
-        <td>${x.firstName}</td>
-        <td> ${x.lastName}</td>
-        <td>${x.email}</td>
-        <td>${x.wallet}</td>
-        <td>${x.status}</td>
+        // <td>${x.firstName}</td>
+        // <td> ${x.lastName}</td>
+        // <td>${x.email}</td>
+        // <td>${x.wallet}</td>
+        // <td>${x.status}</td>
 
-        </tr>
+        // </tr>
         
         
         
         
         
-        `
+        // `
 
     }).join("")
 
@@ -57,7 +60,7 @@ const allUsers = async () => {
 
 
 
-allUsers()
+allWIthdrawals()
 
 
 const manage = (button) => {

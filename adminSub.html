@@ -71,7 +71,7 @@
         <!-- MAIN SECTION BODY -->
         <div class="main-section-body-container">
             <div class="main-section-body-container1" id="user-table-container">
-                <h3>You have <span id="number-of-users">0</span> Withdrawal Requests</h3>
+                <h3>You have <span id="number-of-users">0</span> Subscriptions</h3>
                 <div class="users-list-container">
                     <table class="table">
                                 <tr class="table-head">
@@ -82,7 +82,10 @@
                                 </tr>
                                 <!-- <hr> -->
                                 <tbody id="users-table-body">
-                                    
+                                    <td>Hello</td>
+                                    <td>World</td>
+                                    <td>123345678910</td>
+                                    <td><button>Manage</button></td>
                                 </tbody>
                     </table>
                 </div>
@@ -107,6 +110,7 @@
                         </table>
                     </div>
                 </div>
+
                
 
             </div>
@@ -116,7 +120,9 @@
     </section>
 
 </body>
-<script src="./scripts/widrawalAdmin.js"></script>
+
+<script src="./scripts/adminSub.js"></script>
+
 <!-- Firebase -->
 <script type="module">
 
@@ -155,9 +161,8 @@
     // time:`${day}-${month}-${year}`
     // var User = document.querySelectorAll('.table-data') 
     // let UserInfo 
-    let users = []
 
-
+   
 
     menubar.addEventListener('click', () => {
         // console.log('you clicked me')
@@ -178,6 +183,16 @@
 
 
 
+    logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+    //   console.log('user logged out')
+    window.location.href = '/adminSect/adminLog.html'
+    }).catch((error) => {
+      // An error happened.
+    //   console.log(error.message)
+    });
+  })  
 
 </script>
 
