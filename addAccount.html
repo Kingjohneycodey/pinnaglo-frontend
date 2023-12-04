@@ -462,44 +462,12 @@
 
     bitcoinBtn.addEventListener("click", async ()=>{
 
-        // alert("Hello World!")
-
-        if(requestAmount.value === ""){
-
-          return  alert("Please Enter a Request Amount")
-        }
-
-        if(walletAddress.value === ""){
-
-          return  alert("Please Enter a Wallet Address")
-        }
+        alert("Hello World!")
 
        
 
 
-        const response = await fetch(url+"/withdrawals",{
-
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-                "authorization": `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                amount: requestAmount.value,
-                walletAddress: walletAddress.value
-            })
-        })
-
-        const data = await response.json()
-
-        alert(data.message)
-
-        // if(data.status){
-
-        //     location.href = "./dashboard.html"
-        // }
-
-        // console.log(data)
+    
 
 
     })
