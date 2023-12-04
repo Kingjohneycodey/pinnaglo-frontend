@@ -319,7 +319,7 @@
         <div class="calculator-container">
             <section class="calculator-section">
                 <div class="calculator-input">
-                    <img class="calculator-image" src="/calculator-image.png" alt="Calculator Image">
+                    <img class="calculator-image" src="./images/calc.png" alt="Calculator Image">
                     <h2 class="starting-amount-label">Starting amount</h2>
                     <p class="starting-amount-value">€13,500</p>
                     <div class="range-slider">
@@ -775,10 +775,11 @@
     // Initial slider value
     startingAmount.textContent = `€${slider.value}`;
 
-    // Update starting amount when slider value changes
+    // Update starting amount and slider color when slider value changes
     slider.addEventListener("input", function() {
         startingAmount.textContent = `€${slider.value}`;
         updateResults();
+        updateSliderColor();
     });
 
     // Update results based on the slider value
@@ -792,10 +793,16 @@
         results[2].textContent = `€${year5.toFixed(2)}`;
     }
 
-    // Initial results update
-    updateResults();
-});
+    // Update the background color of the slider based on the slider value
+    function updateSliderColor() {
+        const percentage = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+        slider.style.setProperty('--webkitProgressPercent', `${percentage}%`);
+    }
 
+    // Initial results update and slider color
+    updateResults();
+    updateSliderColor();
+});
 
    
 </script>
