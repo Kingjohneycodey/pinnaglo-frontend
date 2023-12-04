@@ -20,7 +20,8 @@ const allUsers = async () => {
     const response = await fetch(url+"/users", {
         method: "GET",
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
+            "authorization": `Bearer ${checkAdmin}`
         }
     })
 

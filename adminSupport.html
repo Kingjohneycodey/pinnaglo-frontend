@@ -1,0 +1,296 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FAVICON FILES -->
+        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+        <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardMediaQuery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+
+        /* Add this CSS for styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+ 
+            <div class="sidebar-mobile-container" id="sidebar-container">
+
+                <div class="sidebar-container" id="sidebar">
+                    <div class="sidebar-wrapper">
+                        <div class="user-name-info-wrapper">
+                            
+                        </div>
+                        <!-- <hr class="line"> -->
+                        <div class="sidebar-menu-list">
+                            <ul class="sidebar-menu-list-wrapper">
+                                <a href="./admin.html" class="">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa-solid fa-house sidebar-icon" ></i>
+                                        <span>Users</span>
+                                    </li>
+                                </a>
+                              
+                                <a href="./withdrawalAdmin.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa fa-briefcase sidebar-icon"></i>
+                                        <span>Withdrawals</span>
+                                    </li>
+                                </a>
+                               
+                                <a href="./adminSub.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fas fa-cubes sidebar-icon"></i>
+                                        <span>Subscriptions</span>
+                                    </li>
+                                </a>
+                                <a  class="active"  href="./adminSupport.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                        <span>Tickets</span>
+                                    </li>
+                                </a>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- MAIN BODY CONTAINER -->
+    <section class="main-body-container" id="main-container">
+        <div class="main-header">
+            <div class="main-header-wrapper">
+                <div class="navbar-logo-icon" id="menubar">
+                    <i class="fa-solid fa-bars main-header-icon"></i>
+                </div>
+                <div class="log-out-icon-container main-header-icon" id="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="good-container" id="good-container">
+            <div class="good-wrapper" id="good-wrapper">
+                <div class="good-image">
+                    <img src="./assets/check-green.gif" alt="gif">
+                </div>
+                <h2>Success</h2>
+                <p>Email Sent</p>
+                <div class="good-button">
+                    <button id="ok-button">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN SECTION BODY -->
+        <div class="main-section-body-container">
+            <div class="main-section-body-container1" id="user-table-container">
+                <h3>You have <span id="number-of-users">0</span> Tickets</h3>
+                <div class="users-list-container">
+                    <table class="table">
+                                <tr class="table-head">
+                                    <th>User</th>
+                                    <th>Complaint</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Manage</th>
+                                </tr>
+                                <!-- <hr> -->
+                                <tbody id="users-table-body">
+                                    
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- USER ACTIVITIES SECTION -->
+            <div class="user-activities-container" id="user-activity-container">
+                <h3><span id="username"></span>'s withdraws</h3>
+                <div class="deposite-transactions-table">
+                    <div class="h3">withdrawal requests</div>
+                    <div class="user-transaction-table">
+                        <table class="table">
+                            <tr class="table-head">
+                                <th>Amount</th>
+                                <th>Wallet</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Details</th>
+                            </tr>
+                            <!-- <hr> -->
+                            <tbody id="deposite-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Add this modal HTML structure at the end of your body tag -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Complaint Details</h2>
+      <p>user: <span id="modalAmount"></span></p>
+      <p>Status: <span id="modalStatus"></span></p>
+      <p>Complaint: <br><h3 id="modalHash"></h3></p>
+
+      <div class="button-container">
+        <button onclick="approveTransaction(this)">Complaint Settled</button>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+
+<script src="./scripts/adminSupport.js"></script>
+
+<!-- Firebase -->
+<script type="module">
+
+    const logoutButton = document.getElementById('logout')
+
+
+
+var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var userName3 = document.getElementById('user-name3')
+    var accountBalance = document.getElementById('account-balance')
+    var totalDeposite = document.getElementById('total-deposite')
+    var totalInvestments = document.getElementById('total-investments')
+    var totalActiveInvestments = document.getElementById('total-active-investments')
+    var totalBonus = document.getElementById('total-bonus')
+    var totalProfit = document.getElementById('total-profit')
+    var inner = document.getElementById('inner-container') 
+    let mainBalance = 0
+    let deposites = 0
+    let profits = 0
+    let bonuss = 0
+    let depositeTransactions 
+
+      // Check authentication state
+
+
+    menubar.addEventListener('click', () => {
+        // console.log('you clicked me')
+        sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
+    })
+    sidebar.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
+    })
+
+   
+
+     
+
+
+
+ 
+  
+
+  logoutButton.addEventListener('click', () => {
+    getAuth().signOut().then(() => {
+      // Sign-out successful.
+      console.log('user logged out')
+    }).catch((error) => {
+      // An error happened.
+      console.log(error.message)
+    });
+  })  
+
+
+</script>
+</html>
