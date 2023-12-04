@@ -321,56 +321,52 @@
     //     coinNetwork = 'btc'
     // })
     proccedBtn.addEventListener('click', () => {
+    let percentage;
 
-        let percentage;
+    if (plan === "3-months") {
+        percentage = 0.09;
+    } else if (plan === "6-months") {
+        percentage = 0.18;
+    } else if (plan === "1-year") {
+        percentage = 0.36;
+    }
 
-        if(plan === "3-months"){
-            percentage = 0.09
-        }else if(urlParams.get("plan") === "6-months"){
-            percentage = 0.18
-        }else if(urlParams.get("plan") === "1-year"){
-            percentage = 0.36
-        }
- 
-    if( amount.value == '' ){
-            notSelected.style.top=0
-            notifyText.innerHTML="Please Input an account Size"
+    if (amount.value == '') {
+        notSelected.style.top = 0;
+        notifyText.innerHTML = "Please Input an account Size";
         setTimeout(() => {
-            notSelected.style.top='-1000px'
-        }, 3000)
-            // console.log(amount.value, paymentMethod)
-        } else{
+            notSelected.style.top = '-1000px';
+        }, 3000);
+    } else {
+        const firstCalculation = percentage * parseInt(amount.value);
+        const secondCalculation = firstCalculation * 0.1;
+        let thirdCalculation;
 
-            // 0.09*8000/0.1
-
-            const firstCalculation = (percentage * amount.value)
-            const secondCalculation = firstCalculation * 0.1
-            let thirdCalculation = firstCalculation + secondCalculation
-
-            if(amount.value === "1000" && urlParams.get("plan") === "3-months"){
-                thirdCalculation = 100
-            }else if(amount.value === "1000" && urlParams.get("plan") === "6-months"){
-                thirdCalculation = 200
-            }else if(amount.value === "1000" && urlParams.get("plan") === "1-year"){
-                thirdCalculation = 400
-            }
-
-            console.log(firstCalculation, secondCalculation, thirdCalculation)
-
-
-            paymentMethod = 'USDT'
-            payment.innerHTML= paymentMethod
-            card.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
-            copyText.innerHTML='TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx'
-            netWorkType.innerHTML='TRC20'
-            coinNetwork = 'TRC20'
-            amountToPay.innerHTML= thirdCalculation
-            container1.style.display = 'none'
-            container2.style.display = 'block'
+        if (plan === "3-months") {
+            thirdCalculation = 0.1 * parseInt(amount.value);
+        } else if (plan === "6-months") {
+            // Perform the calculation here, similar to the previous example
+            let initial_value = parseInt(amount.value);
+            let replaced_value = 0.1 * initial_value;
+            thirdCalculation = (2 * replaced_value) - (replaced_value * 0.1);
+        } else if (plan === "1-year") {
+            thirdCalculation = parseInt(amount.value) * 0.1 * 12 * 0.3;
         }
-    })
 
-    copyButton.addEventListener('click', () => {
+        console.log(firstCalculation, secondCalculation, thirdCalculation);
+
+        paymentMethod = 'USDT';
+        payment.innerHTML = paymentMethod;
+        card.innerHTML = 'TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx';
+        copyText.innerHTML = 'TAtWy44hFvWjBB5y2uLhZAxpWzmMYXUvtx';
+        netWorkType.innerHTML = 'TRC20';
+        coinNetwork = 'TRC20';
+        amountToPay.innerHTML = thirdCalculation;
+        container1.style.display = 'none';
+        container2.style.display = 'block';
+    }
+});
+   copyButton.addEventListener('click', () => {
 
         goodContainer.style.display='block'
         goodWrapper.style.transform='scale(1)'

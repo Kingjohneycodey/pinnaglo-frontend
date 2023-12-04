@@ -43,7 +43,7 @@ const allWIthdrawals = async () => {
         <tr data-id=${x._id} data-index=${i} class="table-data">
 
         <td>${x.user.firstName} ${x.user.lastName}</td>
-        <td> $${x.complaint.substring(0,10)}</td>
+        <td> $${x.complaint.substring(0,10)+"..."}</td>
         <td>${x.status}</td>
         <td>${new Date(x.createdAt).toLocaleDateString()}</td>
         <td><button onclick="showModal(${i})">Manage</button></td>
