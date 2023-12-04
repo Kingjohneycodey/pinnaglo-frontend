@@ -10,6 +10,86 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <title>PINNALGO CAPITAL || Pricing</title>
+
+   <style>
+    .pt-6 {
+    padding-top: 6px;
+}
+
+.calculator-container {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.calculator-input {
+    padding: 20px;
+}
+
+.calculator-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.starting-amount-label {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.starting-amount-value {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.range-slider {
+    margin-bottom: 30px;
+}
+
+.range-slider input {
+    width: 100%;
+    height: 10px;
+    appearance: none;
+    background: linear-gradient(to right, #ddd 0%, #ddd var(--webkitProgressPercent, 0%), #ff9800 var(--webkitProgressPercent, 0%), #ff9800 100%);
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.range-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border: 4px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calculator-results {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.result-label {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff9800;
+    margin: 0;
+}
+
+   </style>
+
    <meta name="author" content="PINNALGO CAPITAL">
    <meta name="description" content="PINNALGO CAPITAL | The best investment strategies to build your fortune">
    <meta name="keywords" content="business, corporate, cryptocurrency, investment, finance, network, passive, income, earn">
@@ -234,12 +314,40 @@
    </section> -->
    <!-- end featured-solutions -->
    <section id="pricing" class="pricing">
+    
        <div class="container">
+        <div class="calculator-container">
+            <section class="calculator-section">
+                <div class="calculator-input">
+                    <img class="calculator-image" src="/calculator-image.png" alt="Calculator Image">
+                    <h2 class="starting-amount-label">Starting amount</h2>
+                    <p class="starting-amount-value">€13,500</p>
+                    <div class="range-slider">
+                        <input type="range" min="2000" max="30000" step="500" value="13500" style="--webkitProgressPercent: 41.07142857142857%;">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div>
+                        <p class="result-label">Expected after 1 year</p>
+                        <p class="result-value">€25,586</p>
+                    </div>
+                    <div>
+                        <p class="result-label">Expected after 3 years</p>
+                        <p class="result-value">€49,758</p>
+                    </div>
+                    <div>
+                        <p class="result-label">Expected after 5 years</p>
+                        <p class="result-value">€73,931</p>
+                    </div>
+                </div>
+            </section>
+        </div>
            <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap; flex-direction: row;">
                <div class="col-xs-12 text-center">
                    <h6>Pricing</h6>
                    <h2>Choose Your Subscription</h2>
                </div>
+
                <!-- end col-12 -->
                    <div class="col-md-3 col-sm-3 col-xs-12">
                        <div class="price-box recommended">
@@ -326,6 +434,8 @@
    </div>
    <!-- end container -->
 </section>
+
+
 <!-- end support-bar -->
 <footer class="footer transition">
    <div class="footer-bar">
@@ -653,7 +763,40 @@
    //     });		
        
        
-   // });				
+   // });	
+   
+   
+
+   document.addEventListener("DOMContentLoaded", function() {
+    const slider = document.querySelector('.range-slider input');
+    const startingAmount = document.querySelector('.starting-amount-value');
+    const results = document.querySelectorAll('.result-value');
+
+    // Initial slider value
+    startingAmount.textContent = `€${slider.value}`;
+
+    // Update starting amount when slider value changes
+    slider.addEventListener("input", function() {
+        startingAmount.textContent = `€${slider.value}`;
+        updateResults();
+    });
+
+    // Update results based on the slider value
+    function updateResults() {
+        const year1 = parseFloat(slider.value) * 1.05; // Sample calculation, you can replace it with your own logic
+        const year3 = parseFloat(slider.value) * 1.15;
+        const year5 = parseFloat(slider.value) * 1.25;
+
+        results[0].textContent = `€${year1.toFixed(2)}`;
+        results[1].textContent = `€${year3.toFixed(2)}`;
+        results[2].textContent = `€${year5.toFixed(2)}`;
+    }
+
+    // Initial results update
+    updateResults();
+});
+
+
    
 </script>
 <!-- Smartsupp Live Chat script -->
