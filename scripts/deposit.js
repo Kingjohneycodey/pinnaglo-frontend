@@ -87,7 +87,7 @@ submitPayment.addEventListener("click", async () => {
 
     setTimeout(() => {
 
-        location.href = "./transactionHistory.html"
+        location.href = "./addAccount.html"
         
     }, 1000);
 

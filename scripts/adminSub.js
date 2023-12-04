@@ -97,7 +97,7 @@ const closeModal = () => {
     document.getElementById("myModal").style.display = "none";
 }
 
-const approveTransaction = () => {
+const approveTransaction = async () => {
     // Add logic for approving the transaction
     console.log("Transaction approved");
     closeModal();

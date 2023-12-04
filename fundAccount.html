@@ -26,7 +26,7 @@
                 <div class="logo-container">
                     <a href="dashboard ">
                         <h2>
-                            PINNALGO CAPITAL
+                            <img src="images/logo-dark.png" style="height: 90px;" alt="Image" class="logo-light">
                         </h2>
                     </a>
                 </div>
@@ -345,7 +345,16 @@
 
             const firstCalculation = (percentage * amount.value)
             const secondCalculation = firstCalculation * 0.1
-            const thirdCalculation = firstCalculation + secondCalculation
+            let thirdCalculation = firstCalculation + secondCalculation
+
+            if(amount.value === "1000" && urlParams.get("plan") === "3-months"){
+                thirdCalculation = 100
+            }else if(amount.value === "1000" && urlParams.get("plan") === "6-months"){
+                thirdCalculation = 200
+            }else if(amount.value === "1000" && urlParams.get("plan") === "1-year"){
+                thirdCalculation = 400
+            }
+
             console.log(firstCalculation, secondCalculation, thirdCalculation)
 
 

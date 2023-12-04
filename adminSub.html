@@ -12,6 +12,8 @@
         <link href="images/favicon.png" rel="shortcut icon">
     <link rel="stylesheet" href="./admin.css">
     <link rel="stylesheet" href="./investmentPlans.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardMediaQuery.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
@@ -71,29 +73,48 @@ button {
     </style>
 </head>
 <body>
+ 
+            <div class="sidebar-mobile-container" id="sidebar-container">
 
-    <div class="sidebar-container" id="sidebar-container">
-        <div class="sidebar-wrapper">
-            <div class="logo-container">
-                <h2>PINNALGO CAPITAL</h2>
+                <div class="sidebar-container" id="sidebar">
+                    <div class="sidebar-wrapper">
+                        <div class="user-name-info-wrapper">
+                            
+                        </div>
+                        <!-- <hr class="line"> -->
+                        <div class="sidebar-menu-list">
+                            <ul class="sidebar-menu-list-wrapper">
+                                <a href="./admin.html" class="">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa-solid fa-house sidebar-icon" ></i>
+                                        <span>Users</span>
+                                    </li>
+                                </a>
+                              
+                                <a href="./withdrawalAdmin.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa fa-briefcase sidebar-icon"></i>
+                                        <span>Withdrawals</span>
+                                    </li>
+                                </a>
+                               
+                                <a class="active" href="./adminSub.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fas fa-cubes sidebar-icon"></i>
+                                        <span>Subscriptions</span>
+                                    </li>
+                                </a>
+                                <a href="./adminSupport.html">
+                                    <li class="sidebar-menu-list-item">
+                                        <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                        <span>Tickets</span>
+                                    </li>
+                                </a>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="sidebar-list-item-container">
-                <ul class="sidebar-list-items">
-                    <a class="sidebar-list-item" href="./admin.html">
-                        <li>Users</li>
-                    </a>
-                  
-                    <a class="sidebar-list-item" href="./withdrawalAdmin.html">
-                        <li>Withdrawals</li>
-                    </a>
-                    
-                    <a class="sidebar-list-item" href="./adminSub.html">
-                        <li>Subscriptions</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <!-- MAIN BODY CONTAINER -->
     <section class="main-body-container" id="main-container">
@@ -195,74 +216,82 @@ button {
 <!-- Firebase -->
 <script type="module">
 
+    const logoutButton = document.getElementById('logout')
 
-    var userTable = document.getElementById('users-table-body')
-    var numberOfUsers = document.getElementById('number-of-users')
-    var deposite = document.getElementById('deposite-table-body')
-    var userName = document.getElementById('username')
-    var Plan = document.getElementById('pln-table-body')
-    var profitContainer = document.getElementById('profit-container')
-    var userTableContainer = document.getElementById('user-table-container')
-    var userActivityContainer = document.getElementById('user-activity-container')
-    var addBonusBtn = document.getElementById('add-bonus-btn')
-    var addProfitButton = document.getElementById('add-profit-btn')
-    var addBonusAmount = document.getElementById('add-bonus-amount')
-    var addBonusNaration = document.getElementById('add-bonus-naration')
-    var addProfitNarration = document.getElementById('add-profit-naration')
-    var addProfitAmount = document.getElementById('add-profit-amount')
-    var logoutButton = document.getElementById('logout-btn')
-    var bonus = document.getElementById('bonus-table-body')
-    var profit = document.getElementById('profit-table-body')
-    var menubar = document.getElementById('menubar')
-    var sidebar = document.getElementById('sidebar-container')
-    var mainContainer = document.getElementById('main-container')
-    var depositeInput = document.getElementById('add-deposite-amount')
-    var depositeNarration = document.getElementById('add-deposite-narration')
-    var depositeBtn = document.getElementById('add-deposite-btn')
-    var good = document.getElementById('good-container')
-    var bad = document.getElementById('bad-container')
-    var goodWrapper = document.getElementById('good-wrapper')
-    var okBtn = document.getElementById('ok-button')
-    const date = new Date();
-    let day = date.getDate();
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    // time:`${day}-${month}-${year}`
-    // var User = document.querySelectorAll('.table-data') 
-    // let UserInfo 
 
-   
+
+var menubar = document.getElementById('menubar');
+    var sidebar = document.getElementById('sidebar');
+    var sidebarContainer = document.getElementById('sidebar-container');
+    var userInfoContainer = document.getElementById('user-info-container')
+    var userInfoContainerButton = document.getElementById('user-info-container-button')
+    var userInfoContainerButton1 = document.getElementById('user-info-container-button1')
+    var userEmail = document.getElementById('useremail')
+    var userName = document.getElementById('user-name')
+    var userName1 = document.getElementById('user-name1')
+    var userName2 = document.getElementById('user-name2')
+    var userName3 = document.getElementById('user-name3')
+    var accountBalance = document.getElementById('account-balance')
+    var totalDeposite = document.getElementById('total-deposite')
+    var totalInvestments = document.getElementById('total-investments')
+    var totalActiveInvestments = document.getElementById('total-active-investments')
+    var totalBonus = document.getElementById('total-bonus')
+    var totalProfit = document.getElementById('total-profit')
+    var inner = document.getElementById('inner-container') 
+    let mainBalance = 0
+    let deposites = 0
+    let profits = 0
+    let bonuss = 0
+    let depositeTransactions 
+
+      // Check authentication state
+
 
     menubar.addEventListener('click', () => {
         // console.log('you clicked me')
         sidebar.classList.toggle('active')
+        sidebarContainer.classList.toggle('active')
     })
     sidebar.addEventListener('click', () => {
-        // console.log('you clicked me')
         sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
     })
-    // mainContainer.addEventListener('click', () => {
-    //     sidebar.classList.remove('active')
-    // })
-
-    okBtn.addEventListener('click', () => {
-        good.style.display='none'
-        goodWrapper.style.transform='scale(0.3)'
+    sidebarContainer.addEventListener('click', () => {
+        sidebar.classList.remove('active')
+        sidebarContainer.classList.remove('active')
+    })
+    userInfoContainerButton.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainerButton1.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    userInfoContainer.addEventListener('click', () => {
+        userInfoContainer.classList.toggle('active')
+    })
+    inner.addEventListener('click', () => {
+        userInfoContainer.classList.remove('active')
     })
 
+   
+
+     
 
 
-    logoutButton.addEventListener('click', () => {
+
+ 
+  
+
+  logoutButton.addEventListener('click', () => {
     getAuth().signOut().then(() => {
       // Sign-out successful.
-    //   console.log('user logged out')
-    window.location.href = '/adminSect/adminLog.html'
+      console.log('user logged out')
     }).catch((error) => {
       // An error happened.
-    //   console.log(error.message)
+      console.log(error.message)
     });
   })  
 
-</script>
 
+</script>
 </html>
