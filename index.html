@@ -77,6 +77,48 @@
                 height: auto;
             }
         }
+
+        /* !VERY IMPORTANT */
+        @media (max-width: 768px) {
+      .video-section {
+        flex-direction: column-reverse;
+      }
+    }
+ 
+    /* Add this to your existing styles */
+video {
+  width: 100%;
+  height: auto;
+  pointer-events: none; /* Disable pointer events on the video so that controls won't show on hover */
+}
+
+/* Style to hide controls */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Optional: Style the video container to show a play button or any other desired UI */
+.col-lg-6 {
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Optional: Add hover effect for the play button */
+.play-button:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+
+    /* rfefefe */
         @media (max-width: 767px) {
             .fullscreen-bg__video {
                 width: 100%;
@@ -163,8 +205,7 @@
                     </div>
                     
                 </div>
-
-                
+      
             
             </div>
               
@@ -304,7 +345,26 @@
         
     </section> -->
 
-    <section class="quote transition">
+     
+<section style="margin-top: 20px;" class="container mt-5">
+    <div class="row video-section">
+      <!-- Left Side: Write-ups -->
+      <div class="col-lg-6">
+        <h6>PinnAlgo Capital</h6>
+        <h2>A state-of-the-art trading bot that boosts the performance of traders at any level</h2>
+      </div>
+  
+      <!-- Right Side: Video -->
+      <div onmouseover="unmuteVideo()" onmouseout="muteVideo()" class="col-lg-6">
+        <video id="loopingVideo" style="width: 100%;height: auto;" muted autoplay width="100%" height="auto" ontimeupdate="checkVideo()"  controls="false">
+          <source src="./media/vid2.mp4"  type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+    <section style="margin-bottom: 20px;" class="quote transition">
         <div class="video-bg">
             <video src="media/video9.mp4" muted loop autoplay></video>
         </div>
@@ -321,6 +381,8 @@
         </div>
         <!-- end container -->
     </section>
+
+
     <!-- end quote -->
     
     <section class>
@@ -752,15 +814,40 @@
 </script>
 <!-- Smartsupp Live Chat script -->
 <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '7049bd469612b6787fb5e4f81b302b16f64396f3';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
+<script>
+    // JavaScript to handle video playback
+    var video = document.getElementById('loopingVideo');
+  
+    function checkVideo() {
+      // Set the time (in seconds) where you want to loop the video
+      var loopPoint = 60;
+  
+      // Check if the current playback time is greater than or equal to the loop point
+      if (video.currentTime >= loopPoint) {
+        // Reset the playback time to loop the video
+        video.currentTime = 0;
+      }
+    }
+  
+    // Optional: Play/pause functionality with the play button
+    function playPause() {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+
+     // Unmute the video on hover
+  function unmuteVideo() {
+    video.muted = false;
+  }
+
+  // Mute the video when not hovering
+  function muteVideo() {
+    video.muted = true;
+  }
+  </script>
+  
 <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 </html>
