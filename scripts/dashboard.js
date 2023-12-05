@@ -39,10 +39,24 @@ const loggedInUser = async () => {
         const user = data.doc.user
         username2.innerHTML = user.firstName
 
+
+
         if(loggedUsername1){
 
         loggedUsername1.innerHTML = user.firstName
-        loggedInUserballance.innerHTML = `$${user.wallet}`
+        loggedInUserballance.innerHTML = (()=>{
+
+        
+            if(user.subscription){
+                const duration = user.subscription.duration
+                const expiration = new Date(user.subscription.expiration).toLocaleDateString()
+                const bonus = user.wallet
+
+                return `$${bonus} <br> <p> ${duration}, Expires: ${expiration}</p>`
+            }
+
+            return `$${user.wallet}`
+        })()
         loggedInUserprofit.innerHTML = `$${user.referralBonus}`
         totalReferralsUser.innerHTML = `${user.totalReferrals}`
         }

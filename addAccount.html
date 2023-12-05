@@ -460,12 +460,27 @@
 
     const walletAddress = document.getElementById("withdraw-wallet")
 
+    const urlparams = new URLSearchParams(location.search)
+    if(!urlparams.get("subscription")){
+        location.href = "./investmentPlans.html"
+    }
+
     bitcoinBtn.addEventListener("click", async ()=>{
+        const server = document.getElementById("server")
+        const login = document.getElementById("login")
+        const password = document.getElementById("password")
 
-        alert("Hello World!")
+        const response = await fetch(url+`/subscriptions/${urlparams.get("subscription")}/update-mt4-mt5-details`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type":"application/json",
+            "authorization":`Bearer ${token}`
+        }
+    })
 
-       
 
+    const data = await response.json()
+    console.log(data)
 
     
 
