@@ -7,7 +7,7 @@ const withdrawalTable = document.getElementById("withdraw-table-body")
 
 const getUserTransactins = async () => {
     
-    const response = await fetch(url+"/referrals/my-referrals", {
+    const response = await fetch(url+"/subscriptions/my-subscriptions", {
         method: "GET",
         headers: {
             "Content-Type":"application/json",
@@ -19,36 +19,14 @@ const getUserTransactins = async () => {
     console.log(data)
 
 
-    // if(data.status)
-    
-    // depositTable.innerHTML = data.transactions.map(x => {
-
-    //     const date = new Date(x.createdAt).toLocaleDateString("en-GB", {
-    //         year: "2-digit",
-    //         month: "2-digit",
-    //         day:"2-digit"
-    //     }).split("/").join("-")
-        
-    //     return `
-    //     <tr class="table-data">
-    //     <td>$${x.amount}</td>
-    //     <td>${x.status}</td>
-    //     <td>${date}</td>
-    //     </tr>
-        
-        
-    //     `
-
-    // }).join("")
-
     if(data.status === "success"){
         const user = data.downline
 
     depositTable.innerHTML = data.doc.map(x => {
 
-        const user = x.downline
+        // const user = x.downline
 
-        const date = new Date(user.createdAt).toLocaleDateString("en-GB", {
+        const date = new Date(x.createdAt).toLocaleDateString("en-GB", {
             year: "2-digit",
             month: "2-digit",
             day:"2-digit"
@@ -56,8 +34,9 @@ const getUserTransactins = async () => {
         
         return `
         <tr class="table-data">
-        <td>${user.firstName}</td>
-        <td>${user.lastName}</td>
+        <td>${x.duration}</td>
+        <td>$${x.amount}</td>
+        <td>${x.status}</td>
         <td>${date}</td>
         </tr>
         

@@ -87,7 +87,7 @@ submitPayment.addEventListener("click", async () => {
 
     setTimeout(() => {
 
-        location.href = "./addAccount.html"
+        location.href = `./addAccount.html?subscription=${data.doc.id}`
         
     }, 1000);
 
