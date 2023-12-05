@@ -52,7 +52,7 @@ const loggedInUser = async () => {
                 const expiration = new Date(user.subscription.expiration).toLocaleDateString()
                 const bonus = user.wallet
 
-                return `$${bonus} <br> <p> ${duration}, Expires: ${expiration}</p>`
+                return `<p> ${duration}, Expires: ${expiration}</p>`
             }
 
             return `No Active Subscription`
