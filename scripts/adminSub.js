@@ -81,15 +81,23 @@ const showModal = (index) => {
     const hash = currentSub.transaction_hash;
     const amount = currentSub.amount;
     const status = currentSub.status;
+    const server = currentSub?.server ? currentSub?.server : "Not Submited Yet";
+    const password = currentSub?.password ? currentSub?.password : "Not Submited Yet";
+    const login = currentSub?.mt4Login ? currentSub?.mt4Login : "Not Submited Yet";
 
     // Update modal content
     document.getElementById("modalHash").textContent = hash;
     document.getElementById("modalAmount").textContent = amount;
     document.getElementById("modalStatus").textContent = status;
+    document.getElementById("mtlogin").textContent = login;
+    document.getElementById("mtpassword").textContent = password;
+    document.getElementById("mtserver").textContent = server;
     document.getElementById("modalImage").src = image;
 
     // Display modal
     document.getElementById("myModal").style.display = "block";
+    document.getElementById("myModal").querySelector("#approve").setAttribute("subid", currentSub._id);
+    document.getElementById("myModal").querySelector("#decline").setAttribute("subid", currentSub._id);
 }
 
 const closeModal = () => {
@@ -97,7 +105,8 @@ const closeModal = () => {
     document.getElementById("myModal").style.display = "none";
 }
 
-const approveTransaction = async () => {
+const approveTransaction = async (button) => {
+    
     // Add logic for approving the transaction
     console.log("Transaction approved");
     closeModal();

@@ -200,10 +200,15 @@ button {
       <p>Transaction Hash: <span id="modalHash"></span></p>
       <p>Amount: <span id="modalAmount"></span></p>
       <p>Status: <span id="modalStatus"></span></p>
+      <br>
+      <p><b>MT4/5 Login:</b> <span id="mtlogin"></span></p>
+      <p><b>Server:</b> <span id="mtserver"></span></p>
+      <p><b>Password:</b> <span id="mtpassword"></span></p>
+      <br>
       <img id="modalImage" src="" alt="Attachment Image">
       <div class="button-container">
-        <button onclick="approveTransaction()">Approve</button>
-        <button onclick="declineTransaction()">Decline</button>
+        <button id="approve" onclick="approveTransaction(this)">Approve</button>
+        <button id="decline" onclick="declineTransaction(this)">Decline</button>
       </div>
     </div>
   </div>
