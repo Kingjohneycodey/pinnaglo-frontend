@@ -55,7 +55,7 @@ const loggedInUser = async () => {
                 return `$${bonus} <br> <p> ${duration}, Expires: ${expiration}</p>`
             }
 
-            return `$${user.wallet}`
+            return `No Active Subscription`
         })()
         loggedInUserprofit.innerHTML = `$${user.referralBonus}`
         totalReferralsUser.innerHTML = `${user.totalReferrals}`

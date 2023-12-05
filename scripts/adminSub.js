@@ -106,10 +106,10 @@ const closeModal = () => {
 }
 
 const approveTransaction = async (button) => {
+    const id = button.getAttribute(id)
     
-    // Add logic for approving the transaction
-    console.log("Transaction approved");
-    closeModal();
+  
+    // closeModal();
 }
 
 const declineTransaction = () => {
