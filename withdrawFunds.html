@@ -537,11 +537,9 @@
             location.href = "./dashboard.html"
         }   else{
 
-            if(data.message == 'Withdrawal validation failed: amount: Path `amount` (3) is less than minimum allowed value (20).'){
+    
                 alert('You are trying to withdraw below the minimum withdrawal value which is $20')
-            } else{
-                alert(data.message)
-            }
+        
             
         }
 
