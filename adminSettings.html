@@ -16,7 +16,146 @@
     <link rel="stylesheet" href="./investmentPlans.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Document</title>
+    <title>Pinaglo Capitals | Admin Settings</title>
+
+    <style>
+        .settings-wrapper{
+    margin: 10px auto;
+}
+.settings-sub-wrapper{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 10px auto;
+}
+.settings-option-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+.settings-option{
+    width: 100%;
+    border: 1px solid lightblue;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+#option1{
+    background-color: orange;
+}
+/* .settings-option:hover{
+    background-color: #0052ff;
+} */
+.settings-box-container{
+    margin-top: 20px;
+}
+.settings-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgb(48, 47, 47);
+    border-radius: 10px;
+}
+.settings-box .settings-input-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.settings-input-container input{
+    margin-top: 5px;
+    text-indent: 7px;
+    height:38px;
+    background-color: #16181c;
+    color: #fff;
+    border: 1px solid rgb(83, 82, 82);
+    /* font-size: 1rem; */
+    outline: none;
+}
+.settings-box textarea{
+    background-color: #16181c;
+    height: 100px;    
+    text-indent: 10px;
+    color:#fff;
+}
+.settings-button{
+    margin-top: 10px;
+}
+.settings-button button{
+    padding: 8px 10px;
+    width: 180px;
+    color: #Fff;
+    background-color: orange;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.settings-button button:hover{
+    color: orange;
+    background-color: #Fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.settings-box-text{
+    margin: 15px 0;
+    color: gray;
+}
+.settings-box-text2{
+    margin-top: 30px;
+}
+.withdraw-settings p{
+    font-size: 13px;
+}
+.advance-setting-link{
+    margin-top: 15px;
+}
+.advance-setting-link span{
+    color: orange;
+    cursor: pointer;
+}
+.advance-settings-box{
+    padding: 10px;
+    box-shadow: 0 0 5px rgb(48, 47, 47);
+    width: 100%;
+    max-width: 500px;
+}
+/* .advance-settings-box span{
+    color: gray;
+} */
+.advance-settings-box p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.delete-button{
+    margin-top: 10px;
+}
+.delete-button button{
+    color:#fff;
+    width: 130px;
+    background-color: red;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.delete-acct-box{
+    margin-top: 35px;
+}
+.withdraw-password-btn{
+    margin: 18px 0;
+}
+.error{
+    display: none;
+    color: red;
+}
+    </style>
 </head>
 <body>
 <!-- 
@@ -171,8 +310,8 @@ location.href = "/index.html"
 
 
 </script>
-<script src="./scripts/admin.js"></script>
 <script src="./scripts/admin-general.js"></script>
+<script src="./scripts/adminSettings.js"></script>
 <!-- Firebase -->
 <script type="module">
 

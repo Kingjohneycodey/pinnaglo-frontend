@@ -1,5 +1,7 @@
+
 const loggedInAdmin = async () => {
     const token = localStorage.getItem("admin")
+    var url = "https://pinn-algo-capitals.vercel.app/api/v1" 
     
     const response = await fetch(url+"/users/me", {
         method: "GET",

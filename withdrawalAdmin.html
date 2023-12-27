@@ -132,6 +132,12 @@ button {
                                 <span>Tickets</span>
                             </li>
                         </a>
+                        <a href="./adminSettings.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Settings</span>
+                            </li>
+                        </a>
                     </ul> 
                 </div>
             </div>
@@ -145,9 +151,10 @@ button {
                 <div class="navbar-logo-icon" id="menubar">
                     <i class="fa-solid fa-bars main-header-icon"></i>
                 </div>
-                <div class="log-out-icon-container main-header-icon" onclick="logout1()">
-                    <i class="fa-solid fa-power-off"></i>
-                    <span>Logout</span>
+                <div class="log-out-icon-container main-header-icon">
+                    <span style="margin-right: 20px;" id="username1"></span>
+                   <span  id="logout" onclick="logout1()"> <i class="fa-solid fa-power-off"></i>
+                    <span >Logout</span></span>
                 </div>
             </div>
         </div>
@@ -244,6 +251,7 @@ location.href = "/index.html"
 </script>
 <!-- <script src="./scripts/admin.js"></script> -->
 <script src="./scripts/widrawalAdmin.js"></script>
+<script src="./scripts/admin-general.js"></script>
 <!-- Firebase -->
 <script type="module">
 
