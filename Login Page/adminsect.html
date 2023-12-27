@@ -18,15 +18,15 @@
     <div class="signup-container">
         <div class="signup-wrapper">
             <div class="logo">
-                <a href="../index ">
-                 <h2>PinnAlgo Capitals</h2>
+                <a href="../index.html">
+                    <img src="../images/logo-dark.png" style="width:200px;height: 90px;" alt="Image" class="logo-dark">
                 </a> 
             </div>
             <div class="signup-form-container">
                 <div class="signup-form-text">
                     <h2>Login to your Account</h2>
                 </div>
-                <div class="error" id="error">Could not login user</div>
+                <div class="error" id="error">Could not login Admin</div>
                 <form class="auth-form" id="form">
                     <div class="input-container">
                         <span>Email</span>
@@ -116,7 +116,12 @@
 
 
                 if(data.status === "success"){
-                    button.innerHTML='Login'
+
+                    if(data.user.role == 'user'){
+                        button.innerHTML='Login'
+                        return alert("You can't access this page because you are not an dmin")
+                    }   else{
+                        button.innerHTML='Login'
 
                     localStorage.setItem("admin",data.accessToken)
 
@@ -128,11 +133,13 @@
                     setTimeout(() => {
                         location.href = "../admin.html"
                     }, 1000);
+                    }
+                    
 
                 }else{
                     error.style.display = "block"
                     error.innerHTML = "Invalid Credentials"
-
+                    button.innerHTML='Login'
                 }
 
     }

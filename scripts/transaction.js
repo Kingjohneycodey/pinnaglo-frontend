@@ -26,22 +26,40 @@ const getUserTransactins = async () => {
 
         // const user = x.downline
 
-        const date = new Date(x.createdAt).toLocaleDateString("en-GB", {
+        var date = new Date(x.createdAt).toLocaleDateString("en-GB", {
             year: "2-digit",
             month: "2-digit",
             day:"2-digit"
         }).split("/").join("-")
-        
+
+        var enddate = new Date(x.expiration).toLocaleDateString("en-GB", {
+            year: "2-digit",
+            month: "2-digit",
+            day:"2-digit"
+        }).split("/").join("-")
+
+        if(x.status == 'pending'){
+            date = 'pending'
+            enddate = 'pending'
+        }
+
+        if(x.status == 'rejected'){
+            date = 'inactive'
+            enddate = 'inactive'
+        }
+         
         return `
         <tr class="table-data">
         <td>${x.duration}</td>
         <td>$${x.amount}</td>
         <td>${x.status}</td>
         <td>${date}</td>
+        <td>${enddate}</td>
         </tr>
         
         
         `
+        
 
     }).join("")
 

@@ -1,675 +1,791 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
 
     <!-- Fake Notifications stylesheet -->
-   <link rel="stylesheet" href="css/fake-notification-min.css">
-   <link rel="stylesheet" href="css/animate.min.css">
-   <link rel="stylesheet" href="css/font-awesome.min_1.css"> <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="shortcut icon" href="favicon.ico">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <title>PinnAlgo Capitals || Pricing</title>
+    <link rel="stylesheet" href="css/fake-notification-min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min_1.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PinnAlgo Capitals || Pricing</title>
 
-   <style>
-    .pt-6 {
-    padding-top: 6px;
-}
+    <style>
+        .pt-6 {
+            padding-top: 6px;
+        }
 
-.calculator-container {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    max-width: 400px;
-}
+        .calculator-container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
 
-.calculator-input {
-    padding: 20px;
-}
+        .calculator-input {
+            padding: 20px;
+        }
 
-.calculator-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
+        .calculator-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-.starting-amount-label {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
+        .starting-amount-label {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-.starting-amount-value {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-}
+        .starting-amount-value {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-.range-slider {
-    margin-bottom: 30px;
-}
+        .range-slider {
+            margin-bottom: 30px;
+        }
 
-.range-slider input {
-    width: 100%;
-    height: 10px;
-    appearance: none;
-    background: linear-gradient(to right,#ff9800 0%, #ff9800 var(--webkitProgressPercent, 0%), #ddd var(--webkitProgressPercent, 0%), #ddd 100%);
-    border-radius: 5px;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-}
+        .range-slider input {
+            width: 100%;
+            height: 10px;
+            appearance: none;
+            background: linear-gradient(to right, #ff9800 0%, #ff9800 var(--webkitProgressPercent, 0%), #ddd var(--webkitProgressPercent, 0%), #ddd 100%);
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
 
-.range-slider input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #fff;
-    border: 4px solid #000;
-    border-radius: 50%;
-    cursor: pointer;
-}
+        .range-slider input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border: 4px solid #000;
+            border-radius: 50%;
+            cursor: pointer;
+        }
 
-.calculator-results {
-    padding: 20px;
-    background-color: #fff;
-}
+        .calculator-results {
+            padding: 20px;
+            background-color: #fff;
+        }
 
-.result-label {
-    font-size: 1.25rem;
-    margin-bottom: 5px;
-}
+        .result-label {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
 
-.result-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff9800;
-    margin: 0;
-}
+        .result-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff9800;
+            margin: 0;
+        }
+    </style>
 
-   </style>
+    <meta name="author" content="PinnAlgo Capitals">
+    <meta name="description" content="PinnAlgo Capitals | The best investment strategies to build your fortune">
+    <meta name="keywords"
+        content="business, corporate, cryptocurrency, investment, finance, network, passive, income, earn">
 
-   <meta name="author" content="PinnAlgo Capitals">
-   <meta name="description" content="PinnAlgo Capitals | The best investment strategies to build your fortune">
-   <meta name="keywords" content="business, corporate, cryptocurrency, investment, finance, network, passive, income, earn">
-   
 
-   <!-- SOCIAL MEDIA META -->
-   <meta property="og:description" content="PinnAlgo Capitals | The best investment strategies to build your fortune">
-   <meta property="og:image" content="images/logo-dark.png">
-   <meta property="og:site_name" content="PinnAlgo Capitals">
-   <meta property="og:title" content="PinnAlgo Capitals">
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="index ">
+    <!-- SOCIAL MEDIA META -->
+    <meta property="og:description" content="PinnAlgo Capitals | The best investment strategies to build your fortune">
+    <meta property="og:image" content="images/logo-dark.png">
+    <meta property="og:site_name" content="PinnAlgo Capitals">
+    <meta property="og:title" content="PinnAlgo Capitals">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index ">
 
-   <!-- FAVICON FILES -->
-   <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
-   <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
-   <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
-   <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-   <link href="images/favicon.png" rel="shortcut icon">
+    <!-- FAVICON FILES -->
+    <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="images/favicon.png" rel="shortcut icon">
 
-   <!-- CSS FILES -->
-   <link href="css/settings.css" rel="stylesheet">
-   <link href="./css/flaticon.css" rel="stylesheet">
-   <link href="css/font-awesome.min.css" rel="stylesheet">
-   <link href="css/jquery.fancybox.css" rel="stylesheet">
-   <link href="css/odometer.min.css" rel="stylesheet">
-   <link href="css/owl.carousel.min.css" rel="stylesheet">
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/base.css" rel="stylesheet">
-   <link href="css/style.css" rel="stylesheet">
+    <!-- CSS FILES -->
+    <link href="css/settings.css" rel="stylesheet">
+    <link href="./css/flaticon.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/jquery.fancybox.css" rel="stylesheet">
+    <link href="css/odometer.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-   <style>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
 
-       body{
-           scroll-behavior: smooth;
-       }
-       .header .main-title {
-           font-family: poppins !important;
-       }
-       h2 {
-           font-family: poppins !important;
-       }
-   </style>
-   <style>
-       .fullscreen-bg {
-           position: absolute;
-           top: 0;
-           right: 0;
-           bottom: 0;
-           left: 0;
-           overflow: hidden;
-       }
-       .fullscreen-bg__video {
-           position: absolute;
-           top: 0;
-           right: 0;
-           bottom: 0;
-           left: 0;
-           width: 100%;
-           height: auto;
-       }
-       @media (min-aspect-ratio: 16/9) {
-           .fullscreen-bg__video {
-               width: 100%;
-               height: auto;
-           }
-       }
-       @media (max-width: 767px) {
-           .fullscreen-bg__video {
-               width: 100%;
-               height: auto;
-           }
-           .fullscreen-bg{
-               width: 1000px;
-           }
-           #rev_slider_24_1_wrapper{
-               height: 560px !important;
-           }
-       }
-       #overlay {
-           position: absolute;
-           display: block;
-           width: 100%;
-           height: 90%;
-           top: 0;
-           left: 0;
-           right: 0;
-           bottom: 0;
-           background-color: rgba(0,0,0,0.3);
-           /* z-index: 1; */
-           cursor: pointer;
-       }
-   </style>
-   
-   <!-- Smartsupp Live Chat script
+        .header .main-title {
+            font-family: poppins !important;
+        }
+
+        h2 {
+            font-family: poppins !important;
+        }
+    </style>
+    <style>
+        .fullscreen-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .fullscreen-bg__video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .fullscreen-bg__video {
+                width: 100%;
+                height: auto;
+            }
+
+            .fullscreen-bg {
+                width: 1000px;
+            }
+
+            #rev_slider_24_1_wrapper {
+                height: 560px !important;
+            }
+        }
+
+        #overlay {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 90%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            /* z-index: 1; */
+            cursor: pointer;
+        }
+
+        .pricing-section {
+            background-image: url(images/pricing1.jpg);
+            background-size: cover;
+            padding-bottom: 30px;
+        }
+    </style>
+
+    <style>
+        /* Styles for the modal */
+        #myModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styles for the modal buttons */
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #copyButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        #copyButton:hover {
+            background-color: #45a049;
+        }
+
+        #approveButton {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+        }
+
+        #approveButton:hover {
+            background-color: #0077A3;
+        }
+
+        #declineButton {
+            background-color: #FF3333;
+            color: white;
+            border: none;
+        }
+
+        #declineButton:hover {
+            background-color: #CC0000;
+        }
+    </style>
+
+    <!-- Smartsupp Live Chat script
 <script id="facebook-jssdk" src="js/xfbml.customerchat.js"></script><script src="js/render.5e6be0d9df0d6f22df78.js" async></script>
 <script id="freshchat-js-sdk" async src="js/widget.js"></script></head> -->
+
 <body>
-<div class="preloader">
-   <svg class="spinner" id="pageloader_anime" width="32px" height="32px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-       <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"/>
-   </svg>
-</div>
-<!-- end preloader -->
-<header style="height: 100px;" class=" header ">
-    <nav class="navbar navbar-default navbar-fixed-top transition">
- 
-        <!-- end top-bar -->
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse" data-target="#collapse-nav"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="index ">
-                     <!-- <img src="images/logo-dark.png" style="height: 33px;" alt="Image" class="logo-light">  -->
-                     <img src="images/logo-dark.png" style="width:100px;height: 50px;" alt="Image" class="logo-light">
-                     <img src="images/logo-dark.png" style="width:100px;height: 50px;" alt="Image" class="logo-dark">
-                  <span class="since">2<br>
-        <small>years</small></span> </a> </div>
-            <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="collapse-nav">
-                <!-- end top-menu -->
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html">HOME</a></li>
-                    <li><a href="/about.html">ABOUT US</a></li>
-                    <li><a href="/pricing.html">PRICING</a></li>
-                                        <li><a href="./login page/login.html">LOGIN</a></li>
-                    <!-- <li><a href="./Signup/signup.html ">REGISTER</a></li> -->
-                                                        </ul>
-                <!-- end navbar-nav -->
-                                    <a href="/login page/login.html" class="quote-btn">GET STARTED</a>
-                                            <!-- end phone -->
-            </div>
-            <!-- end navbar-collapse -->
-        </div>
-        <!-- end container -->
-    </nav> 
- </header>
-   <style>
-       @media (max-width: 767px) {
-           .highlights {
-               margin-top: 0px;
-           }
-       }
-   </style>
-<script src="script.js"></script>
+    <div class="preloader">
+        <svg class="spinner" id="pageloader_anime" width="32px" height="32px" viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30" />
+        </svg>
+    </div>
+    <!-- end preloader -->
+    <header style="height: 100px;" class=" header ">
+        <nav class="navbar navbar-default navbar-fixed-top transition">
 
-
-   
-   <!-- end highlights -->
-   <!-- <section class="">
-       <div class="container">
-           <div class="row">
-               <div class="col-md-4">
-                   <h6>PinnAlgo Capitals</h6>
-                   <h2>A state-of-the-art trading bot that boosts the performance of traders at any level</h2>
-                  
-                   <a href="./Signup/signup.html" class="watch-btn fancybox">GET STARTED</a> </div>
-              
-               <div class="col-md-6 col-md-offset-2">
-                   <div class="video"><div class="cryptohopper-web-widget" data-id="8" data-chart_color="#ffbb3f" data-box_design="3" data-coins="bitcoin"></div></div>
-                   
-               </div>
-              
-           </div>
-         
-       </div>
-     
-   </section> -->
-   <!-- end video-intro -->
-
-   <!-- end featured-services -->
-   <!-- <section class="featured-solutions transition">
-       <div class="container">
-           <div class="row">
-               <div class="col-xs-12 text-center">
-                   <h6>PinnAlgo Capitals</h6>
-                   <h2>Empower Your Trading Skills</h2>
-               </div>
-              
-               <div class="col-md-4 col-sm-4 col-xs-12">
-                   <div class="solution-box">
-                       <iframe
-                   src="https://www.youtube.com/embed/eLYlX__5gLM?si=qnGf9pqmUBLpoC26"
-                   type="video/mp4"
-                   controls
-                   width="100%"
-                   height="315"
-                   >
-                   </iframe>
-                   </div>
-                   
-               </div>
-               
-               <div class="col-md-4 col-sm-4 col-xs-12">
-                   <div class="solution-box">
-                       <iframe
-                   src="https://www.youtube.com/embed/ID2ARm36KEE?si=mZsHiJ0jViOrOSEj"
-                   type="video/mp4"
-                   controls
-                   width="100%"
-                   height="315"
-                   >
-                   </iframe>
-                   </div>
-                   
-               </div>
-               <div class="col-md-4 col-sm-4 col-xs-12">
-                   <div class="solution-box">
-                       <iframe
-                       src="https://www.youtube.com/embed/eynxyoKgpng?si=3zbW-JOrNSnZYGAH"
-                       type="video/mp4"
-                       width="100%"
-                       height="315"
-                       ></iframe>
-                   </div>
-              
-               </div>
-               
-           </div>
-         
-       </div>
-       
-   </section> -->
-   <!-- end featured-solutions -->
-   <section id="pricing" class="pricing">
-    
-       <div class="container">
-           <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap; flex-direction: row;">
-
-            <div class="col-xs-12 text-center">
-                <h6>Pricing</h6>
-                <h2>Choose Your Subscription</h2>
+            <!-- end top-bar -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle toggle-menu menu-left push-body"
+                                data-toggle="collapse" data-target="#collapse-nav">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="images/logo-dark.png" style="width:200px;height: 90px;" alt="Image"
+                                    class="logo-light">
+                                <img src="images/logo-dark.png" style="width:200px;height: 90px;" alt="Image"
+                                    class="logo-dark">
+                                <span class="since">2<br><small>years</small></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
+                            id="collapse-nav">
+                            <ul class="nav navbar-nav">
+                                <li><a href="./index.html">HOME</a></li>
+                                <li><a href="./about.html">ABOUT US</a></li>
+                                <li><a href="./index.html#getstarted">HOW IT WORKS</a></li>
+                                <li><a href="./pricing.html">PRICING</a></li>
+                                <li id="logins"></li>
+                                <script>
+                                    var token = localStorage.getItem('token')
+                                    if (token) {
+                                        document.getElementById('logins').innerHTML = `<a href="./dashboard.html">My Account</a>`
+                                    } else {
+                                        document.getElementById('logins').innerHTML = `<a href="./Login Page/login.html">LOGIN</a>`
+                                    }
+                                </script>
+                            </ul>
+                            <a href="/Login Page/login.html" class="quote-btn">GET STARTED</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-              
+            <!-- end container -->
+        </nav>
+    </header>
+    <style>
+        @media (max-width: 767px) {
+            .highlights {
+                margin-top: 0px;
+            }
+        }
+    </style>
+    <script src="script.js"></script>
+    <section id="pricing" class="pricing">
 
-               <!-- end col-12 -->
-                   <div class="col-md-3 col-sm-3 col-xs-12">
-                       <div class="price-box recommended">
-                           <div class="price-header">
-                               <h3>Basic</h3>
-                               <h5>Get Started with Enhanced trading tools</h5>
-                           </div>
-                           <!-- end price-header -->
-                           <span class="price"><span></span><small>3-Months</small></span>
-           
-                          
-                           <a href="./Signup/signup.html?sub=basic">Subscribe</a> </div>
-                       <!-- end price-box -->
-                   </div>
-                   <div class="col-md-3 col-sm-3 col-xs-12">
-                       <div class="price-box recommended">
-                           <div class="price-header">
-                               <h3>Premium</h3>
-                               <h5>Get Started with even better trading benefits.</h5>
-                           </div>
-                           <!-- end price-header -->
-                           <span class="price"><span></span><small>6-Months</small></span>
-           
-                          
-                           <a href="./Signup/signup.html?sub=premium">Subscribe</a> </div>
-                       <!-- end price-box -->
-                   </div>
-                   <div class="col-md-3 col-sm-3 col-xs-12">
-                       <div class="price-box recommended">
-                           <div class="price-header">
-                               <h3>VIP</h3>
-                               <h5>Maximize Your Trading Prowess</h5>
-                           </div>
-                           <!-- end price-header -->
-                           <span class="price"><span></span><small>1-Year</small></span>
-           
-                          
-                           <a href="./Signup/signup.html?sub=vip">Subscribe</a> </div>
-                       <!-- end price-box -->
-                   </div>
-                  
-                
-               <div style="margin-top: 100px;" class="col-xs-12 text-center">
-                <div class="calculator-container">
-                    <section class="calculator-section">
-                        <div class="calculator-input">
-                            <!-- <img class="calculator-image" src="./images/calc.png" alt="Calculator Image">
+        <div class="container pricing-section">
+            <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap; flex-direction: row;">
+
+                <div class="col-xs-12 text-center">
+                    <h3>Pricing</h3>
+                    <h2>Choose Your Subscription <br>
+                        <p style="font-size: 18px;">Our fees are based on your account size. The longer the duration the
+                            less you pay</p>
+                    </h2>
+
+                </div>
+
+
+
+                <!-- end col-12 -->
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="price-box recommended">
+                        <div class="price-header">
+                            <h3>Basic</h3>
+                            <h5>Get Started with Enhanced trading tools</h5>
+                        </div>
+                        <!-- end price-header -->
+                        <span class="price"><span></span><small>3-Months</small></span>
+
+
+                        <!-- <a href="./Signup/signup.html?sub=basic">Subscribe</a> -->
+                        <a href="#" onclick="subscribe('basic')">Subscribe</a>
+                    </div>
+                    <!-- end price-box -->
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="price-box recommended">
+                        <div class="price-header">
+                            <h3>Premium</h3>
+                            <h5>Get Started with even better trading benefits.</h5>
+                        </div>
+                        <!-- end price-header -->
+                        <span class="price"><span></span><small>6-Months</small></span>
+
+
+                        <!-- <a href="./Signup/signup.html?sub=premium">Subscribe</a> -->
+
+                        <a href="#" onclick="subscribe('premium')">Subscribe</a>
+                    </div>
+                    <!-- end price-box -->
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="price-box recommended">
+                        <div class="price-header">
+                            <h3>VIP</h3>
+                            <h5>Maximize Your Trading Prowess</h5>
+                        </div>
+                        <!-- end price-header -->
+                        <span class="price"><span></span><small>1-Year</small></span>
+
+
+                        <!-- <a href="./Signup/signup.html?sub=vip">Subscribe</a> -->
+
+                        <a href="#" onclick="subscribe('vip')">Subscribe</a>
+                    </div>
+                    <!-- end price-box -->
+                </div>
+
+                <center>
+                    <h3 style="margin-top: 100px; margin-bottom: 30px;">Start with the amount you're comfortable with
+                    </h3>
+                </center>
+
+                <div class="col-xs-12 text-center">
+                    <div class="calculator-container">
+                        <h4>Try it yourself by dragging the sliders below.</h4>
+                        <section class="calculator-section">
+                            <div class="calculator-input">
+                                <!-- <img class="calculator-image" src="./images/calc.png" alt="Calculator Image">
                             <h2 class="starting-amount-label">Starting amount</h2> -->
-                            <p class="starting-amount-value">$13,500</p>
-                            <div class="range-slider">
-                                <input type="range" min="1000" max="30000" step="500" value="1000" style="--webkitProgressPercent: 41.07142857142857%;">
+                                <p class="starting-amount-value">$13,500</p>
+                                <div class="range-slider">
+                                    <input type="range" min="1000" max="30000" step="500" value="1000"
+                                        style="--webkitProgressPercent: 41.07142857142857%;">
+                                </div>
                             </div>
-                        </div>
-                        <div class="calculator-results">
-                            <div>
-                                <p class="result-label">Expected after 3 Months</p>
-                                <p class="result-value">$25,586</p>
+                            <div class="calculator-results">
+                                <div>
+                                    <p class="result-label">Expected after 3 Months</p>
+                                    <p class="result-value">$25,586</p>
+                                </div>
+                                <div>
+                                    <p class="result-label">Expected after 6 Months</p>
+                                    <h1 class="result-value">$49,758</h1>
+                                </div>
+                                <div>
+                                    <p class="result-label">Expected after 1 Year</p>
+                                    <p class="result-value">€73,931</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="result-label">Expected after 6 Months</p>
-                                <p class="result-value">$49,758</p>
-                            </div>
-                            <div>
-                                <p class="result-label">Expected after 1 Year</p>
-                                <p class="result-value">€73,931</p>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
-               </div>    
-            
-           </div>
-           <!-- end row -->
-       </div>
-       <!-- end container -->
-   </section>
-   
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeit()">&times;</span>
+            <h2 id="plan-details" style="text-transform: capitalize;"></h2>
+            <p id="modalAmount"></p>
+            <label for="">Enter the amount(the account size) </label><br>
+            <input type="number" id="amountSize"><br><br>
+
+            <button id="approveButton" onclick="calculate()">Calculate</button>
+            <button id="declineButton" onclick="closeit()">Close</button>
+
+            <hr>
+            <p id="mainamounttag" style="display: none;">Amount</p>
+            <p><b id="mainamount"></b></p>
+            <p id="feetag" style="display: none;">Subscription fee</p>
+            <p><b id="fee"></b></p>
+            <p id="proceedLink"></p>
+        </div>
+    </div>
 
 
-   <!-- <section id="contact" class="get-quote transition">
-       <div class="container">
-           <div class="row">
-               <div class="col-md-6 col-sm-8 col-xs-12">
-                   <h6>PinnAlgo Capitals</h6>
-                   <h2>Get Some Information</h2>
-                   <form action="##" method="post">
-                       <input type="hidden" name="_token" value="g2fP8roaASYPFsBxj45IC4IKfpuEyOe2IN0mQxco">           <input name="fullname" type="text" placeholder="Your name" class="first">
-                       <input name="uemail" type="text" placeholder="Your e-mail" class="second">
-                       <textarea name="message" placeholder="Your message"></textarea>
-                       <button type="submit">SEND NOW</button>
-                   </form>
-               </div>
-              
-           </div>
-           
-       </div>
-       
-   </section> -->
-   
-<form id="logout-form" action="##" method="POST" style="display: none;">
-   <input type="hidden" name="_token" value="g2fP8roaASYPFsBxj45IC4IKfpuEyOe2IN0mQxco"></form>
-<!-- <section class="support-bar transition">
-   <div class="container">
-       <div class="row">
-           <div class="col-xs-12"> <a href="#">GET IN TOUCH</a> <img src="images/icon-support.png" alt="Image">
-               <h4>Have any Question?</h4>
-               <h6>We're here to help. Send us an email.</h6>
-           </div>
-           
-       </div>
-       
-   </div>
-   
-</section> -->
 
+    <footer class="footer transition">
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <!-- end social-media -->
+                    </div>
+                    <!-- end col-6 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
 
-<footer class="footer transition">
-    <div class="footer-bar">
+                    </div>
+                    <!-- end col-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end footer-bar -->
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <ul class="social-media">
-                        <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <h4 class="footer-title">PinnAlgo Capitals</h4>
+                    <p>Are You Ready to take your trading to the next level? Our cutting-edge trading bot is here to
+                        help you make informed decisions and maximize your profits. With Pinnalgo, you'll gain access to
+                        powerful trading tools and strategies that can lead to financial success.</p>
+                    <div id="google_translate_element"></div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                        }
+                    </script>
+
+                    <script type="text/javascript" src="js/elementa0d8.js"></script>
+                </div>
+                <!-- end col-4 -->
+
+                <!-- end col-4 -->
+                <div class="col-md-4" style="z-index: 10;">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="/index.html">Home</a></li>
+
                     </ul>
-                    <!-- end social-media -->
+                    <ul class="footer-menu">
+                        <li><a href="/about.html">About Us </a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="/pricing.html">Pricing</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="./index.html#getstarted">How it works</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="/faqs.html">FAQS</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="/terms.html">Terms And Conditions</a></li>
+
+                    </ul>
                 </div>
-                <!-- end col-6 -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4">
+                    <h4 class="footer-title">Contact Us</h4>
+
+
+                    <!-- Replace This Section With a Contact Form-->
+
+                    <div style="max-width: 400px;" class="form-container">
+
+                        <form id="submitContactForm">
+                            <div style="width: 100%; margin-top: 10px;" class="form-top">
+
+                                <input style="width: 100%;" type="text" id="name" placeholder="Name" required>
+
+
+                            </div>
+                            <div style="width: 100%; margin-top: 10px;" class="form-top">
+
+
+                                <input style="width: 100%;" type="text" id="email" placeholder="Email" required>
+
+                            </div>
+
+                            <div style="width: 100%; margin-top: 5px;" class="form-buttom">
+                                <textarea name="" style="width: 100%; margin-top: 5px;" id="message" placeholder="
+                                Message" required></textarea>
+                            </div>
+
+                            <div class="form-button">
+                                <button style="border-radius: 0;" type="submit">Send Message</button>
+                            </div>
+
+                        </form>
+                    </div>
+
 
                 </div>
-                <!-- end col-3 -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                </div>
-                <!-- end col-3 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end footer-bar -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <h4 class="footer-title">PinnAlgo Capitals</h4>
-                <p>Are You Ready to take your trading to the next level? Our cutting-edge trading bot is here to help you make informed decisions and maximize your profits. With Pinnalgo, you'll gain access to powerful trading tools and strategies that can lead to financial success.</p>
-                <div id="google_translate_element"></div>
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-                    }
+
+                <script>
+                    const submitContact = document.getElementById('submitContactForm')
+                    submitContact.addEventListener("submit", async (e) => {
+                        e.preventDefault()
+                        const name = document.getElementById('name')
+                        const email = document.getElementById('email')
+                        const message = document.getElementById('message')
+
+                        if (name.value == '' || name.value == ' ') {
+
+                            alert("Please your name is required")
+                            return
+                        }
+
+                        if (email.value == '' || email.value == ' ') {
+
+                            alert("Please your email is required")
+                            return
+                        }
+
+                        if (message.value == '' || message.value == ' ') {
+
+                            alert("Please your message is required")
+                            return
+                        }
+                        const url = "https://pinn-algo-capitals.vercel.app/api/v1"
+                        const response = await fetch(url + "/contacts", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                name: name.value,
+                                email: email.value,
+                                message: message.value,
+
+                            })
+                        })
+
+                        const data = await response.json()
+
+                        alert("Message sent successfully")
+                        location.href = './pricing.html'
+
+
+
+
+                        console.log(data)
+
+                    })
+
                 </script>
-
-                <script type="text/javascript" src="js/elementa0d8.js"></script>
-            </div>
-            <!-- end col-4 -->
-            
-            <!-- end col-4 -->
-            <div class="col-md-4">
-                <h4 class="footer-title">Quick Links</h4>
-                <ul class="footer-menu">
-                    <li><a href="/index.html">Home</a></li>
-                
-                </ul>
-                <ul class="footer-menu">
-                    <li><a href="/about.html">About</a></li>
-                
-                </ul>
-                <ul class="footer-menu">
-                    <li><a href="/pricing.html">Pricing</a></li>
-                
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4 class="footer-title">Contact Us</h4>
-
-             
-                <!-- Replace This Section With a Contact Form-->
-             
-                <div style="width: 100%;" class="form-container">
-
-                    <div style="display: flex;align-items: center;width: 100%;" class="form-top">
-
-                        <input type="text" placeholder="Name">
-                        <input style="margin-left: 5px;" type="text" placeholder="Email">
-
-                    </div>
-
-                    <div style="margin-top: 5px;width: 434px!important;" class="form-buttom">
-                    <textarea name="" id="" cols="30" rows="20" style="width: 434px;"></textarea>
-                    </div>
-
-                    <div class="form-button">
-                        <button style="border-radius: 0;" type="submit">Send Message</button>
-                    </div>
-
-                </div>
-
-
-            </div>
-            <!-- end col-4 -->
-        </div>
-        <!-- end row -->
-    </div>
-    <!-- end container -->
-    <div class="sub-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">Copyright © 2023 , PinnAlgo Capitals</div>
-                <!-- end col-6 -->
+                <!-- end col-4 -->
             </div>
             <!-- end row -->
         </div>
         <!-- end container -->
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">Copyright © 2023 , PinnAlgo Capitals</div>
+                    <!-- end col-6 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end sub-footer -->
+    </footer><!-- end footer -->
+    <a href="#" class="scrollup"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
+
+    <!-- ==================== NOTIFIER ====================== -->
+    <div class="notify-container" id="notify-container">
+        <div class="notifier-text" id="notify-text">
+            Some one from Canada justed invested $1000
+        </div>
     </div>
-    <!-- end sub-footer -->
-</footer><!-- end footer -->
-<a href="#" class="scrollup"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
 
-<!-- ==================== NOTIFIER ====================== -->
-<div class="notify-container" id="notify-container">
-   <div class="notifier-text" id="notify-text">
-       Some one from Canada justed invested $1000
-   </div>
-</div>
+    <!-- ========== Paste this one after the <body tag )  ========== -->
+    <div id="notification-1" class="notification">
+        <div class="notification-block">
+            <div class="notification-img">
+                <!-- Your image or icon -->
+                <!-- <i class="fa fa-btc" aria-hidden="true"></i> -->
+                <!-- / Your image or icon -->
+            </div>
+            <div class="notification-text-block">
+                <div class="notification-title">
+                    <!-- Notification Title -->
+                    <!-- Earning -->
+                    <!-- / Notification Title -->
+                </div>
+                <div class="notification-text"></div>
+            </div>
+        </div>
+    </div>
 
-<!-- ========== Paste this one after the <body tag )  ========== -->
-   <div id="notification-1" class="notification">			
-       <div class="notification-block">
-           <div class="notification-img">
-               <!-- Your image or icon -->
-               <!-- <i class="fa fa-btc" aria-hidden="true"></i> -->
-               <!-- / Your image or icon -->
-           </div>
-           <div class="notification-text-block">
-               <div class="notification-title">
-                   <!-- Notification Title -->
-                   <!-- Earning -->
-                   <!-- / Notification Title -->
-               </div>
-               <div class="notification-text"></div>
-           </div>
-       </div>
-   </div>
-   
-   <!-- ========== END COPYING HERE ========== -->
+    <!-- ========== END COPYING HERE ========== -->
 
-<!-- JS FILES -->
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript">
-   $(window).load(function() {
-       $(".preloader").fadeOut("fast");
-   })
-</script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jPushMenu.js"></script>
-<script src="js/odometer.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
-<script src="js/scripts.js"></script>
+    <!-- JS FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".preloader").fadeOut("fast");
+        })
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jPushMenu.js"></script>
+    <script src="js/odometer.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/scripts.js"></script>
 
-<!-- REVOLUTION JS FILES -->
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="js/revolution.addon.slicey.min8a548a548a54.js"></script>
-<script type="text/javascript" src="js/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="js/revolution.extension.video.min.js"></script>
+    <!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="js/revolution.addon.slicey.min8a548a548a54.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="js/revolution.extension.video.min.js"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-   var tpj=jQuery;
-   var revapi24;
-   tpj(document).ready(function() {
-       if(tpj("#rev_slider_24_1").revolution == undefined){
-           revslider_showDoubleJqueryError("#rev_slider_24_1");
-       }else{
-           revapi24 = tpj("#rev_slider_24_1").show().revolution({
-               sliderType:"standard",
-               jsFileLocation:"/sc/revolution/js/",
-               sliderLayout:"fullscreen",
-               dottedOverlay:"none",
-               delay:9000,
-               navigation: {
-                   keyboardNavigation:"off",
-                   keyboard_direction: "horizontal",
-                   mouseScrollNavigation:"off",
-                   mouseScrollReverse:"default",
-                   onHoverStop:"off",
-                   bullets: {
-                       enable:true,
-                       hide_onmobile:false,
-                       style:"bullet-bar",
-                       hide_onleave:false,
-                       direction:"horizontal",
-                       h_align:"center",
-                       v_align:"bottom",
-                       h_offset:0,
-                       v_offset:50,
-                       space:5,
-                       tmp:''
-                   }
-               },
-               responsiveLevels:[1240,1024,778,480],
-               visibilityLevels:[1240,1024,778,480],
-               gridwidth:[1240,1024,778,480],
-               gridheight:[868,768,960,720],
-               lazyType:"none",
-               shadow:0,
-               spinner:"off",
-               stopLoop:"off",
-               stopAfterLoops:-1,
-               stopAtSlide:-1,
-               shuffle:"off",
-               autoHeight:"off",
-               fullScreenAutoWidth:"off",
-               fullScreenAlignForce:"off",
-               fullScreenOffsetContainer: "",
-               fullScreenOffset: "0",
-               hideThumbsOnMobile:"off",
-               hideSliderAtLimit:0,
-               hideCaptionAtLimit:0,
-               hideAllCaptionAtLilmit:0,
-               debugMode:false,
-               fallbacks: {
-                   simplifyAll:"off",
-                   nextSlideOnWindowFocus:"off",
-                   disableFocusListener:false,
-               }
-           });
-       }
+        var tpj = jQuery;
+        var revapi24;
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_24_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_24_1");
+            } else {
+                revapi24 = tpj("#rev_slider_24_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "/sc/revolution/js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "bullet-bar",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 50,
+                            space: 5,
+                            tmp: ''
+                        }
+                    },
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1240, 1024, 778, 480],
+                    gridheight: [868, 768, 960, 720],
+                    lazyType: "none",
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "0",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
 
-       if(revapi24) revapi24.revSliderSlicey();
-   });	/*ready*/
-</script>
+            if (revapi24) revapi24.revSliderSlicey();
+        });	/*ready*/
+    </script>
 
 
-<!-- <script type="text/javascript">
+    <!-- <script type="text/javascript">
    var notifyContainer = document.getElementById('notify-container')
    var notifyText = document.getElementById('notify-text')
 
@@ -702,173 +818,252 @@
 </script> -->
 
 
-      <div class="preloader"><span class="spinner spinner-round"></span></div>
-   
-   <!-- JavaScript -->
-   <script src="js/jquery.bundlef86e.js"></script>
-   <script src="js/scriptsf86e.js"></script>
-   <script src="js/charts0c67.js"></script>
-   <!-- Messenger Chat Plugin Code -->
-   <div id="fb-root"></div>
+    <div class="preloader"><span class="spinner spinner-round"></span></div>
 
-   <!-- Your Chat Plugin code -->
-   <div id="fb-customer-chat" class="fb-customerchat" page_id="110085924729927" attribution="biz_inbox">
-   </div>
+    <!-- JavaScript -->
+    <script src="js/jquery.bundlef86e.js"></script>
+    <script src="js/scriptsf86e.js"></script>
+    <script src="js/charts0c67.js"></script>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
 
-   <script>
-     var chatbox = document.getElementById('fb-customer-chat');
-     chatbox.setAttribute("page_id", "110085924729927");
-     chatbox.setAttribute("attribution", "biz_inbox");
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat" page_id="110085924729927" attribution="biz_inbox">
+    </div>
 
-     window.fbAsyncInit = function() {
-       FB.init({
-         xfbml            : true,
-         version          : 'v11.0'
-       });
-     };
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "110085924729927");
+        chatbox.setAttribute("attribution", "biz_inbox");
 
-     (function(d, s, id) {
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) return;
-       js = d.createElement(s); js.id = id;
-       js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-   </script>
-<script>
- function initFreshChat() {
-   window.fcWidget.init({
-     token: "f380345d-ac2c-46e9-b493-060fcc83d199",
-     host: "https://wchat.freshchat.com"
-   });
- }
- function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="../wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-</script>
-   
-   
-   
-   
-   <!-- ========== Copy Here to your script footer before the (/body Tag ) ========== -->
-   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-   
-   <!-- Fake Notifications jQuery plugin -->
-   <script type="text/javascript" src="js/jquery.fake-notification.min.js"></script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+        function initFreshChat() {
+            window.fcWidget.init({
+                token: "f380345d-ac2c-46e9-b493-060fcc83d199",
+                host: "https://wchat.freshchat.com"
+            });
+        }
+        function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "../wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) } function initiateCall() { initialize(document, "freshchat-js-sdk") } window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+    </script>
+
+
+
+
+    <!-- ========== Copy Here to your script footer before the (/body Tag ) ========== -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- Fake Notifications jQuery plugin -->
+    <script type="text/javascript" src="js/jquery.fake-notification.min.js"></script>
 
 
 
 
 </body>
 <script>
-       <!-- Fake Notifications invoke -->
-   // $(document).ready(function() {
-   //     $('#notification-1').Notification({
-   //         // Notification varibles
-   //         Varible1: ["Dirk", "Johnny", "Watkin ", "Alejandro",  "Vina",  "Tony",   "Ahmed","Jackson",  "Noah", "Aiden",  "Darren", "Isabella", "Aria", "John", "Greyson", "Peter", "Mohammed", "William",
-   //         "Lucas", "Amelia", "Mason", "Mathew", "Richard", "Chris", "Mia", "Oliver"],
-   //         Varible2: ["USA","UAE","ITALY", "FLORIDA",  "MEXICO",  "INDIA",  "CHINA",  "BOTSWANA",  "UNITED KINGDOM",  "GERMANY", "AUSTRALIA",  "BANGLADESH", "SWEDEN", "PAKISTAN", "MALDIVES", "SEYCHELLES", 
-   //         "BOLIVIA",
-   //          "SOUTH AFRICA", "ZAMBIA", "ZIMBABWE", "BOTSWANA", "SAUDI ARgABIA", "CHILE", "PEUTO RICO"],
-           
-   //         Amount: [100000, 250000,55005,60066,40440,33003,33003,50000,45000,200000,24000,78000],					
-   //         Content: '[Varible1] from [Varible2] has just Earned<b>$[Amount]</b>.',
-   //         // Timer
-   //         Show: ['stable', 5, 10],
-   //         Close: 5,
-   //         Time: [0, 23],
-   //         // Notification style 
-   //         LocationTop: [true, '20%'],
-   //         LocationBottom:[false, '10%'],
-   //         LocationRight: [false, '10%'],						
-   //         LocationLeft:[true, '10px'],
-   //         Background: '#F6F6F6',
-   //         BorderRadius: 5,
-   //         BorderWidth: 5,
-   //         BorderColor: '#F6F6F6',
-   //         TextColor: 'black',
-   //         IconColor: '#ffffff',
-   //         // Notification Animated   
-   //         AnimationEffectOpen: 'slideInUp',
-   //         AnimationEffectClose: 'slideOutDown',
-   //         // Number of notifications
-   //         Number: 40,
-   //         // Notification link
-   //         Link: [true, 'index ', '_blank']
-           
-   //     });		
-       
-       
-   // });	
-   
-   
+    <!-- Fake Notifications invoke -->
+    // $(document).ready(function() {
+    //     $('#notification-1').Notification({
+    //         // Notification varibles
+    //         Varible1: ["Dirk", "Johnny", "Watkin ", "Alejandro",  "Vina",  "Tony",   "Ahmed","Jackson",  "Noah", "Aiden",  "Darren", "Isabella", "Aria", "John", "Greyson", "Peter", "Mohammed", "William",
+    //         "Lucas", "Amelia", "Mason", "Mathew", "Richard", "Chris", "Mia", "Oliver"],
+    //         Varible2: ["USA","UAE","ITALY", "FLORIDA",  "MEXICO",  "INDIA",  "CHINA",  "BOTSWANA",  "UNITED KINGDOM",  "GERMANY", "AUSTRALIA",  "BANGLADESH", "SWEDEN", "PAKISTAN", "MALDIVES", "SEYCHELLES",
+    //         "BOLIVIA",
+    //          "SOUTH AFRICA", "ZAMBIA", "ZIMBABWE", "BOTSWANA", "SAUDI ARgABIA", "CHILE", "PEUTO RICO"],
 
-   document.addEventListener("DOMContentLoaded", function() {
-    const slider = document.querySelector('.range-slider input');
-    const startingAmount = document.querySelector('.starting-amount-value');
-    const results = document.querySelectorAll('.result-value');
+    //         Amount: [100000, 250000,55005,60066,40440,33003,33003,50000,45000,200000,24000,78000],
+    //         Content: '[Varible1] from [Varible2] has just Earned<b>$[Amount]</b>.',
+    // // Timer
+    // Show: ['stable', 5, 10],
+    // Close: 5,
+    // Time: [0, 23],
+    // // Notification style
+    // LocationTop: [true, '20%'],
+    // LocationBottom:[false, '10%'],
+    // LocationRight: [false, '10%'],
+    // LocationLeft:[true, '10px'],
+    // Background: '#F6F6F6',
+    // BorderRadius: 5,
+    // BorderWidth: 5,
+    // BorderColor: '#F6F6F6',
+    // TextColor: 'black',
+    // IconColor: '#ffffff',
+    // // Notification Animated
+    // AnimationEffectOpen: 'slideInUp',
+    // AnimationEffectClose: 'slideOutDown',
+    // // Number of notifications
+    // Number: 40,
+    // // Notification link
+    // Link: [true, 'index ', '_blank']
 
-    // Initial slider value
-    startingAmount.textContent = `$${slider.value}`;
+    // });
 
-    // Update starting amount and slider color when slider value changes
-    slider.addEventListener("input", function() {
+
+    // });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.querySelector('.range-slider input');
+        const startingAmount = document.querySelector('.starting-amount-value');
+        const results = document.querySelectorAll('.result-value');
+
+        // Initial slider value
         startingAmount.textContent = `$${slider.value}`;
+
+        // Update starting amount and slider color when slider value changes
+        slider.addEventListener("input", function () {
+            startingAmount.textContent = `$${slider.value}`;
+            updateResults();
+            updateSliderColor();
+        });
+
+        // Update results based on the slider value
+        function updateResults() {
+            const year1 = () => {
+                const firstCalculation = parseFloat(slider.value) * 0.15
+                const secondCalculation = firstCalculation * 3
+                const thirdCalculation = secondCalculation + parseFloat(slider.value)
+
+                return thirdCalculation
+            }; // Sample calculation, you can replace it with your own logic
+            const year3 = () => {
+                const firstCalculation = parseFloat(slider.value) * 0.15
+                const secondCalculation = firstCalculation * 6
+                const thirdCalculation = secondCalculation + parseFloat(slider.value)
+
+                return thirdCalculation
+            };
+            const year5 = () => {
+                const firstCalculation = parseFloat(slider.value) * 0.15
+                const secondCalculation = firstCalculation * 12
+                const thirdCalculation = secondCalculation + parseFloat(slider.value)
+
+                return thirdCalculation
+            };
+
+            results[0].textContent = `$${year1()}`;
+            results[1].textContent = `$${year3()}`;
+            results[2].textContent = `$${year5()}`;
+        }
+
+        // Update the background color of the slider based on the slider value
+        function updateSliderColor() {
+            const percentage = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+            slider.style.setProperty('--webkitProgressPercent', `${percentage}%`);
+        }
+
+        // Initial results update and slider color
         updateResults();
         updateSliderColor();
     });
 
-    // Update results based on the slider value
-    function updateResults() {
-        const year1 = ()=>{
-            const firstCalculation = parseFloat(slider.value) * 0.15
-            const secondCalculation = firstCalculation * 3
-            const thirdCalculation = secondCalculation + parseFloat(slider.value)
 
-            return thirdCalculation
-        }; // Sample calculation, you can replace it with your own logic
-        const year3 = ()=>{
-            const firstCalculation = parseFloat(slider.value) * 0.15
-            const secondCalculation = firstCalculation * 6
-            const thirdCalculation = secondCalculation + parseFloat(slider.value)
+</script>
+<script>
+    const modal = document.getElementById('myModal').style
+    function subscribe(plan) {
+        localStorage.setItem('selectedplan', plan)
 
-            return thirdCalculation
-        };
-        const year5 = ()=>{
-            const firstCalculation = parseFloat(slider.value) * 0.15
-            const secondCalculation = firstCalculation * 12
-            const thirdCalculation = secondCalculation + parseFloat(slider.value)
+        modal.display = 'block'
+    
 
-            return thirdCalculation
-        };
+        if (plan === "basic") {
+            document.getElementById('plan-details').innerHTML = plan + ' Plan - 3 months'
+         
+        } else if (plan === "premium") {
+            document.getElementById('plan-details').innerHTML = plan + ' Plan - 6 months'
 
-        results[0].textContent = `$${year1()}`;
-        results[1].textContent = `$${year3()}`;
-        results[2].textContent = `$${year5()}`;
+        } else if (plan === "vip") {
+            document.getElementById('plan-details').innerHTML = plan + ' Plan - 12 months'
+
+        }
     }
 
-    // Update the background color of the slider based on the slider value
-    function updateSliderColor() {
-        const percentage = (slider.value - slider.min) / (slider.max - slider.min) * 100;
-        slider.style.setProperty('--webkitProgressPercent', `${percentage}%`);
-    }
+        function closeit() {
+            document.getElementById('myModal').style.display = 'none'
+        }
 
-    // Initial results update and slider color
-    updateResults();
-    updateSliderColor();
-});
+        function calculate() {
+            const amount = document.getElementById('amountSize')
 
-   
+
+
+
+            const plan = localStorage.getItem('selectedplan')
+
+            let percentage;
+
+            if (plan === "basic") {
+                percentage = 0.09;
+            } else if (plan === "premium") {
+                percentage = 0.18;
+            } else if (plan === "vip") {
+                percentage = 0.36;
+            }
+
+            console.log('percentage', percentage)
+
+            if (amount.value == '') {
+                return alert("Please Input an account Size")
+            } else {
+                const firstCalculation = percentage * parseInt(amount.value);
+                console.log('firstCalculation', firstCalculation)
+                const secondCalculation = firstCalculation * 0.1;
+                let thirdCalculation;
+
+                if (plan === "basic") {
+                    thirdCalculation = 0.1 * parseInt(amount.value);
+
+                } else if (plan === "premium") {
+                    // Perform the calculation here, similar to the previous example
+                    let initial_value = parseInt(amount.value);
+                    let replaced_value = 0.1 * initial_value;
+                    thirdCalculation = (2 * replaced_value) - (replaced_value * 0.1);
+                } else if (plan === "vip") {
+                    thirdCalculation = parseInt(amount.value) * 0.1 * 12 * 0.3;
+                }
+                document.getElementById('feetag').style.display = 'block'
+                document.getElementById('fee').innerHTML = '$' + thirdCalculation
+                document.getElementById('mainamounttag').style.display = 'block'
+                document.getElementById('mainamount').innerHTML = '$' + amount.value
+
+                console.log(firstCalculation, secondCalculation, thirdCalculation);
+
+                document.getElementById('proceedLink').innerHTML = `<button style="background-color: orange; display: inline-block; color: white;  border: none; border-radius: 20px; " ><a href="./Signup/signup.html?sub=${plan}" >Proceed</a></button>`
+
+
+
+            }
+        }
+
 </script>
 <!-- Smartsupp Live Chat script -->
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '7049bd469612b6787fb5e4f81b302b16f64396f3';
-window.smartsupp||(function(d) {
- var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
- s=d.getElementsByTagName('script')[0];c=d.createElement('script');
- c.type='text/javascript';c.charset='utf-8';c.async=true;
- c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '7049bd469612b6787fb5e4f81b302b16f64396f3';
+        window.smartsupp || (function (d) {
+            var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
+            s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+            c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
+        })(document);
 </script>
 <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
 </html>

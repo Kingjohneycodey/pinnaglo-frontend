@@ -67,7 +67,7 @@
     <style>
         /* Increase the font size and make it bold */
         .step-title {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
         }
 
@@ -235,34 +235,49 @@
 
             <!-- end top-bar -->
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle toggle-menu menu-left push-body" data-toggle="collapse"
-                        data-target="#collapse-nav"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                            class="icon-bar"></span> </button>
-                    <a class="navbar-brand" href="./index.html">
-                        <!-- <img src="images/logo-dark.png" style="height: 33px;" alt="Image" class="logo-light">  -->
-                        <img src="images/logo-dark.png" style="width:200px;height: 100px;" alt="Image"
-                            class="logo-light">
-                        <img src="images/logo-dark.png" style="width:200px;height: 100px;" alt="Image"
-                            class="logo-dark">
-                        <span class="since">2<br>
-                            <small>years</small></span> </a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle toggle-menu menu-left push-body"
+                                data-toggle="collapse" data-target="#collapse-nav">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="images/logo-dark.png" style="width:200px;height: 90px;" alt="Image"
+                                    class="logo-light">
+                                <img src="images/logo-dark.png" style="width:200px;height: 90px;" alt="Image"
+                                    class="logo-dark">
+                                <span class="since">2<br><small>years</small></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
+                            id="collapse-nav">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">HOME</a></li>
+                                <li><a href="/about.html">ABOUT US</a></li>
+                                <li><a href="./index.html#getstarted">HOW IT WORKS</a></li>
+                                <li><a href="/pricing.html">PRICING</a></li>
+                                <li id="logins"></li>
+                                <script>
+                                    var token = localStorage.getItem('token')
+                                    if(token){
+                                        document.getElementById('logins').innerHTML = `<a href="./dashboard.html">My Account</a>`
+                                    }   else{
+                                        document.getElementById('logins').innerHTML = `<a href="./Login Page/login.html">LOGIN</a>`
+                                    }
+                                </script>
+                        
+                            </ul>
+                            <a href="/Login Page/login.html" class="quote-btn">GET STARTED</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="collapse navbar-collapse cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="collapse-nav">
-                    <!-- end top-menu -->
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="/about.html">ABOUT US</a></li>
-                        <li><a href="/pricing.html">PRICING</a></li>
-                        <li><a href="./login page/login.html">LOGIN</a></li>
-                        <!-- <li><a href="./Signup/signup.html ">REGISTER</a></li> -->
-                    </ul>
-                    <!-- end navbar-nav -->
-                    <a href="/login page/login.html" class="quote-btn">GET STARTED</a>
-                    <!-- end phone -->
-                </div>
-                <!-- end navbar-collapse -->
             </div>
+
             <!-- end container -->
         </nav>
         <div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="website-intro"
@@ -270,19 +285,22 @@
             <div id="rev_slider_24_1" class="rev_slider fullscreenbanner tiny_bullet_slider" data-version="5.4.1">
                 <div class="intro-container"
                     style="margin-top: 100px; padding: 20px; display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 100px;">
+
                     <div class="first-container">
-                        <div class="intro-container-text" style="width:100%; max-width: 500px;">
+                        <div class="intro-container-text"
+                            style="width:100%; max-width: 500px; margin-left: 20px; margin-bottom: 30px;">
+                            <div class="blurry-background"></div>
                             <h2>Passive income Potential with user-friendly trading algo</h2>
-                            <p>Trade like a pro with our easy-to-use algo, no experience required, get started in just
+                            <h3 style="color: rgb(182, 119, 2); ">Your gateway to successful trading</h3>
+                            <p style="color: rgb(181, 118, 1); ">Trade like a pro with our easy-to-use algo, no
+                                experience
+                                required, get started in just
                                 15 minutes</p>
                             <div class="intro-container-button" style="margin-top: 50px">
                                 <a href="./Signup/signup.html">Get Started</a>
                             </div>
                         </div>
-                        <div class="intro-container-image">
-                            <img src="./images/man_working_while_trading_the_forex_market.webp"
-                                style="width: 100%; height: 100%; max-width: 700px;" alt="">
-                        </div>
+
                     </div>
                 </div>
 
@@ -319,8 +337,9 @@
             class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h6>PinnAlgo Capitals</h6>
-                    <h2>We Passionate About Helping Traders Succeed in the dynamic World of financial markets </h2>
+                    <br><br>
+                    <h6>WHAT WE OFFER</h6>
+                    <h2>We Are Passionate About Helping Traders Succeed in the Dynamic World of Financial Markets </h2>
                 </div>
                 <!-- end col-12 -->
                 <div class="col-md-2 col-md-offset-1 col-sm-4 col-xs-12"> <img src="images/accessibilite.png"
@@ -435,8 +454,15 @@
         <div class="row video-section">
             <!-- Left Side: Write-ups -->
             <div class="col-lg-6">
-                <h6>PinnAlgo Capitals</h6>
-                <h2>A state-of-the-art trading bot that boosts the performance of traders at any level</h2>
+                <h6 class="header-underlined">Track Our Peformance</h6>
+                <h3>A state-of-the-art trading bot that boosts the performance of traders at any level</h3>
+                
+                <div style="background-color: rgb(241, 238, 238); padding: 20px;">
+                    <p>Access our trade book to evaluate Our bot performance</p>
+                <p>Account: <b>53495234</b></p>
+                <p>Password: <b>PinnAlgo</b></p>
+                <p>Server: <b>Exness-Real20</b></p>
+                </div>
             </div>
 
             <!-- Right Side: Video -->
@@ -448,7 +474,7 @@
                 </video>
             </div>
         </div>
-    </section>
+    </section><br><br>
 
     <section style="margin-bottom: 20px;margin-top: 10px;" class="quote transition">
         <div class="video-bg">
@@ -458,8 +484,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h6>PinnAlgo Capitals</h6>
-                    <h2>Knowledge is Power we are here to provide you with the Education you need to excel.</h2>
+                    <h6>With PinnAlgo Capitals</h6>
+                    <h2>Completely automate your trading with the most
+                        lethal institutional trading algo in the market.</h2>
+                       <section class="text-align: left">
+                        <p><input type="checkbox" name="" id="" style="display: inline-block;" checked><label for="">&nbsp; Low drawdown &emsp;</label><input type="checkbox" name="" id="" style="display: inline-block;" checked><label for="">&nbsp; Hands Free Trading &emsp;</label><input type="checkbox" name="" id="" style="display: inline-block;" checked><label for="">&nbsp; 24/5 Auto Trading</label></p>
+                       </section>
                 </div>
                 <!-- end col-12 -->
             </div>
@@ -469,31 +499,39 @@
     </section>
 
 
-    <div class="container mt-5">
+    <div class="container-fluid mt-5" id="getstarted">
         <div class="col-xs-12 text-center">
             <!-- <h6>Get Started</h6> -->
-            <h2>Follow These 3 Easy Steps to Get Started</h2>
+            <h2>Follow These 4 Easy Steps to Get Started</h2>
+            <br>
+
         </div>
-        <div style="align-items: center;display: flex;width: 90%;margin-top: 40px;" class="row d-flex1">
+        <div style="margin-top: 10px;" class="row  steps">
             <!-- Left Side: 3 Steps Guide -->
-            <div class="col-md-6" id="stepsGuide">
+            <div class="col-md-6 mb-5" id="stepsGuide">
                 <div class="step">
-                    <p class="step-title">Step 1 : Have a Forex Account</p>
+                    <p class="step-title"><span>1</span> Have a Forex Account</p>
                     <p>Open and Verify your Trading account with any broker of your choice</p>
                 </div>
                 <div class="step">
-                    <p class="step-title">Step 2: Register on PinnAlgo</p>
+                    <p class="step-title"><span>2</span> Register on PinnAlgo</p>
                     <p>Sign up With Your Email and Password to Create Your PinnAlgo Account</p>
                 </div>
                 <div class="step">
-                    <p class="step-title">Step 3: Subscribe To Our Bot</p>
-                    <p>Choose any of our Subscription Plans, Make Payment to Access Our Bot</p>
+                    <p class="step-title"><span>3</span> Subscribe To Our Bot</p>
+                    <p>Choose any of our Subscription Plans, Make Payment to Access Our Bot and start enjoying passive
+                        income.
+                    </p>
+                </div>
+                <div class="step">
+                    <p class="step-title"><span>4</span> Refer your Friends</p>
+                    <p>Refer your Family and Friends to get a referral bonus</p>
                 </div>
             </div>
 
             <!-- Right Side: 3 Image Slider -->
             <div class="col-md-6">
-                <div id="imageSlider" class="image-slider">
+                <div id="imageSlider" class="image-slider steps-slider">
                     <div class="slider-item active">
                         <img src="./images/botimg1.jpg" class="d-block w-100" alt="Image 1">
                     </div>
@@ -506,22 +544,23 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- end quote -->
-
+    <!-- 
     <section class>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center" style="margin-bottom:50px;">
                     <div class="cryptohopper-web-widget" data-id="1" data-table_length="10"></div>
                 </div>
-                <!-- end col-12 -->
+
             </div>
-            <!-- end row -->
+         
         </div>
-        <!-- end container -->
-    </section>
+   
+    </section> -->
     <!-- end featured-projects -->
 
     <section class="testimonials">
@@ -630,6 +669,68 @@
     </div>
     
 </section> -->
+
+    <section className="faqs-section" id='faqs-section'>
+        <center>
+            <h2>FAQS</h2>
+            <p><b>With our bot, there is no manual intervention at all. Check this frequently asked questions.</b></p>
+        </center>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <input type="checkbox" id="item1" name="accordion" />
+                <label for="item1" class="accordion-header">Does PinnAlgo Capitals profit from me running the bot?<span
+                        class="arrow">&#9654;</span></label>
+                <div class="accordion-content">
+                    <p>We only profit from the fees when you purchase any of our packages. The cost of the bot
+                        subscriptions are the same. Your winnings are yours.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="item2" name="accordion" />
+                <label for="item2" class="accordion-header">Is PinnAlgo Capitals in control of my funds?
+                    <span class="arrow">&#9654;</span></label>
+                <div class="accordion-content">
+                    <p>It is crucial to understand that PinnAlgo Capitals does not have any access, control or interest
+                        in your funds deposited with your broker. We provide the bot and set them up, we do not have
+                        anything to do with your accounts with your broker. We receive no commission from your gains or
+                        trades.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="item3" name="accordion" />
+                <label for="item3" class="accordion-header">Is it Working?<span class="arrow">&#9654;</span></label>
+                <div class="accordion-content">
+                    <p>While we can not guarantee that our track record will continue into the future, our results are
+                        very transparent and published on our results page and social media. Our Telegram is open to all
+                        current and potential customers so join the conversation and judge for yourself.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="item4" name="accordion" />
+                <label for="item4" class="accordion-header">How much does it to cost to subscribe?<span class="arrow">&#9654;</span></label>
+                <div class="accordion-content">
+                    <p>Our fees are dependent on the account size. Fees are calculated at the point of subscription. This is to ensure smaller accounts are accommodated. Generally our fees are targeted at 10% of the profit you make with our bot.  However, the longer the duration of your subscription, the lesser you pay.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="item5" name="accordion" />
+                <label for="item5" class="accordion-header">Why rent out algorithms if they are so good? <span class="arrow">&#9654;</span></label>
+                <div class="accordion-content">
+                    <p>Renting out algorithms is a risk-free income while the algorithms are used on your own account. Since the algorithms are not affected by how many people use them, there was nothing that harmed renting them out.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section><br />
+
     <!-- end support-bar -->
     <footer class="footer transition">
         <div class="footer-bar">
@@ -675,18 +776,30 @@
                 <!-- end col-4 -->
 
                 <!-- end col-4 -->
-                <div class="col-md-4">
+                <div class="col-md-4" style="z-index: 10;">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-menu">
                         <li><a href="/index.html">Home</a></li>
 
                     </ul>
                     <ul class="footer-menu">
-                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/about.html">About Us</a></li>
 
                     </ul>
                     <ul class="footer-menu">
                         <li><a href="/pricing.html">Pricing</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="./index.html#getstarted">How it works</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="/faqs.html">FAQS</a></li>
+
+                    </ul>
+                    <ul class="footer-menu">
+                        <li><a href="/terms.html">Terms And Conditions</a></li>
 
                     </ul>
                 </div>
@@ -696,27 +809,89 @@
 
                     <!-- Replace This Section With a Contact Form-->
 
-                    <div style="width: 100%;" class="form-container">
+                    <div style="max-width: 400px;" class="form-container">
 
-                        <div style="display: flex;align-items: center;width: 100%;" class="form-top">
+                        <form id="submitContactForm">
+                            <div style="width: 100%; margin-top: 10px;" class="form-top">
 
-                            <input type="text" placeholder="Name">
-                            <input style="margin-left: 5px;" type="text" placeholder="Email">
+                                <input style="width: 100%;" type="text" id="name" placeholder="Name" required>
 
-                        </div>
 
-                        <div style="margin-top: 5px;width: 434px!important;" class="form-buttom">
-                            <textarea name="" id="" cols="30" rows="20" style="width: 434px;"></textarea>
-                        </div>
+                            </div>
+                            <div style="width: 100%; margin-top: 10px;" class="form-top">
 
-                        <div class="form-button">
-                            <button style="border-radius: 0;" type="submit">Send Message</button>
-                        </div>
 
+                                <input style="width: 100%;" type="text" id="email" placeholder="Email" required>
+
+                            </div>
+
+                            <div style="width: 100%; margin-top: 5px;" class="form-buttom">
+                                <textarea name="" style="width: 100%; margin-top: 5px;" id="message" placeholder="
+                                    Message" required></textarea>
+                            </div>
+
+                            <div class="form-button">
+                                <button style="border-radius: 0;" type="submit">Send Message</button>
+                            </div>
+
+                        </form>
                     </div>
 
 
                 </div>
+
+                <script>
+                    const submitContact = document.getElementById('submitContactForm')
+                    submitContact.addEventListener("submit", async (e) => {
+                        e.preventDefault()
+                        const name = document.getElementById('name')
+                        const email = document.getElementById('email')
+                        const message = document.getElementById('message')
+
+                        if (name.value == '' || name.value == ' ') {
+
+                            alert("Please your name is required")
+                            return
+                        }
+
+                        if (email.value == '' || email.value == ' ') {
+
+                            alert("Please your email is required")
+                            return
+                        }
+
+                        if (message.value == '' || message.value == ' ') {
+
+                            alert("Please your message is required")
+                            return
+                        }
+                        const url = "https://pinn-algo-capitals.vercel.app/api/v1"
+                        const response = await fetch(url + "/contacts", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                name: name.value,
+                                email: email.value,
+                                message: message.value,
+
+                            })
+                        })
+
+                        const data = await response.json()
+
+                        alert("Message sent successfully")
+                        location.href = './index.html'
+
+
+                       
+
+                        console.log(data)
+
+                    })
+
+                </script>
                 <!-- end col-4 -->
             </div>
             <!-- end row -->

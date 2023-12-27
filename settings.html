@@ -66,7 +66,13 @@
                         <a href="./investmentPlans.html">
                             <li class="sidebar-menu-list-item">
                                 <i class="fas fa-cubes sidebar-icon"></i>
-                                <span>Subscriptions</span>
+                                <span>Packages</span>
+                            </li>
+                        </a>
+                        <a href="./referrals.html ">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-user sidebar-icon"></i>
+                                <span>Referrals</span>
                             </li>
                         </a>
                         <a href="./support.html">
@@ -267,8 +273,8 @@
         userInfoContainer.classList.remove('active')
     })
     option1.addEventListener('click', () => {
-        option1.style.backgroundColor="#0052FF"
-        option2.style.backgroundColor="#16181c"
+        option1.style.backgroundColor="orange"
+        option2.style.backgroundColor="orange"
         option3.style.backgroundColor="#16181c"
         personalSettings.style.display='block'
         withdrawalSettings.style.display='none'
@@ -276,9 +282,9 @@
         advanceSettings.style.display='none'
     })
     option2.addEventListener('click', () => {
-        option1.style.backgroundColor="#16181c"
-        option2.style.backgroundColor="#0052FF"
-        option3.style.backgroundColor="#16181c"
+        option1.style.backgroundColor="orange"
+        option2.style.backgroundColor="orange"
+        option3.style.backgroundColor="orange"
         personalSettings.style.display='none'
         withdrawalSettings.style.display='block'
         passwordSettings.style.display='none'
@@ -287,7 +293,7 @@
     option3.addEventListener('click', () => {
         option1.style.backgroundColor="#16181c"
         option2.style.backgroundColor="#16181c"
-        option3.style.backgroundColor="#0052FF"
+        option3.style.backgroundColor="orange"
         personalSettings.style.display='none'
         withdrawalSettings.style.display='none'
         passwordSettings.style.display='block'

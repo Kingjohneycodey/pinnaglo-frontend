@@ -68,7 +68,7 @@ button {
 }
 
 #copyButton:hover {
-    background-color: #45a049;
+    background-color: #45a049; 
 }
 
 #approveButton {
@@ -93,15 +93,15 @@ button {
 
 
     </style>
-</head>
+</head> 
 <body>
 
     <div class="sidebar-mobile-container" id="sidebar-container">
 
-        <div class="sidebar-container" id="sidebar">
+        <div class="sidebar-container" id="sidebar"  style="margin-top: -30px;">
             <div class="sidebar-wrapper">
                 <div class="user-name-info-wrapper">
-                    
+                    <a href="./index.html"><img src="./images/logo-light.png" alt=""></a>
                 </div>
                 <!-- <hr class="line"> -->
                 <div class="sidebar-menu-list">
@@ -145,7 +145,7 @@ button {
                 <div class="navbar-logo-icon" id="menubar">
                     <i class="fa-solid fa-bars main-header-icon"></i>
                 </div>
-                <div class="log-out-icon-container main-header-icon" id="logout-btn">
+                <div class="log-out-icon-container main-header-icon" onclick="logout1()">
                     <i class="fa-solid fa-power-off"></i>
                     <span>Logout</span>
                 </div>
@@ -226,6 +226,23 @@ button {
 
 
 </body>
+<script>
+       
+    const admin = localStorage.getItem("admin")
+ 
+    if(!admin){
+
+location.href = "/index.html"
+}
+
+function logout1(){
+    localStorage.clear()
+location.href = "/index.html"
+}
+
+
+</script>
+<!-- <script src="./scripts/admin.js"></script> -->
 <script src="./scripts/widrawalAdmin.js"></script>
 <!-- Firebase -->
 <script type="module">
@@ -287,24 +304,6 @@ var menubar = document.getElementById('menubar');
         userInfoContainer.classList.remove('active')
     })
 
-   
-
-     
-
-
-
- 
-  
-
-  logoutButton.addEventListener('click', () => {
-    getAuth().signOut().then(() => {
-      // Sign-out successful.
-      console.log('user logged out')
-    }).catch((error) => {
-      // An error happened.
-      console.log(error.message)
-    });
-  })  
 
 
 </script>

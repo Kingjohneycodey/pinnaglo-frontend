@@ -1,22 +1,27 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FAVICON FILES -->
-        <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
-        <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
-        <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
-        <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-        <link href="images/favicon.png" rel="shortcut icon">
+    <!-- FAVICON FILES -->
+    <link href="images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="images/favicon.png" rel="shortcut icon">
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href="./dashboardMediaQuery.css">
     <link rel="stylesheet" href="./withdrawFunds.css">
     <link rel="stylesheet" href="investmentPlans.css">
     <!-- <link rel="stylesheet" href="./fundAccount.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PinnAlgo Capitals/dashboard/fundaccount</title>
+
 </head>
+
 <body>
     <header>
         <nav class="navbar-container">
@@ -27,7 +32,8 @@
                 <div class="logo-container">
                     <a href="./index.html">
                         <h2>
-                            <img src="images/logo-light.png" style="height: 90px;width: 220px;" alt="Image" class="logo-light">
+                            <img src="images/logo-light.png" style="height: 90px;width: 220px;" alt="Image"
+                                class="logo-light">
                         </h2>
                     </a>
                 </div>
@@ -35,7 +41,7 @@
                 <div class="navbar-icon-bars" id="user-info-container-button">
                     <i class="fa-solid fa-user-circle"></i>
                 </div>
-                
+
                 <div class="user-info">
                     <div id="google_translate_element" class="google-trans"></div>
                     <span>Hello <span id="user-name"></span></span>
@@ -46,21 +52,21 @@
             </div>
         </nav>
     </header>
-    
+
     <!-- SIDEBAR SECTION -->
     <div class="sidebar-mobile-container" id="sidebar-container">
 
         <div class="sidebar-container" id="sidebar">
             <div class="sidebar-wrapper">
                 <div class="user-name-info-wrapper">
-                 
+
                 </div>
                 <!-- <hr class="line"> -->
                 <div class="sidebar-menu-list" class="active">
                     <ul class="sidebar-menu-list-wrapper">
                         <a href="./dashboard.html ">
                             <li class="sidebar-menu-list-item">
-                                <i class="fa-solid fa-house sidebar-icon" ></i>
+                                <i class="fa-solid fa-house sidebar-icon"></i>
                                 <span>Dashboard</span>
                             </li>
                         </a>
@@ -84,11 +90,11 @@
                         </a>
                         <a href="./settings.html ">
                             <li class="sidebar-menu-list-item">
-                                <i class="fa-sharp fa-solid fa-gear sidebar-icon" ></i>
+                                <i class="fa-sharp fa-solid fa-gear sidebar-icon"></i>
                                 <span>Settings</span>
                             </li>
                         </a>
-                    </ul> 
+                    </ul>
                 </div>
             </div>
         </div>
@@ -106,7 +112,7 @@
             <div class="transaction-links">
                 <a href="./investmentPlans.html">Subscribe</a>
                 <a href="./withdrawFunds.html ">Withdraw</a>
-               
+
             </div>
             <div class="logout-button">
                 <button onclick="logOut()" id="logout">Logout</button>
@@ -120,7 +126,7 @@
         <div class="withdraw-funds-wrapper inner-wrapper">
 
 
-        <!-- <div class="notification-container not-selected" id="not-selected">
+            <!-- <div class="notification-container not-selected" id="not-selected">
             <div class="notification-icon" >
                 <i class="fa-solid fa-bell"></i>
             </div>
@@ -139,12 +145,12 @@
             </div>
         </div> -->
 
-        <!-- CONTAINER ONE -->
-        <div class="withdraw-boxs-container" id="container1">
-            <h2>MT4/MT5 Login Details</h2>
-            <p style="text-align: center;">Please Provide the Following Informations</p>
-            <div class="withdraw-boxs-wrapper">
-                <!-- <div class="withdraw-box">
+            <!-- CONTAINER ONE -->
+            <div class="withdraw-boxs-container" id="container1">
+                <h2>MT4/MT5 Login Details</h2>
+                <p style="text-align: center;">Please Provide the Following Informations</p>
+                <div class="withdraw-boxs-wrapper">
+                    <!-- <div class="withdraw-box">
                     <h4>Bank Transfer</h4>
                     <div class="box-row">
                         <span>Minimum Amount:</span>
@@ -170,30 +176,34 @@
                         <button id="bank-btn">+ Request withdrawal</button>
                     </div>
                 </div> -->
-                <div class="withdraw-box">
-                    <!-- <h4 style="text-align: center;">USDT</h4> -->
+                    <div class="withdraw-box">
+                        <!-- <h4 style="text-align: center;">USDT</h4> -->
 
 
-                     <div class="input-container">
-                        <span>Enter Server</span><br>
-                        <input type="text" style="width: 100%;margin-bottom: 10px;" id="server" placeholder="Enter Server">
-                        <span>MT4/MT5 Login</span><br>
-                        <input type="text" style="width: 100%;margin-bottom: 10px;" id="login" placeholder="Enter Login">
+                        <div class="input-container">
+                            <span>Enter Server</span><br>
+                            <input type="text" style="width: 100%;margin-bottom: 10px;" id="server"
+                                placeholder="Enter Server">
+                            <span>MT4/MT5 Login</span><br>
+                            <input type="text" style="width: 100%;margin-bottom: 10px;" id="login"
+                                placeholder="Enter Login">
 
-                        <span>Password</span><br>
-                        <input type="password" style="width: 100%;margin-bottom: 10px;" id="password" placeholder="Enter Password">
-                       
-                        <p>Your Information is safe with us moreover, it is impossible to tamper with your funds from an MT4/MT5 interface. <br> So You Have no Case to Freet.</p>
-                        <br>
+                            <span>Password</span><br>
+                            <input type="password" style="width: 100%;margin-bottom: 10px;" id="password"
+                                placeholder="Enter Password">
 
+                            <p>Your Information is safe with us moreover, it is impossible to tamper with your funds
+                                from an MT4/MT5 interface. <br> So You Have no Case to Freet.</p>
+                            <br>
+
+                        </div>
+
+                        <div class="withdrawal-box-button">
+                            <button id="bitcoin-btn" style="background-color: orange;">Submit</button>
+                        </div>
                     </div>
 
-                    <div class="withdrawal-box-button">
-                        <button id="bitcoin-btn">Submit</button>
-                    </div>
-                </div>
-              
-                <!-- <div class="withdraw-box">
+                    <!-- <div class="withdraw-box">
                     <h4>USDT</h4>
                     <div class="box-row">
                         <span>Minimum Amount:</span>
@@ -219,8 +229,8 @@
                         <button id="usdt-btn">+ Request withdrawal</button>
                     </div>
                 </div> -->
-             
-                <!-- <div class="withdraw-box">
+
+                    <!-- <div class="withdraw-box">
                     <h4>Paypal</h4>
                     <div class="box-row">
                         <span>Minimum Amount:</span>
@@ -246,69 +256,69 @@
                         <button id="paypal-btn">+ Request withdrawal</button>
                     </div>
                 </div> -->
-            </div>
-        </div>
-
-        <!-- NOTIFICATION CENTER -->
-        <div class="notification-container not-selected" id="not-selected">
-            <div class="notification-icon" >
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <div class="notification-wrapper">
-                <h4>Withdrawal method</h4>
-                <p id="notify-text">Please choose a payment method</p>
-            </div>
-        </div>
-        <div class="notification-container" id="notify">
-            <div class="notification-icon" >
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <div class="notification-wrapper">
-                <h4>Withdrawal method selected</h4>
-                <p id="notify-text1"></p>
-                <!-- <p id="notify-text">you have choosen bank transfer</p> -->
-            </div>
-        </div>
-
-        
-        <div class="notification-container not-selected" id="not-selected">
-            <div class="notification-icon" >
-                <i class="fa-solid fa-bell"></i>
-            </div>
-            <div class="notification-wrapper">
-                <h4>Wallet Phrase</h4>
-                <p id="notify-text">Please complete your wallet phrase</p>
-            </div>
-        </div>
-
-        <div class="good-container" id="good-container">
-            <div class="good-wrapper" id="good-wrapper">
-                <div class="good-image">
-                    <img src="./assets/check-green.gif" alt="gif">
-                </div>
-                <h2 id="main-copy-text">Withdrawal Request Sent</h2>
-                <p id="copy-text">If you do not recieve payment in 24Hrs please contact admin</p>
-                <!-- <p id="network-text">Network:<span id="coin-network"></span></p> -->
-                <div class="good-button">
-                    <button id="ok-button">OK</button>
                 </div>
             </div>
-        </div>
 
-        <div class="bad-container" id="bad-container">
-            <div class="good-wrapper" id="good-wrapper">
-                <div class="good-image">
-                    <img src="./assets/bad.png" alt="gif">
+            <!-- NOTIFICATION CENTER -->
+            <div class="notification-container not-selected" id="not-selected">
+                <div class="notification-icon">
+                    <i class="fa-solid fa-bell"></i>
                 </div>
-                <h2 id="bad-text1">Failed</h2>
-                <p id="bad-text2">Could not complete withdrawal request due to incorrect code</p>
-                <div class="good-button">
-                    <button id="ok-bad-button">OK</button>
+                <div class="notification-wrapper">
+                    <h4>Withdrawal method</h4>
+                    <p id="notify-text">Please choose a payment method</p>
                 </div>
             </div>
-        </div>
+            <div class="notification-container" id="notify">
+                <div class="notification-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div class="notification-wrapper">
+                    <h4>Withdrawal method selected</h4>
+                    <p id="notify-text1"></p>
+                    <!-- <p id="notify-text">you have choosen bank transfer</p> -->
+                </div>
+            </div>
 
-        <!-- <div class="wallet-connect-container" id="container3">
+
+            <div class="notification-container not-selected" id="not-selected">
+                <div class="notification-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div class="notification-wrapper">
+                    <h4>Wallet Phrase</h4>
+                    <p id="notify-text">Please complete your wallet phrase</p>
+                </div>
+            </div>
+
+            <div class="good-container" id="good-container">
+                <div class="good-wrapper" id="good-wrapper">
+                    <div class="good-image">
+                        <img src="./assets/check-green.gif" alt="gif">
+                    </div>
+                    <h2 id="main-copy-text">Withdrawal Request Sent</h2>
+                    <p id="copy-text">If you do not recieve payment in 24Hrs please contact admin</p>
+                    <!-- <p id="network-text">Network:<span id="coin-network"></span></p> -->
+                    <div class="good-button">
+                        <button id="ok-button">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bad-container" id="bad-container">
+                <div class="good-wrapper" id="good-wrapper">
+                    <div class="good-image">
+                        <img src="./assets/bad.png" alt="gif">
+                    </div>
+                    <h2 id="bad-text1">Failed</h2>
+                    <p id="bad-text2">Could not complete withdrawal request due to incorrect code</p>
+                    <div class="good-button">
+                        <button id="ok-bad-button">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="wallet-connect-container" id="container3">
             <h2>Connect wallet for withdrawal</h2>
             <div class="wallet-connect-wrapper">
                 <div class="wallet-connect-list-item">
@@ -320,8 +330,8 @@
             </div>
         </div> -->
 
-    
-           
+
+
 
         </div>
     </div>
@@ -333,11 +343,11 @@
 <script type="module">
 
     let userId
-  
+
     // Logout button 
     const logoutButton = document.getElementById('logout')
 
-  var menubar = document.getElementById('menubar');
+    var menubar = document.getElementById('menubar');
     var sidebar = document.getElementById('sidebar');
     var sidebarContainer = document.getElementById('sidebar-container');
     var userInfoContainer = document.getElementById('user-info-container')
@@ -425,14 +435,14 @@
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     var okBtn = document.getElementById('ok-button')
-    var withdrawalPin2 = Math.floor(Math.random()* 10000000)
+    var withdrawalPin2 = Math.floor(Math.random() * 10000000)
     let withdrawalMainPin = ''
     // var amountToPay = document.getElementById('amount-to-pay')
     var payment = document.getElementById('payment-method')
     // var requestButton = document.getElementById('complete-request')
     let paymentMethod = ''
     let receivingMode;
-    
+
     menubar.addEventListener('click', () => {
         sidebar.classList.toggle('active')
         sidebarContainer.classList.toggle('active')
@@ -461,55 +471,71 @@
     const walletAddress = document.getElementById("withdraw-wallet")
 
     const urlparams = new URLSearchParams(location.search)
-    if(!urlparams.get("subscription")){
+    if (!urlparams.get("subscription")) {
         location.href = "./investmentPlans.html"
     }
 
-    bitcoinBtn.addEventListener("click", async ()=>{
+    bitcoinBtn.addEventListener("click", async () => {
         const server = document.getElementById("server")
         const login = document.getElementById("login")
         const password = document.getElementById("password")
 
-        const response = await fetch(url+`/subscriptions/${urlparams.get("subscription")}/update-mt4-mt5-details`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type":"application/json",
-            "authorization":`Bearer ${token}`
+        if(server.value==''){
+            return alert('Server is required')
+        }   else if(login.value==''){
+            return alert('MT4/MT5 Login is required')
+        }   else if(password.value==''){
+            return alert('Password is required')
         }
+
+
+
+        const response = await fetch(url + `/subscriptions/${urlparams.get("subscription")}/update-mt4-mt5-details`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                server: server.value,
+                mt4Login: login.value,
+                password: password.value
+            })
     })
 
 
-        const data = await response.json()
-            console.log(data)
-            if(data.status === "success"){
-                alert("Account Submited")
-                // location.href="./dashboard.html"
-            }
+    const data = await response.json()
+    console.log(data)
+    if (data.status === "success") {
+        alert("Account Submited")
+        location.href = "./transactionHistory.html"
+    }
     
 
     
 
 
     })
- 
 
-  logoutButton.addEventListener('click', () => {
-   
-  })
+
+    logoutButton.addEventListener('click', () => {
+
+    })
 
 </script>
 
 <script>
-    
+
 
 </script>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
-    </script>
-   
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</script>
+
+<script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </html>

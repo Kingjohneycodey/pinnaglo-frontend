@@ -62,7 +62,7 @@
                             </li>
                         </a>
                       
-                        <a href="./transactionHistory.html " class="active">
+                        <a href="./transactionHistory.html ">
                             <li class="sidebar-menu-list-item">
                                 <i class="fa fa-briefcase sidebar-icon"></i>
                                 <span>Transaction history</span>
@@ -71,7 +71,13 @@
                         <a href="./investmentPlans.html ">
                             <li class="sidebar-menu-list-item">
                                 <i class="fas fa-cubes sidebar-icon"></i>
-                                <span>Subscriptions</span>
+                                <span>Packages</span>
+                            </li>
+                        </a>
+                        <a href="./referrals.html"  class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-user sidebar-icon"></i>
+                                <span>Referrals</span>
                             </li>
                         </a>
                         <a href="./support.html ">
@@ -125,20 +131,21 @@
                 <div id="deposite-table" class="deposite-table">
                     <table class="table">
                                 <tr class="table-head">
-                                    <th>Duration</th>
-                                    <th>Amount</th>
+                                    <th>S/N</th>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>Email</th>
                                     <th>Status</th>
-                                    <th>Date</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
                                 <!-- <hr> -->
-                                <tbody id="deposite-table-body">
+                                <tbody id="user-referrals-table-body">
                                    
                                 </tbody>
                     </table>
                 </div>
                
-            </div>
+            </div> 
         </div>
     </div>
 
@@ -214,14 +221,14 @@
         withdrawTable.style.display='none'
         OthersTable.style.display='none'
     })
-    tableBtn2.addEventListener('click', () => {
-        tableBtn1.classList.remove('active')
-        tableBtn2.classList.add('active')
+    // tableBtn2.addEventListener('click', () => {
+    //     tableBtn1.classList.remove('active')
+    //     tableBtn2.classList.add('active')
       
-        depositeTable.style.display='none'
-        withdrawTable.style.display='block'
-        OthersTable.style.display='none'
-    })
+    //     depositeTable.style.display='none'
+    //     withdrawTable.style.display='block'
+    //     OthersTable.style.display='none'
+    // })
 
 
 inner.addEventListener('click', () => {

@@ -18,7 +18,7 @@ const createReportTicket = async ()=>{
     const data = await response.json()
 
     if(data.status === "error"){
-        alert(data.message)
+        alert('Message is required')
     }
 
     if(data.status === "Created"){

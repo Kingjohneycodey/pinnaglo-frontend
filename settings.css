@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 #option1{
-    background-color: #0052FF;
+    background-color: orange;
 }
 /* .settings-option:hover{
     background-color: #0052ff;
@@ -68,7 +68,7 @@
     padding: 8px 10px;
     width: 180px;
     color: #Fff;
-    background-color: #0052FF;
+    background-color: orange;
     border: none;
     outline: none;
     cursor: pointer;
@@ -76,7 +76,7 @@
     transition: all 0.3s ease-in-out;
 }
 .settings-button button:hover{
-    color: #0052FF;
+    color: orange;
     background-color: #Fff;
     transition: all 0.3s ease-in-out;
 }
@@ -97,7 +97,7 @@
     margin-top: 15px;
 }
 .advance-setting-link span{
-    color: #0052FF;
+    color: orange;
     cursor: pointer;
 }
 .advance-settings-box{

@@ -1,4 +1,4 @@
-
+ 
 // alert("Connected")
 
 
@@ -17,53 +17,65 @@ if(plan === "3-months"){
     percentage = 0.36
 }
 
-let blogImageUrl = ""
 
 const blogImage = document.getElementById('payment-proof-image')
 
 
-let fr = new FileReader();
+// let fr = new FileReader();
 
 
-blogImage.addEventListener("change", ()=>{
+// blogImage.addEventListener("change", ()=>{
 
-    fr.readAsDataURL(blogImage.files[0])
+//     fr.readAsDataURL(blogImage.files[0])
 
     
-    fr.addEventListener("load", ()=>{
+//     fr.addEventListener("load", ()=>{
 
 
-        blogImageUrl = fr.result;
+//         blogImageUrl = fr.result;
 
-       console.log(blogImageUrl)
+//        console.log(blogImageUrl)
 
 
         
-           // selectedimage.src = imageurl;
-    })
+//            // selectedimage.src = imageurl;
+//     })
 
-})
+// })
+
 
 submitPayment.addEventListener("click", async () => {
 
-    if(!blogImageUrl){
+    const formData = new FormData();
 
-        alert("Please Choose Payment Proof")
+
+formData.append('accountSize', amount.value);
+formData.append('duration', plan);
+formData.append('transaction_hash', transactionHash.value);
+formData.append('attachments', blogImage.files[0]); 
+
+    if(!transactionHash.value){
+        alert("Please Input Transaction Hash")
         return
     }
+
+
+    if(!blogImage.files[0]){
+
+        alert("Please Upload Payment Proof")
+        return
+    }
+
+    const headers = {
+        'authorization': `Bearer ${token}`,
+        
+    };
+    
     
     const response = await fetch(url+"/subscriptions", {
         method: "POST",
-        headers: {
-            "Content-Type":"application/json",
-            "authorization":`Bearer ${token}`
-        },
-        body: JSON.stringify({
-            accountSize: amount.value,
-            duration:plan,
-            attachments:[blogImageUrl],
-            transaction_hash:transactionHash.value
-        })
+        headers: headers,
+        body: formData,
     })
 
     const data = await response.json()

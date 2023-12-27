@@ -9,13 +9,90 @@ let requests = []
 
 const checkAdmin = localStorage.getItem("admin")
 
-// if (!checkAdmin) {
+if (!checkAdmin) {
     
-//     location.href = "./index.html"
-// }
+    location.href = "./index.html"
+}
 
-const token = localStorage.getItem("token")
+function refreshToken() {
+    const token = localStorage.getItem('admin');
+  
+    if (!token) {
+      // If token doesn't exist in local storage, consider it expired
+      return true;
+    }
+  
+    try {
+      const tokenPayload = JSON.parse(atob(token.split('.')[1])); // Decoding the payload of the token
+  
+      // Check if the token has an 'exp' (expiration) claim
+      if (tokenPayload && tokenPayload.exp) {
+        const expirationTime = tokenPayload.exp * 1000; // Convert expiration time to milliseconds
+        
+        const currentTime = Math.floor(Date.now() / 1000);
 
+        // Compare the expiration time with the current time
+        if(Date.now() >= expirationTime){
+          alert('token expired')
+          localStorage.clear()
+          location.href = './Login Page/adminsect.html'
+        }
+
+        
+
+
+      }
+    } catch (error) {
+      console.error('Error parsing token:', error);
+    }
+
+  };
+
+  refreshToken()
+
+
+const token = localStorage.getItem("admin")
+
+
+// function refreshToken() {
+//     const token = localStorage.getItem('token');
+  
+//     if (!token) {
+//       // If token doesn't exist in local storage, consider it expired
+//       return true;
+//     }
+  
+//     try {
+//       const tokenPayload = JSON.parse(atob(token.split('.')[1])); // Decoding the payload of the token
+  
+//       // Check if the token has an 'exp' (expiration) claim
+//       if (tokenPayload && tokenPayload.exp) {
+//         const tokenExp = new Date(tokenPayload.exp)
+//         console.log(tokenExp)
+//         const expirationTime = tokenPayload.exp * 1000; 
+//         console.log(new Date(expirationTime))// Convert expiration time to milliseconds
+        
+//         const currentTime = Math.floor(Date.now() / 1000);
+
+//         console.log(currentTime)
+
+//         // Compare the expiration time with the current time
+//         Date.now() >= expirationTime;
+
+//         tokenPayload.exp = currentTime + 3600;
+        
+//         console.log(new Date(tokenPayload.exp * 1000))
+
+//         // localStorage.setItem('token', JSON.stringify(tokenPayload));
+
+//       }
+//     } catch (error) {
+//       console.error('Error parsing token:', error);
+//     }
+
+//   };
+
+//   refreshToken()
 
 const allWIthdrawals = async () => {
     
@@ -90,21 +167,67 @@ const allWIthdrawals = async () => {
                 copyToClipboard(walletAddress);
                 alert('Wallet address copied to clipboard!');
             });
+
+           // Set the subid attribute for approve button
+    // Set the subid attribute for decline button
     
             // TODO: Implement the logic for the "Approve" button
             const approveButton = document.getElementById('approveButton');
+            approveButton.dataset.subid = currentRequest._id; 
             approveButton.addEventListener('click', () => {
-                // Implement the logic to approve the request
-                // You can call a function or perform any necessary actions
-                alert('Request Approved!');
+                const id = approveButton.dataset.subid // Get subid attribute value
+                // Perform operations using the obtained id
+                console.log("Transaction approved for ID:", id);
+                // closeModal();
+            
+                fetch(`${url}/withdrawals/${id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type":"application/json",
+                        "authorization": `Bearer ${checkAdmin}`
+                    },
+                    body: JSON.stringify({ status: "approved" })
+                })
+                    .then(response => {
+                        modal.style.display = 'none';
+                        alert('Withdrawal Request Approved')
+                        allWIthdrawals()
+                        return response.json()
+                    })
+                    .catch(error =>{
+                        console.log(error)
+                        alert("Error while approving user's withdrawal request")
+                    } )
+              
             });
     
             // TODO: Implement the logic for the "Decline" button
             const declineButton = document.getElementById('declineButton');
+            declineButton.dataset.subid = currentRequest._id; 
             declineButton.addEventListener('click', () => {
-                // Implement the logic to decline the request
-                // You can call a function or perform any necessary actions
-                alert('Request Declined!');
+                const id = declineButton.dataset.subid // Get subid attribute value
+                // Perform operations using the obtained id
+                console.log("Transaction approved for ID:", id);
+                // closeModal();
+            
+                fetch(`${url}/withdrawals/${id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type":"application/json",
+                        "authorization": `Bearer ${checkAdmin}`
+                    },
+                    body: JSON.stringify({ status: "rejected" })
+                })
+                    .then(response => {
+                        modal.style.display = 'none';
+                        alert('Withdrawal Request Declined')
+                        allWIthdrawals()
+                        return response.json()
+                    })
+                    .catch(error =>{
+                        console.log(error)
+                        alert("Error while declining user's withdrawal request")
+                    } )
             });
         });
     });

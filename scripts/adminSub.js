@@ -13,6 +13,42 @@ if (!checkAdmin) {
     location.href = "./index.html"
 }
 
+function refreshToken() {
+    const token = localStorage.getItem('admin');
+  
+    if (!token) {
+      // If token doesn't exist in local storage, consider it expired
+      return true;
+    }
+  
+    try {
+      const tokenPayload = JSON.parse(atob(token.split('.')[1])); // Decoding the payload of the token
+  
+      // Check if the token has an 'exp' (expiration) claim
+      if (tokenPayload && tokenPayload.exp) {
+        const expirationTime = tokenPayload.exp * 1000; // Convert expiration time to milliseconds
+        
+        const currentTime = Math.floor(Date.now() / 1000);
+
+        // Compare the expiration time with the current time
+        if(Date.now() >= expirationTime){
+          alert('token expired')
+          localStorage.clear()
+          location.href = './Login Page/adminsect.html'
+        }
+
+        
+
+
+      }
+    } catch (error) {
+      console.error('Error parsing token:', error);
+    }
+
+  };
+
+  refreshToken()
+
 
 let subs = []
 
@@ -96,8 +132,10 @@ const showModal = (index) => {
 
     // Display modal
     document.getElementById("myModal").style.display = "block";
-    document.getElementById("myModal").querySelector("#approve").setAttribute("subid", currentSub._id);
-    document.getElementById("myModal").querySelector("#decline").setAttribute("subid", currentSub._id);
+    const approveButton = document.getElementById("myModal").querySelector("#approve");
+    const declineButton = document.getElementById("myModal").querySelector("#decline");
+    approveButton.dataset.subid = currentSub._id; // Set the subid attribute for approve button
+    declineButton.dataset.subid = currentSub._id; // Set the subid attribute for decline button
 }
 
 const closeModal = () => {
@@ -106,16 +144,53 @@ const closeModal = () => {
 }
 
 const approveTransaction = async (button) => {
-    const id = button.getAttribute(id)
-    
-  
+    const id = button.dataset.subid; // Get subid attribute value
+    // Perform operations using the obtained id
+    console.log("Transaction approved for ID:", id);
     // closeModal();
+
+    fetch(`${url}/subscriptions/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type":"application/json",
+            "authorization": `Bearer ${checkAdmin}`
+        },
+        body: JSON.stringify({ status: "approved" })
+    })
+        .then(response => {
+            closeModal();
+            alert('Subscription has been approved')
+            allWIthdrawals()
+            return response.json()
+        })
+        .catch(error =>{
+            console.log(error)
+        } )
 }
 
-const declineTransaction = () => {
-    // Add logic for declining the transaction
-    console.log("Transaction declined");
-    closeModal();
+const declineTransaction = async (button) => {
+    const id = button.dataset.subid; // Get subid attribute value
+    // Perform operations using the obtained id
+    console.log("Transaction approved for ID:", id);
+    // closeModal();
+
+    fetch(`${url}/subscriptions/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type":"application/json",
+            "authorization": `Bearer ${checkAdmin}`
+        },
+        body: JSON.stringify({ status: "rejected" })
+    })
+        .then(response => {
+            closeModal();
+            alert('Subscription has been rejected')
+            allWIthdrawals()
+            return response.json()
+        })
+        .catch(error =>{
+            console.log(error)
+        } )
 }
 
 

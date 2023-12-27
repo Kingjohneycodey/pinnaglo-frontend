@@ -13,6 +13,42 @@ if (!checkAdmin) {
     location.href = "./index.html"
 }
 
+function refreshToken() {
+    const token = localStorage.getItem('admin');
+  
+    if (!token) {
+      // If token doesn't exist in local storage, consider it expired
+      return true;
+    }
+  
+    try {
+      const tokenPayload = JSON.parse(atob(token.split('.')[1])); // Decoding the payload of the token
+  
+      // Check if the token has an 'exp' (expiration) claim
+      if (tokenPayload && tokenPayload.exp) {
+        const expirationTime = tokenPayload.exp * 1000; // Convert expiration time to milliseconds
+        
+        const currentTime = Math.floor(Date.now() / 1000);
+
+        // Compare the expiration time with the current time
+        if(Date.now() >= expirationTime){
+          alert('token expired')
+          localStorage.clear()
+          location.href = './Login Page/adminsect.html'
+        }
+
+        
+
+
+      }
+    } catch (error) {
+      console.error('Error parsing token:', error);
+    }
+
+  };
+
+  refreshToken()
+
 
 let subs = []
 
@@ -118,6 +154,7 @@ const approveTransaction = async (button) => {
     if(data.status === "success"){
         alert("Complain Status Updated")
         closeModal();
+        allWIthdrawals()
     }
     // Add logic for approving the transaction
     console.log("Transaction approved");
@@ -128,6 +165,7 @@ const declineTransaction = () => {
     // Add logic for declining the transaction
     console.log("Transaction declined");
     closeModal();
+    allWIthdrawals()
 }
 
 
