@@ -1,4 +1,4 @@
-const loggedInUser = async () => {
+const loggedInAdmin = async () => {
     const token = localStorage.getItem("admin")
     
     const response = await fetch(url+"/users/me", {
@@ -14,45 +14,19 @@ const loggedInUser = async () => {
 
     if(data.status === "success"){
         const user = data.doc.user
-        username2.innerHTML = user.firstName
 
 
 
-        if(loggedUsername1){
+        const username1 = document.getElementById('username1')
+        if(username1){
 
-        loggedUsername1.innerHTML = user.firstName
-        loggedInUserballance.innerHTML = (()=>{
+            username1.innerHTML = user.firstName + ' ' + user.lastName
 
-        
-            if(user.subscription){
-                const duration = user.subscription.duration
-                const expiration = new Date(user.subscription.expiration).toLocaleDateString()
-                const bonus = user.wallet
-
-                return `<p> ${duration}, Expires: ${expiration}</p>`
-            }
-
-            return `No Active Subscription`
-        })()
-        loggedInUserprofit.innerHTML = `$${user.wallet}`
-        totalReferralsUser.innerHTML = `${user.totalReferrals}`
         }
-    
-        if(referalInput){
-            referalInput.value = location.host+"/Signup/signup.html?ref="+user.referralLink
-        }
-    
+
     }
-
-    // loggedUsername1.innerHTML = data.user.firstName
-    // loggedInUserballance.innerHTML = `$${data.user.ballance}`
-    // loggedInUserprofit.innerHTML = `$${data.user.profit}`
-    // loggedInUserwithdrawals.innerHtml = `${data.user.profit}`
-
     console.log(data)
-
-
 
 }
 
-loggedInUser()
+loggedInAdmin()

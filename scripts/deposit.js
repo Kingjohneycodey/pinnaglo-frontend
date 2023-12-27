@@ -36,7 +36,7 @@ const blogImage = document.getElementById('payment-proof-image')
 
 //        console.log(blogImageUrl)
 
-
+ 
         
 //            // selectedimage.src = imageurl;
 //     })
@@ -111,5 +111,5 @@ formData.append('attachments', blogImage.files[0]);
     
 
     console.log(data)
-
+ 
 })

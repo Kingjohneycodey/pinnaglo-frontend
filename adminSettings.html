@@ -53,7 +53,7 @@
                 <!-- <hr class="line"> -->
                 <div class="sidebar-menu-list">
                     <ul class="sidebar-menu-list-wrapper">
-                        <a href="./admin.html" class="active">
+                        <a href="./admin.html">
                             <li class="sidebar-menu-list-item">
                                 <i class="fa-solid fa-house sidebar-icon" ></i>
                                 <span>Users</span>
@@ -77,6 +77,12 @@
                             <li class="sidebar-menu-list-item">
                                 <i class="fa-regular fa-life-ring sidebar-icon"></i>
                                 <span>Tickets</span>
+                            </li>
+                        </a>
+                        <a href="./adminSettings.html"  class="active">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-life-ring sidebar-icon"></i>
+                                <span>Settings</span>
                             </li>
                         </a>
                     </ul> 
@@ -115,26 +121,34 @@
 
         <!-- MAIN SECTION BODY -->
         <div class="main-section-body-container">
-            <div class="main-section-body-container1" id="user-table-container">
-                <h3>You have <span id="number-of-users">0</span> Users</h3>
-                <div class="users-list-container">
-                    <table class="table">
-                                <tr class="table-head">
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-              
-                                    <th>Status</th>
-                                </tr>
-                                <!-- <hr> -->
-                                <tbody id="users-table-body">
-                                    
-                                </tbody>
-                    </table>
+            <div class="settings-box password-settings" id="password-settings">
+                <!-- <div class="settings-input-container">
+                    <span>Withdrawal Password</span>
+                    <input id="withdraw-password" type="text" maxlength="5" minlength="4"
+                    placeholder="Enter withdrawal Password"/>
+                    <span class="error" id="withdraw-password-error">input a withdrawal password</span>
                 </div>
-            </div>
+                <div class="settings-button withdraw-password-btn">
+                    <button id="withdraw-password-button">set withdrawal Password</button>
+                </div> -->
+                <div class="settings-input-container">
+                    <span>Old Password</span>
+                    <input id="old-password" type="password" placeholder="Enter Old Password"/>
+                </div>
+                <div class="settings-input-container">
+                    <span>New Password</span>
+                    <input type="password" id="new-password" placeholder="Enter New Password"/>
+                </div>
+                <div class="settings-input-container">
+                    <span>Confirm New Password</span>
+                    <input type="password" id="confirm-password" placeholder="Confirm New Password"/>
+                </div>
+                <div class="settings-button">
+                    <button id="update-password-button">Update Password</button>
+                </div>
 
-        
+                
+            </div>
 
         </div>
 
