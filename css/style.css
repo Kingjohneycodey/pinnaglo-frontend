@@ -497,24 +497,45 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 		margin-top: -200px;
 	}
 }
-
+@media (max-width: 900px) {
+	.highlights {
+		margin-top: -7/0px;
+	}
+}
+@media (max-width: 800px) {
+	.highlights {
+		margin-top: -450px;
+	}
+}
 @media (max-width: 700px) {
 	.highlights {
-		margin-top: -300px;
+		margin-top: -400px;
 	}
 }
 
 @media (max-width: 450px) {
 	.highlights {
-		margin-top: -230px;
+		margin-top: -400px;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+	.highlights {
+		margin-top: -350px;
+	}
+}
+
+@media (max-width: 390px) {
+	.highlights {
+		margin-top: -150px;
+	}
+}
+@media (max-width: 360px) {
 	.highlights {
 		margin-top: -200px;
 	}
 }
+
 
 @media (max-width: 320px) {
 	.highlights {
