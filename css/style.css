@@ -490,7 +490,36 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 
 
 /* HIGHLIGHTS */
-.highlights{ width: 100%; float: left; padding: 100px 0; text-align: center;}
+.highlights{ width: 100%; float: left; padding: 50px 0; text-align: center;}
+
+@media (max-width: 1400px) {
+	.highlights {
+		margin-top: -200px;
+	}
+}
+
+@media (max-width: 700px) {
+	.highlights {
+		margin-top: -300px;
+	}
+}
+
+@media (max-width: 450px) {
+	.highlights {
+		margin-top: -230px;
+	}
+}
+
+@media (max-width: 400px) {
+	.highlights {
+		margin-top: -200px;
+	}
+}
+
+
+
+
+
 .highlights h6{ text-transform: uppercase; font-weight: 700; font-size: 14px; letter-spacing: 0.4px; color: #3d404e; position: relative; padding-bottom: 30px; color: #9193a4;}
 .highlights h6:after{content: ''; width: 30px; height: 3px; background: #ffbb3f; position: absolute; left: 50%; bottom: 0; margin-left: -15px;}
 .highlights h2{ font-family: "Playfair Display"; padding: 0 10%; font-size: 40px; line-height: 60px; margin-bottom: 50px;}
@@ -507,7 +536,6 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 	background-repeat: none;
 	width: 100%;
 	background-size: cover;
-
 	
 }
 .intro-container-text{
