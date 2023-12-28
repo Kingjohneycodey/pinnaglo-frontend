@@ -521,22 +521,22 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 
 @media (max-width: 420px) {
 	.highlights {
-		margin-top: -350px;
+		margin-top: 80px;
 	}
 }
 
-@media (max-width: 390px) {
+ @media (max-width: 370px) {
 	.highlights {
-		margin-top: -150px;
+		margin-top: 140px;
 	}
 }
-@media (max-width: 360px) {
+@media (max-width: 300px) {
 	.highlights {
-		margin-top: -200px;
+		margin-top: 200px;
 	}
 }
 
-
+/* 
 @media (max-width: 320px) {
 	.highlights {
 		margin-top: -120px;
@@ -553,7 +553,7 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 	.highlights {
 		margin-top: 100px;
 	}
-}
+}  */
 
 
 

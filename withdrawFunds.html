@@ -338,6 +338,7 @@
 </body>
 <script src="scripts/dashboard.js"></script>
 <script>
+    var userWallet
    const fetchInfo = async () => {
     const response = await fetch(url+"/users/me", {
         method: "GET",
@@ -350,12 +351,14 @@
 
     var data = await response.json()
 
+
+
     if(data.status === "success"){
         const user = data.doc.user
 
  
 
-
+        userWallet = `${user.wallet.toFixed(2)}`
         loggedInUserprofit.innerHTML = `$${user.wallet.toFixed(2)}`
         console.log(user.referralBonus)
 
@@ -510,6 +513,19 @@
           return  alert("Please Enter a Wallet Address")
         }
 
+        console.log(userWallet)
+
+        if(requestAmount.value > parseInt(userWallet)){
+
+return  alert("You have insufficient balance")
+}
+
+if(requestAmount.value < 20){
+
+return  alert("The minimum withdrawal amount is $20")
+}
+
+
        
 
 
@@ -537,8 +553,7 @@
             location.href = "./dashboard.html"
         }   else{
 
-    
-                alert('Insufficient Balance')
+                alert('Withdrawal not successful')
         
             
         }
