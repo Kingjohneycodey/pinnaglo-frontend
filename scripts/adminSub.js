@@ -79,7 +79,7 @@ const allWIthdrawals = async () => {
         <tr data-id=${x._id} data-index=${i} class="table-data">
 
         <td>${x.user.firstName} ${x.user.lastName}</td>
-        <td> $${x.amount}</td>
+        <td> $${x.accountSize}</td>
         <td>${x.status}</td>
         <td>${new Date(x.createdAt).toLocaleDateString()}</td>
         <td><button onclick="showModal(${i})">Manage</button></td>
@@ -115,7 +115,7 @@ const showModal = (index) => {
     const currentSub = subs[index];
     const image = currentSub.attachments[0];
     const hash = currentSub.transaction_hash;
-    const amount = currentSub.amount;
+    const amount = currentSub.accountSize;
     const status = currentSub.status;
     const server = currentSub?.server ? currentSub?.server : "Not Submited Yet";
     const password = currentSub?.password ? currentSub?.password : "Not Submited Yet";
@@ -123,7 +123,7 @@ const showModal = (index) => {
 
     // Update modal content
     document.getElementById("modalHash").textContent = hash;
-    document.getElementById("modalAmount").textContent = amount;
+    document.getElementById("modalAmount").textContent = '$' + amount;
     document.getElementById("modalStatus").textContent = status;
     document.getElementById("mtlogin").textContent = login;
     document.getElementById("mtpassword").textContent = password;

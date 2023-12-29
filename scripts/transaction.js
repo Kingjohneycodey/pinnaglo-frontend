@@ -51,7 +51,7 @@ const getUserTransactins = async () => {
         return `
         <tr class="table-data">
         <td>${x.duration}</td>
-        <td>$${x.amount}</td>
+        <td>$${x.accountSize}</td>
         <td>${x.status}</td>
         <td>${date}</td>
         <td>${enddate}</td>
