@@ -55,7 +55,7 @@
                     <h3 id="user-name1"></h3>
                 </div>
                 <!-- <hr class="line"> -->
-                <div class="sidebar-menu-list" class="active">
+                <div class="sidebar-menu-list">
                     <ul class="sidebar-menu-list-wrapper">
                         <a href="./dashboard.html ">
                             <li class="sidebar-menu-list-item">
@@ -63,18 +63,23 @@
                                 <span>Dashboard</span>
                             </li>
                         </a>
-                       
+                      
                         <a href="./transactionHistory.html ">
                             <li class="sidebar-menu-list-item">
                                 <i class="fa fa-briefcase sidebar-icon"></i>
                                 <span>Transaction history</span>
                             </li>
                         </a>
-                        
-                        <a href="./investmentPlans.html ">
+                        <a href="./investmentPlans.html "  class="active">
                             <li class="sidebar-menu-list-item">
                                 <i class="fas fa-cubes sidebar-icon"></i>
-                                <span>Subscriptions</span>
+                                <span>Packages</span>
+                            </li>
+                        </a>
+                        <a href="./referrals.html">
+                            <li class="sidebar-menu-list-item">
+                                <i class="fa-regular fa-user sidebar-icon"></i>
+                                <span>Referrals</span>
                             </li>
                         </a>
                         <a href="./support.html ">
@@ -336,6 +341,12 @@
     if (amount.value == '') {
         notSelected.style.top = 0;
         notifyText.innerHTML = "Please Input an account Size";
+        setTimeout(() => {
+            notSelected.style.top = '-1000px';
+        }, 3000);
+    } else if (amount.value < 1000) {
+        notSelected.style.top = 0;
+        notifyText.innerHTML = "The Minimum Account Size is $1000";
         setTimeout(() => {
             notSelected.style.top = '-1000px';
         }, 3000);

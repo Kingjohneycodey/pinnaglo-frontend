@@ -1020,6 +1020,8 @@
 
             if (amount.value == '') {
                 return alert("Please Input an account Size")
+            } else if (amount.value < 1000) {
+                return alert("The Minimum Account Size is $1000")
             } else {
                 const firstCalculation = percentage * parseInt(amount.value);
                 console.log('firstCalculation', firstCalculation)
