@@ -26,6 +26,8 @@ const getUserTransactins = async () => {
 
         // const user = x.downline
 
+        var action
+
         var date = new Date(x.createdAt).toLocaleDateString("en-GB", {
             year: "2-digit",
             month: "2-digit",
@@ -47,6 +49,13 @@ const getUserTransactins = async () => {
             date = 'inactive'
             enddate = 'inactive'
         }
+
+
+        if(x.status == 'approved'){
+            action = `<a href="support.html"><button style="background-color: red; color: white; padding: 10px; border-radius: 10px; border: 0;">Request Cancellation</button></a>`
+        }   else{
+            action=''
+        }
          
         return `
         <tr class="table-data">
@@ -55,6 +64,7 @@ const getUserTransactins = async () => {
         <td>${x.status}</td>
         <td>${date}</td>
         <td>${enddate}</td>
+        <td>${action}</td>
         </tr>
         
         
