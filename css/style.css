@@ -8,7 +8,7 @@ is the file you need to edit to change the look of the
 theme.
 
 
-// Table of contents //
+// Table of contents // 
 
 
 	1. FONTS
@@ -569,7 +569,7 @@ button[type="submit"]:hover{ background: transparent; color: #ffbb3f; border: 2p
 
 /* INTRO CONTAINER */
 .intro-container{
-	background-image: url(../images/mainpage.png);
+	/* background-image: url(../images/mainpage.png); */
 	padding-left: 100px;
 	background-position: cover;
 	background-repeat: none;
